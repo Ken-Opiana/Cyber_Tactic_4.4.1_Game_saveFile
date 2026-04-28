@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c8006h0o0nmgw"]
+[gd_scene format=3 uid="uid://c8006h0o0nmgw"]
 
 [ext_resource type="Script" uid="uid://2ju4bjvgrm1i" path="res://scenes/shop/shop.gd" id="1_qxddl"]
 [ext_resource type="Script" uid="uid://jie6cbv6kc3m" path="res://custom_resources/thread_passive.gd" id="2_k4e0x"]
@@ -72,7 +72,7 @@ font_size = 24
 [sub_resource type="LabelSettings" id="LabelSettings_k5co3"]
 font_size = 32
 
-[node name="Shop" type="Control"]
+[node name="Shop" type="Control" unique_id=1551131522]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -83,10 +83,10 @@ mouse_filter = 2
 script = ExtResource("1_qxddl")
 shop_threads = Array[ExtResource("2_k4e0x")]([ExtResource("3_1p8uf"), ExtResource("4_7rtu0"), ExtResource("5_72muf"), ExtResource("6_kcjqd"), ExtResource("8_6kbe7"), ExtResource("9_hbyua")])
 
-[node name="BackgroundLayer" type="CanvasLayer" parent="."]
+[node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=907651257]
 layer = 0
 
-[node name="Background" type="TextureRect" parent="BackgroundLayer"]
+[node name="Background" type="TextureRect" parent="BackgroundLayer" unique_id=381639456]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -94,9 +94,9 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_jvmkg")
 
-[node name="DecorationLayer" type="CanvasLayer" parent="."]
+[node name="DecorationLayer" type="CanvasLayer" parent="." unique_id=2112763018]
 
-[node name="Shopkeeper" type="TextureRect" parent="DecorationLayer"]
+[node name="Shopkeeper" type="TextureRect" parent="DecorationLayer" unique_id=383562911]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -109,20 +109,18 @@ texture = ExtResource("9_k5co3")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="ShopkeeperAnimation" type="AnimationPlayer" parent="DecorationLayer"]
+[node name="ShopkeeperAnimation" type="AnimationPlayer" parent="DecorationLayer" unique_id=1049938912]
 unique_name_in_owner = true
-libraries = {
-&"": SubResource("AnimationLibrary_3v51k")
-}
+libraries/ = SubResource("AnimationLibrary_3v51k")
 
-[node name="BlinkTimer" type="Timer" parent="DecorationLayer"]
+[node name="BlinkTimer" type="Timer" parent="DecorationLayer" unique_id=1812319904]
 unique_name_in_owner = true
 one_shot = true
 
-[node name="UILayer" type="CanvasLayer" parent="."]
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1862791437]
 layer = 2
 
-[node name="Title" type="Label" parent="UILayer"]
+[node name="Title" type="Label" parent="UILayer" unique_id=26871261]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -139,7 +137,7 @@ label_settings = SubResource("LabelSettings_8hvqd")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="UILayer"]
+[node name="Label" type="Label" parent="UILayer" unique_id=2091950213]
 offset_left = 363.0
 offset_top = 110.0
 offset_right = 479.0
@@ -147,7 +145,7 @@ offset_bottom = 136.0
 text = "Take your time"
 label_settings = SubResource("LabelSettings_k5co3")
 
-[node name="BackButton" type="Button" parent="UILayer"]
+[node name="BackButton" type="Button" parent="UILayer" unique_id=1780462959]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -162,7 +160,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 48
 text = "Leave"
 
-[node name="ShopContent" type="VBoxContainer" parent="UILayer"]
+[node name="ShopContent" type="VBoxContainer" parent="UILayer" unique_id=1464026272]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -176,50 +174,50 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 13
 
-[node name="Cards" type="HBoxContainer" parent="UILayer/ShopContent"]
+[node name="Cards" type="HBoxContainer" parent="UILayer/ShopContent" unique_id=1507261830]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="ShopCard" parent="UILayer/ShopContent/Cards" instance=ExtResource("5_npuc3")]
+[node name="ShopCard" parent="UILayer/ShopContent/Cards" unique_id=1782506121 instance=ExtResource("5_npuc3")]
 layout_mode = 2
 
-[node name="ShopCard2" parent="UILayer/ShopContent/Cards" instance=ExtResource("5_npuc3")]
+[node name="ShopCard2" parent="UILayer/ShopContent/Cards" unique_id=1166489075 instance=ExtResource("5_npuc3")]
 layout_mode = 2
 
-[node name="ShopCard3" parent="UILayer/ShopContent/Cards" instance=ExtResource("5_npuc3")]
+[node name="ShopCard3" parent="UILayer/ShopContent/Cards" unique_id=2007435462 instance=ExtResource("5_npuc3")]
 layout_mode = 2
 
-[node name="ShopCard4" parent="UILayer/ShopContent/Cards" instance=ExtResource("5_npuc3")]
+[node name="ShopCard4" parent="UILayer/ShopContent/Cards" unique_id=1591039642 instance=ExtResource("5_npuc3")]
 layout_mode = 2
 
-[node name="Threads" type="HBoxContainer" parent="UILayer/ShopContent"]
+[node name="Threads" type="HBoxContainer" parent="UILayer/ShopContent" unique_id=924867116]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="ShopThread" parent="UILayer/ShopContent/Threads" instance=ExtResource("6_tgpmw")]
+[node name="ShopThread" parent="UILayer/ShopContent/Threads" unique_id=217768961 instance=ExtResource("6_tgpmw")]
 layout_mode = 2
 
-[node name="ShopThread2" parent="UILayer/ShopContent/Threads" instance=ExtResource("6_tgpmw")]
+[node name="ShopThread2" parent="UILayer/ShopContent/Threads" unique_id=1260869824 instance=ExtResource("6_tgpmw")]
 layout_mode = 2
 
-[node name="ShopThread3" parent="UILayer/ShopContent/Threads" instance=ExtResource("6_tgpmw")]
+[node name="ShopThread3" parent="UILayer/ShopContent/Threads" unique_id=262459697 instance=ExtResource("6_tgpmw")]
 layout_mode = 2
 
-[node name="ShopThread4" parent="UILayer/ShopContent/Threads" instance=ExtResource("6_tgpmw")]
+[node name="ShopThread4" parent="UILayer/ShopContent/Threads" unique_id=513443742 instance=ExtResource("6_tgpmw")]
 layout_mode = 2
 
-[node name="CardTooltipPopup" type="CanvasLayer" parent="."]
+[node name="CardTooltipPopup" type="CanvasLayer" parent="." unique_id=1355911813]
 layer = 3
 
-[node name="CardTooltipPopUp" parent="CardTooltipPopup" instance=ExtResource("6_p3200")]
+[node name="CardTooltipPopUp" parent="CardTooltipPopup" unique_id=2093487790 instance=ExtResource("6_p3200")]
 unique_name_in_owner = true
 visible = false
 
-[node name="ModifierHandler" parent="." instance=ExtResource("13_dqlyb")]
+[node name="ModifierHandler" parent="." unique_id=1073242090 instance=ExtResource("13_dqlyb")]
 
-[node name="ShopCostModifier" parent="ModifierHandler" instance=ExtResource("14_w60y6")]
+[node name="ShopCostModifier" parent="ModifierHandler" unique_id=921637203 instance=ExtResource("14_w60y6")]
 type = 4
 
 [connection signal="pressed" from="UILayer/BackButton" to="." method="_on_back_button_pressed"]

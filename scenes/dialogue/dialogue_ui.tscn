@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://i315oax6po0n"]
+[gd_scene format=3 uid="uid://i315oax6po0n"]
 
 [ext_resource type="Texture2D" uid="uid://c65soght4j8py" path="res://art/tile_0087.png" id="1_c5aah"]
 [ext_resource type="Script" uid="uid://brjcvx65iqdsf" path="res://scenes/dialogue/dialogue_ui.gd" id="1_sh47r"]
@@ -10,7 +10,7 @@
 font = ExtResource("2_sh47r")
 font_size = 8
 
-[node name="DialogueUI" type="Control"]
+[node name="DialogueUI" type="Control" unique_id=580078568]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,7 +20,7 @@ grow_vertical = 2
 script = ExtResource("1_sh47r")
 speech_sfx = ExtResource("2_hskrx")
 
-[node name="TransparentBlock" type="ColorRect" parent="."]
+[node name="TransparentBlock" type="ColorRect" parent="." unique_id=1081781577]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,7 +29,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
 
-[node name="BlackBlock" type="ColorRect" parent="."]
+[node name="BlackBlock" type="ColorRect" parent="." unique_id=1078540076]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,7 +38,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.513726)
 
-[node name="ModelViewportContainer" type="SubViewportContainer" parent="."]
+[node name="ModelViewportContainer" type="SubViewportContainer" parent="." unique_id=878084862]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -49,7 +49,7 @@ offset_right = -81.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ModelViewport" type="SubViewport" parent="ModelViewportContainer"]
+[node name="ModelViewport" type="SubViewport" parent="ModelViewportContainer" unique_id=32270032]
 unique_name_in_owner = true
 own_world_3d = true
 transparent_bg = true
@@ -57,13 +57,13 @@ handle_input_locally = false
 size = Vector2i(640, 360)
 render_target_update_mode = 4
 
-[node name="ModelRoot" type="Node3D" parent="ModelViewportContainer/ModelViewport"]
+[node name="ModelRoot" type="Node3D" parent="ModelViewportContainer/ModelViewport" unique_id=477225146]
 unique_name_in_owner = true
 
-[node name="Camera3D" type="Camera3D" parent="ModelViewportContainer/ModelViewport"]
+[node name="Camera3D" type="Camera3D" parent="ModelViewportContainer/ModelViewport" unique_id=1719968367]
 unique_name_in_owner = true
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=1614559647]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -76,7 +76,7 @@ offset_right = 225.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=1674873682]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -88,24 +88,24 @@ offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Icon" type="TextureRect" parent="Panel/HBoxContainer"]
+[node name="Icon" type="TextureRect" parent="Panel/HBoxContainer" unique_id=151781044]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 texture = ExtResource("1_c5aah")
 stretch_mode = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer" unique_id=1808981822]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="NameLabel" type="Label" parent="Panel/HBoxContainer/VBoxContainer"]
+[node name="NameLabel" type="Label" parent="Panel/HBoxContainer/VBoxContainer" unique_id=859694149]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Name"
 label_settings = SubResource("LabelSettings_d3qot")
 
-[node name="DialogueLabel" type="RichTextLabel" parent="Panel/HBoxContainer/VBoxContainer"]
+[node name="DialogueLabel" type="RichTextLabel" parent="Panel/HBoxContainer/VBoxContainer" unique_id=1926126928]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
@@ -115,7 +115,7 @@ bbcode_enabled = true
 text = "Hi! Hello!"
 scroll_active = false
 
-[node name="ImagePanel" type="TextureRect" parent="."]
+[node name="ImagePanel" type="TextureRect" parent="." unique_id=1691523766]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 5
@@ -128,7 +128,7 @@ offset_bottom = 244.0
 grow_horizontal = 2
 stretch_mode = 5
 
-[node name="NextButton" type="Button" parent="."]
+[node name="NextButton" type="Button" parent="." unique_id=927835538]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 7
@@ -143,12 +143,11 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Next"
 
-[node name="SkipButton" type="Button" parent="."]
+[node name="SkipButton" type="Button" parent="." unique_id=1632578319]
 unique_name_in_owner = true
-visible = false
 layout_mode = 0
 offset_left = 446.0
-offset_top = 345.0
+offset_top = 342.0
 offset_right = 496.0
 offset_bottom = 360.0
 text = "Skip"
