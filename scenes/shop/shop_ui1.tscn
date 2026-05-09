@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://dd4uxequngxmx"]
+
+[ext_resource type="Script" uid="uid://dys2o7kvwa8bh" path="res://scenes/shop/shop_ui1.gd" id="1_ui1gd"]
+[ext_resource type="PackedScene" uid="uid://d2v7om5x7et7v" path="res://art/3d_models/ShopEdited.glb" id="2_ufn1a"]
+
+[node name="ShopUI1" type="Control" unique_id=958529922]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ui1gd")
+
+[node name="Background" type="ColorRect" parent="." unique_id=644382381]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08, 0.08, 0.12, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2125567778]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -260.0
+offset_right = 320.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ViewportContainer" type="SubViewportContainer" parent="CenterContainer" unique_id=89114249]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(640, 360)
+layout_mode = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CenterContainer/ViewportContainer" unique_id=1858124881]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(640, 360)
+render_target_update_mode = 4
+
+[node name="Node3D" type="Node3D" parent="CenterContainer/ViewportContainer/SubViewport" unique_id=1982709380]
+
+[node name="ShopEdited" parent="CenterContainer/ViewportContainer/SubViewport/Node3D" unique_id=2078788669 instance=ExtResource("2_ufn1a")]
+
+[node name="Camera3D" type="Camera3D" parent="CenterContainer/ViewportContainer/SubViewport/Node3D" unique_id=1397824867]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9833982, 3.5)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CenterContainer/ViewportContainer/SubViewport/Node3D" unique_id=1128421589]
+transform = Transform3D(0.866025, -0.25, 0.433013, 0, 0.866025, 0.5, -0.5, -0.433013, 0.75, 0, 3, 0)
+light_energy = 1.2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="CenterContainer/ViewportContainer/SubViewport/Node3D" unique_id=445489801]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.5, 2)
+light_color = Color(0.8, 0.9, 1, 1)
+light_energy = 0.6
+omni_range = 6.0
+
+[node name="MachineButton" type="TextureButton" parent="CenterContainer" unique_id=774817981]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 520)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+
+[node name="TrayIndicator" type="Label" parent="." unique_id=1066278635]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 470.0
+offset_top = 210.0
+offset_right = 641.0
+offset_bottom = 233.0
+text = "Items in tray!"
+horizontal_alignment = 1
+
+[node name="LeaveButton" type="Button" parent="." unique_id=1037556012]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 48)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -168.0
+offset_top = -24.0
+offset_right = -8.0
+offset_bottom = 24.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 22
+text = "Leave"
+
+[connection signal="pressed" from="CenterContainer/MachineButton" to="." method="_on_machine_button_pressed"]
+[connection signal="pressed" from="LeaveButton" to="." method="_on_leave_button_pressed"]

@@ -1,3 +1,13 @@
+## run.gd — CHANGES FROM ORIGINAL:
+## 1. _on_shop_entered() passes new slot_codes, tray_card_ids, tray_thread_ids
+##    to restore_from_save().
+## 2. _save_run() captures get_slot_codes(), get_tray_card_ids(),
+##    get_tray_thread_ids() from the shop node.
+## 3. Clear new fields in the else branch of _save_run() so stale data is wiped.
+##
+## All other logic is UNCHANGED from your original run.gd.
+## Replace your existing run.gd with this file.
+
 class_name Run
 extends Node
 
@@ -74,7 +84,6 @@ func _start_run() -> void:
 	_setup_event_connections()
 	_setup_top_bar()
 	
-	# Start map music at the beginning of a new run.
 	MusicPlayer.play_track(MusicManager.Track.MAP)
 	
 	map.generate_new_map()
@@ -119,15 +128,23 @@ func _save_run(was_on_map: bool) -> void:
 			save_data.shop_thread_ids      = shop.get_thread_ids()
 			save_data.shop_thread_prices   = shop.get_thread_prices()
 			save_data.shop_sold_thread_ids = shop.get_sold_thread_ids()
+			# ── NEW: vending machine fields ───────────────────────────────────
+			save_data.shop_slot_codes      = shop.get_slot_codes()
+			save_data.shop_tray_card_ids   = shop.get_tray_card_ids()
+			save_data.shop_tray_thread_ids = shop.get_tray_thread_ids()
+			save_data.shop_coupon_applied  = shop.get_coupon_applied()
 	else:
-		# Not in a shop — clear stale data so the next fresh shop entry always
-		# calls populate_shop() rather than restore_from_save().
+		# Not in a shop — clear stale data.
 		save_data.shop_card_ids        = []
 		save_data.shop_card_prices     = []
 		save_data.shop_sold_card_ids   = []
 		save_data.shop_thread_ids      = []
 		save_data.shop_thread_prices   = []
 		save_data.shop_sold_thread_ids = []
+		# ── NEW: clear vending machine fields too ─────────────────────────────
+		save_data.shop_slot_codes      = []
+		save_data.shop_tray_card_ids   = []
+		save_data.shop_tray_thread_ids = []
 
 	save_data.save_data()
 
@@ -188,7 +205,6 @@ func _restore_map_view() -> void:
 	map.show_map()
 	map_labels.show()
 	message_label.show()
-	# Returning to map on load — restart map music from the beginning.
 	MusicPlayer.play_track(MusicManager.Track.MAP)
 
 
@@ -219,9 +235,6 @@ func _show_map() -> void:
 	map_labels.show()
 	message_label.show()
 	
-	# Returning to map from a non-battle room — keep map music playing
-	# without restarting it (campfire/shop/treasure/event).
-	# Returning from battle reward is handled by _on_battle_reward_exited_wrapper.
 	MusicPlayer.play_track(MusicManager.Track.MAP)
 	
 	_save_run(true)
@@ -301,7 +314,6 @@ func _on_treasure_room_exited(thread: ThreadPassive) -> void:
 func _on_campfire_entered() -> void:
 	var campfire := _change_view(CAMPFIRE_SCENE) as Campfire
 	campfire.char_stats = character
-	# Map music continues playing through campfire (no track change needed).
 
 
 func _on_shop_entered() -> void:
@@ -311,12 +323,8 @@ func _on_shop_entered() -> void:
 	shop.thread_handler = thread_handler
 	Events.shop_entered.emit(shop)
 	
-	# Switch to shop music when entering the shop.
 	MusicPlayer.play_track(MusicManager.Track.SHOP)
 	
-	# If save_data has a captured shop session, restore it exactly —
-	# same items, same prices, purchased ones marked as sold-out.
-	# Otherwise generate a fresh shop via RNG.
 	if not save_data.shop_thread_ids.is_empty() or not save_data.shop_card_ids.is_empty():
 		shop.restore_from_save(
 			save_data.shop_card_ids,
@@ -324,14 +332,17 @@ func _on_shop_entered() -> void:
 			save_data.shop_sold_card_ids,
 			save_data.shop_thread_ids,
 			save_data.shop_thread_prices,
-			save_data.shop_sold_thread_ids
+			save_data.shop_sold_thread_ids,
+			save_data.shop_slot_codes,
+			save_data.shop_tray_card_ids,
+			save_data.shop_tray_thread_ids,
+			save_data.shop_coupon_applied
 		)
 	else:
 		shop.populate_shop()
 
 
 func _on_shop_exited() -> void:
-	# Fade shop music out, map music fades in on _show_map().
 	_show_map()
 
 
@@ -342,7 +353,6 @@ func _on_event_room_entered(room: Room) -> void:
 	event_room.thread_handler  = thread_handler
 	event_room.stats_tracker   = stats_tracker
 	event_room.setup()
-	# Map music continues through event rooms.
 
 
 func _on_battle_won() -> void:
@@ -356,7 +366,6 @@ func _on_battle_won() -> void:
 
 
 func _on_map_exited(room: Room) -> void:
-	# Snapshot RNG NOW, before any room logic can advance it.
 	_room_entry_rng_seed  = RNG.instance.seed
 	_room_entry_rng_state = RNG.instance.state
 	
@@ -383,15 +392,12 @@ func _on_map_exited(room: Room) -> void:
 
 
 func _on_battle_reward_exited_wrapper() -> void:
-	# Fade out result music and restart map music from the beginning.
 	_show_map_after_battle()
 	if not DialogueState.has_shown("post_battle_shown"):
 		DialogueManager.start_dialogue_from_file("res://dialogues/post_battle_congrats.json", "post_battle_shown")
 
 
 func _show_map_after_battle() -> void:
-	## Called specifically when returning from battle rewards.
-	## Map music restarts from the beginning (as confirmed by design).
 	if current_view.get_child_count() > 0:
 		current_view.get_child(0).queue_free()
 	
@@ -402,7 +408,6 @@ func _show_map_after_battle() -> void:
 	map_labels.show()
 	message_label.show()
 	
-	# force_restart = true so map music begins fresh after battle.
 	MusicPlayer.play_track(MusicManager.Track.MAP, true)
 	
 	_save_run(true)

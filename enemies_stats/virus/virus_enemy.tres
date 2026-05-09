@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyStats" load_steps=7 format=3 uid="uid://di1u2yn8ru2vi"]
+[gd_resource type="Resource" script_class="EnemyStats" format=3 uid="uid://di1u2yn8ru2vi"]
 
 [ext_resource type="Script" uid="uid://d0tnal1w0vdan" path="res://custom_resources/enemy_stats.gd" id="1_00qpd"]
 [ext_resource type="PackedScene" uid="uid://pi6b7mp1b2gx" path="res://enemies_stats/virus/virus_enemy_ai.tscn" id="1_lem3m"]

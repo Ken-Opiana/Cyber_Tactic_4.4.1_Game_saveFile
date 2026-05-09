@@ -1,0 +1,612 @@
+[gd_scene format=3 uid="uid://crw77tdck64o8"]
+
+[ext_resource type="Script" uid="uid://dc3xmectolrpa" path="res://scenes/shop/shop_ui2.gd" id="1_ui2gd"]
+[ext_resource type="Texture2D" uid="uid://bphbococcns3x" path="res://art/screen_panel.png" id="2_hknpc"]
+[ext_resource type="Script" uid="uid://crirdesky0ngc" path="res://scenes/shop/shop_keypad.gd" id="2_kpdgd"]
+[ext_resource type="Texture2D" uid="uid://rxaiwbvg3uh6" path="res://art/3d_models/push_panel.png" id="3_ssrk5"]
+[ext_resource type="PackedScene" uid="uid://istosvrl2ng1" path="res://scenes/ui/card_tooltip_pop_up.tscn" id="3_tooltip"]
+[ext_resource type="Texture2D" uid="uid://jm7imd5afxn6" path="res://art/screen_panel_pad.png" id="5_r8nlh"]
+[ext_resource type="AudioStream" uid="uid://drtbx5mult7fq" path="res://art/sfx/Pixel_button_press.wav" id="6_2na17"]
+[ext_resource type="Texture2D" uid="uid://bi4o1lr70jsnx" path="res://art/keypad_buttons/keypad_panels/num_a.png" id="6_mwl3m"]
+[ext_resource type="Texture2D" uid="uid://dbe1aqwn4s1k3" path="res://art/keypad_buttons/keypad_panels_press/num_a_press.png" id="7_2na17"]
+[ext_resource type="AudioStream" uid="uid://bp8q7en5elkow" path="res://art/sfx/Pixel_error.wav" id="7_43gnm"]
+[ext_resource type="Texture2D" uid="uid://di1k3k7w0wdt0" path="res://art/keypad_buttons/keypad_panels/num_1.png" id="8_43gnm"]
+[ext_resource type="AudioStream" uid="uid://cdxebjmf3qk4e" path="res://art/sfx/Pixel_purchase_success.wav" id="8_gn5w0"]
+[ext_resource type="Texture2D" uid="uid://fho6c3wjay00" path="res://art/keypad_buttons/keypad_panels_press/num_1_press.png" id="9_gn5w0"]
+[ext_resource type="Texture2D" uid="uid://oug60s3jqxct" path="res://art/keypad_buttons/keypad_panels/num_2.png" id="10_60ixh"]
+[ext_resource type="Texture2D" uid="uid://dtrdrbpjwfp28" path="res://art/keypad_buttons/keypad_panels_press/num_2_press.png" id="11_sb4ah"]
+[ext_resource type="Texture2D" uid="uid://c4710a8258dd2" path="res://art/keypad_buttons/keypad_panels/num_b.png" id="12_1x74e"]
+[ext_resource type="Texture2D" uid="uid://dewxy3431m3nh" path="res://art/keypad_buttons/keypad_panels_press/num_b_press.png" id="13_43srb"]
+[ext_resource type="Texture2D" uid="uid://djp5rr103cur8" path="res://art/keypad_buttons/keypad_panels/num_3.png" id="14_xbkne"]
+[ext_resource type="Texture2D" uid="uid://cuwhfsgxlcafp" path="res://art/keypad_buttons/keypad_panels_press/num_3_press.png" id="15_nkmva"]
+[ext_resource type="Texture2D" uid="uid://bw7xopyrg0ccd" path="res://art/keypad_buttons/keypad_panels/num_4.png" id="16_bbub1"]
+[ext_resource type="Texture2D" uid="uid://cgj7bgsy57okw" path="res://art/keypad_buttons/keypad_panels_press/num_4_press.png" id="17_qr5te"]
+[ext_resource type="Texture2D" uid="uid://dh420ef6h6aen" path="res://art/keypad_buttons/keypad_panels/num_c.png" id="18_cfrje"]
+[ext_resource type="Texture2D" uid="uid://bxmpdcnnjktsp" path="res://art/keypad_buttons/keypad_panels_press/num_c_press.png" id="19_lie8a"]
+[ext_resource type="Texture2D" uid="uid://op3m11knvp05" path="res://art/keypad_buttons/keypad_panels/num_5.png" id="20_nyx67"]
+[ext_resource type="Texture2D" uid="uid://bjh1ow8v5q3qo" path="res://art/keypad_buttons/keypad_panels_press/num_5_press.png" id="21_wb36m"]
+[ext_resource type="Texture2D" uid="uid://dl6a7il2wsetj" path="res://art/keypad_buttons/keypad_panels/num_6.png" id="22_6gsrl"]
+[ext_resource type="Texture2D" uid="uid://u7pa05cq5i68" path="res://art/keypad_buttons/keypad_panels_press/num_6_press.png" id="23_uxpy3"]
+[ext_resource type="Texture2D" uid="uid://cypgenjwug1gl" path="res://art/keypad_buttons/keypad_panels/num_d.png" id="24_jrdww"]
+[ext_resource type="Texture2D" uid="uid://crni5rq3eqvw0" path="res://art/keypad_buttons/keypad_panels_press/num_d_press.png" id="25_nwdm4"]
+[ext_resource type="Texture2D" uid="uid://ba0vxxulopkvc" path="res://art/keypad_buttons/keypad_panels/num_7.png" id="26_0g6tn"]
+[ext_resource type="Texture2D" uid="uid://dirg87euemacn" path="res://art/keypad_buttons/keypad_panels_press/num_7_press.png" id="27_h2k72"]
+[ext_resource type="Texture2D" uid="uid://cjm5d0mvlpbn2" path="res://art/keypad_buttons/keypad_panels/num_8.png" id="28_h6r4b"]
+[ext_resource type="Texture2D" uid="uid://bvhkcb8wvcbys" path="res://art/keypad_buttons/keypad_panels_press/num_8_press.png" id="29_icgbn"]
+[ext_resource type="FontFile" uid="uid://c1mfnubgq43co" path="res://art/Font Styles/Monocraft.ttc" id="30_6u5d4"]
+[ext_resource type="Texture2D" uid="uid://dxtt3324dl0nb" path="res://art/keypad_buttons/keypad_panels/button_panel.png" id="31_hj5l4"]
+[ext_resource type="Texture2D" uid="uid://dl51bvc0qpf5g" path="res://art/keypad_buttons/keypad_panels_press/button_pressed_panel.png" id="32_eyq4i"]
+[ext_resource type="Texture2D" uid="uid://b88g7vsy3telm" path="res://art/keypad_buttons/keypad_panels/num_9.png" id="33_1wqxl"]
+[ext_resource type="Texture2D" uid="uid://d4dvg2swfvhq" path="res://art/keypad_buttons/keypad_panels_press/num_9_press.png" id="34_dbu1o"]
+[ext_resource type="Texture2D" uid="uid://dpuu1r258bxhf" path="res://art/keypad_buttons/keypad_panels/num_0.png" id="35_ic0yb"]
+[ext_resource type="Texture2D" uid="uid://dml7527xvk2bv" path="res://art/keypad_buttons/keypad_panels_press/num_0_press.png" id="36_2m7ss"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hknpc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ssrk5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r8nlh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yb173"]
+texture = ExtResource("6_mwl3m")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_icqqk"]
+texture = ExtResource("7_2na17")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8n281"]
+texture = ExtResource("8_43gnm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7a57w"]
+texture = ExtResource("9_gn5w0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ohps8"]
+texture = ExtResource("10_60ixh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ybdn"]
+texture = ExtResource("11_sb4ah")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6b2du"]
+texture = ExtResource("12_1x74e")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g0qsi"]
+texture = ExtResource("13_43srb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3gfs0"]
+texture = ExtResource("14_xbkne")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oqogi"]
+texture = ExtResource("15_nkmva")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3tfxv"]
+texture = ExtResource("16_bbub1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fjtvr"]
+texture = ExtResource("17_qr5te")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3b8x3"]
+texture = ExtResource("18_cfrje")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_smmnd"]
+texture = ExtResource("19_lie8a")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rec25"]
+texture = ExtResource("20_nyx67")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pce78"]
+texture = ExtResource("21_wb36m")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_srfja"]
+texture = ExtResource("22_6gsrl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l5tvr"]
+texture = ExtResource("23_uxpy3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7d5p0"]
+texture = ExtResource("24_jrdww")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lkhv4"]
+texture = ExtResource("25_nwdm4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t1bfk"]
+texture = ExtResource("26_0g6tn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d3kfp"]
+texture = ExtResource("27_h2k72")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5vfts"]
+texture = ExtResource("28_h6r4b")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ndokx"]
+texture = ExtResource("29_icgbn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dkc3m"]
+texture = ExtResource("31_hj5l4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ud7io"]
+texture = ExtResource("32_eyq4i")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ssk7k"]
+texture = ExtResource("33_1wqxl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ixhgq"]
+texture = ExtResource("34_dbu1o")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6njbd"]
+texture = ExtResource("35_ic0yb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hvjt3"]
+texture = ExtResource("36_2m7ss")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_prnod"]
+texture = ExtResource("31_hj5l4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v4re1"]
+texture = ExtResource("32_eyq4i")
+
+[node name="ShopUI2" type="Control" unique_id=1672239404]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 11.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ui2gd")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1075594549]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3352134, 0.2976, 0.62, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=31634118]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="MainLayout" type="HBoxContainer" parent="MarginContainer" unique_id=242625960]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="ItemsAndTray" type="VBoxContainer" parent="MarginContainer/MainLayout" unique_id=133785221]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="ItemsPanel" type="NinePatchRect" parent="MarginContainer/MainLayout/ItemsAndTray" unique_id=1003363176]
+custom_minimum_size = Vector2(0, 260)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_hknpc")
+region_rect = Rect2(0, 0, 13, 13)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="SlotsMargin" type="MarginContainer" parent="MarginContainer/MainLayout/ItemsAndTray/ItemsPanel" unique_id=1370861650]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 449.0
+offset_bottom = 259.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="SlotsLayout" type="VBoxContainer" parent="MarginContainer/MainLayout/ItemsAndTray/ItemsPanel/SlotsMargin" unique_id=1363071234]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+
+[node name="CardRow" type="VBoxContainer" parent="MarginContainer/MainLayout/ItemsAndTray/ItemsPanel/SlotsMargin/SlotsLayout" unique_id=875133493]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="CardRowLabel" type="Label" parent="MarginContainer/MainLayout/ItemsAndTray/ItemsPanel/SlotsMargin/SlotsLayout/CardRow" unique_id=760167170]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("30_6u5d4")
+theme_override_font_sizes/font_size = 12
+text = "— CARDS —"
+horizontal_alignment = 1
+
+[node name="CardSlotContainer" type="HBoxContainer" parent="MarginContainer/MainLayout/ItemsAndTray/ItemsPanel/SlotsMargin/SlotsLayout/CardRow" unique_id=644669939]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="ThreadRow" type="VBoxContainer" parent="MarginContainer/MainLayout/ItemsAndTray/ItemsPanel/SlotsMargin/SlotsLayout" unique_id=543851068]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="ThreadRowLabel" type="Label" parent="MarginContainer/MainLayout/ItemsAndTray/ItemsPanel/SlotsMargin/SlotsLayout/ThreadRow" unique_id=1515969358]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("30_6u5d4")
+theme_override_font_sizes/font_size = 12
+text = "— RELICS —"
+horizontal_alignment = 1
+
+[node name="ThreadSlotContainer" type="HBoxContainer" parent="MarginContainer/MainLayout/ItemsAndTray/ItemsPanel/SlotsMargin/SlotsLayout/ThreadRow" unique_id=625866016]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TrayArea" type="Button" parent="MarginContainer/MainLayout/ItemsAndTray" unique_id=569952487]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hknpc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ssrk5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_r8nlh")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/MainLayout/ItemsAndTray/TrayArea" unique_id=2515994]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ssrk5")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="TrayInner" type="MarginContainer" parent="MarginContainer/MainLayout/ItemsAndTray/TrayArea/NinePatchRect" unique_id=809650633]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+
+[node name="TrayLabel" type="Label" parent="MarginContainer/MainLayout/ItemsAndTray/TrayArea/NinePatchRect/TrayInner" unique_id=365354290]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("30_6u5d4")
+theme_override_font_sizes/font_size = 14
+text = "PUSH  —  Click to collect"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TrayContents" type="HBoxContainer" parent="MarginContainer/MainLayout/ItemsAndTray/TrayArea/NinePatchRect/TrayInner" unique_id=1614952119]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="KeypadPanel" type="VBoxContainer" parent="MarginContainer/MainLayout" unique_id=184634864]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Keypad" type="VBoxContainer" parent="MarginContainer/MainLayout/KeypadPanel" unique_id=1658517618]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 5
+script = ExtResource("2_kpdgd")
+sfx_button_press = ExtResource("6_2na17")
+sfx_purchase_fail = ExtResource("7_43gnm")
+sfx_purchase_success = ExtResource("8_gn5w0")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MarginContainer/MainLayout/KeypadPanel/Keypad" unique_id=1185381251]
+
+[node name="DisplayScreen" type="NinePatchRect" parent="MarginContainer/MainLayout/KeypadPanel/Keypad" unique_id=979688284]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+texture = ExtResource("5_r8nlh")
+region_rect = Rect2(-2, -2, 17, 17)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="DisplayLabel" type="Label" parent="MarginContainer/MainLayout/KeypadPanel/Keypad/DisplayScreen" unique_id=1507131882]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1.0
+offset_top = 14.0
+offset_right = 159.0
+offset_bottom = 33.0
+theme_override_font_sizes/font_size = 18
+text = "_ _ _ _"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row1" type="HBoxContainer" parent="MarginContainer/MainLayout/KeypadPanel/Keypad" unique_id=1990924097]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="BtnA" type="Button" parent="MarginContainer/MainLayout/KeypadPanel/Keypad/Row1" unique_id=1025433519]
+custom_minimum_size = Vector2(50, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.88, 0.88, 0.88, 0)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 0)
+theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 0)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_yb173")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_icqqk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_yb173")
+text = "A"
+
+[node name="Btn1" type="Button" parent="MarginContainer/MainLayout/KeypadPanel/Keypad/Row1" unique_id=2107500163]
+custom_minimum_size = Vector2(50, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_8n281")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7a57w")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8n281")
+text = "1"
+
+[node name="Btn2" type="Button" parent="MarginContainer/MainLayout/KeypadPanel/Keypad/Row1" unique_id=1764878684]
+custom_minimum_size = Vector2(50, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_ohps8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5ybdn")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ohps8")
+text = "2"
+
+[node name="Row2" type="HBoxContainer" parent="MarginContainer/MainLayout/KeypadPanel/Keypad" unique_id=1266057374]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="BtnB" type="Button" parent="MarginContainer/MainLayout/KeypadPanel/Keypad/Row2" unique_id=589489279]
+custom_minimum_size = Vector2(50, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_6b2du")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_g0qsi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6b2du")
+text = "B"
+
+[node name="Btn3" type="Button" parent="MarginContainer/MainLayout/KeypadPanel/Keypad/Row2" unique_id=1573960036]
+custom_minimum_size = Vector2(50, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_3gfs0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_oqogi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3gfs0")
+text = "3"
+
+[node name="Btn4" type="Button" parent="MarginContainer/MainLayout/KeypadPanel/Keypad/Row2" unique_id=616412603]
+custom_minimum_size = Vector2(50, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_3tfxv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fjtvr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3tfxv")
+text = "4"
+
+[node name="Row3" type="HBoxContainer" parent="MarginContainer/MainLayout/KeypadPanel/Keypad" unique_id=204144086]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="BtnC" type="Button" parent="MarginContainer/MainLayout/KeypadPanel/Keypad/Row3" unique_id=1954270805]
+custom_minimum_size = Vector2(50, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_3b8x3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_smmnd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3b8x3")
+text = "C"
+
+[node name="Btn5" type="Button" parent="MarginContainer/MainLayout/KeypadPanel/Keypad/Row3" unique_id=702939836]
+custom_minimum_size = Vector2(50, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_rec25")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pce78")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rec25")
+text = "5"
+
+[node name="Btn6" type="Button" parent="MarginContainer/MainLayout/KeypadPanel/Keypad/Row3" unique_id=544036303]
+custom_minimum_size = Vector2(50, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_srfja")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_l5tvr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_srfja")
+text = "6"
+
+[node name="Row4" type="HBoxContainer" parent="MarginContainer/MainLayout/KeypadPanel/Keypad" unique_id=522890811]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="BtnD" type="Button" parent="MarginContainer/MainLayout/KeypadPanel/Keypad/Row4" unique_id=1701414333]
+custom_minimum_size = Vector2(50, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_7d5p0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lkhv4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7d5p0")
+text = "D"
+
+[node name="Btn7" type="Button" parent="MarginContainer/MainLayout/KeypadPanel/Keypad/Row4" unique_id=1126551676]
+custom_minimum_size = Vector2(50, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_t1bfk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_d3kfp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_t1bfk")
+text = "7"
+
+[node name="Btn8" type="Button" parent="MarginContainer/MainLayout/KeypadPanel/Keypad/Row4" unique_id=1075459703]
+custom_minimum_size = Vector2(50, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_5vfts")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ndokx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5vfts")
+text = "8"
+
+[node name="Row5" type="HBoxContainer" parent="MarginContainer/MainLayout/KeypadPanel/Keypad" unique_id=681616965]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="BtnClear" type="Button" parent="MarginContainer/MainLayout/KeypadPanel/Keypad/Row5" unique_id=1550420025]
+custom_minimum_size = Vector2(50, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0.35, 0.35, 1)
+theme_override_fonts/font = ExtResource("30_6u5d4")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxTexture_dkc3m")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ud7io")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dkc3m")
+text = "CLR"
+
+[node name="Btn9" type="Button" parent="MarginContainer/MainLayout/KeypadPanel/Keypad/Row5" unique_id=1909199870]
+custom_minimum_size = Vector2(50, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_ssk7k")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ixhgq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ssk7k")
+text = "9"
+
+[node name="Btn0" type="Button" parent="MarginContainer/MainLayout/KeypadPanel/Keypad/Row5" unique_id=889655217]
+custom_minimum_size = Vector2(50, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_6njbd")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hvjt3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6njbd")
+text = "0"
+
+[node name="Row6" type="HBoxContainer" parent="MarginContainer/MainLayout/KeypadPanel/Keypad" unique_id=569260876]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="MarginContainer/MainLayout/KeypadPanel/Keypad/Row6" unique_id=895568616]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("30_6u5d4")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_prnod")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_v4re1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_prnod")
+text = "Back"
+
+[node name="BtnEnter" type="Button" parent="MarginContainer/MainLayout/KeypadPanel/Keypad/Row6" unique_id=1400610078]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.3, 1, 0.45, 1)
+theme_override_fonts/font = ExtResource("30_6u5d4")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxTexture_prnod")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_v4re1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_prnod")
+text = "ENTER"
+
+[node name="CardTooltipPopup" type="CanvasLayer" parent="." unique_id=1483234611]
+layer = 3
+
+[node name="CardTooltipPopUp" parent="CardTooltipPopup" unique_id=973334654 instance=ExtResource("3_tooltip")]
+unique_name_in_owner = true
+visible = false
+
+[connection signal="pressed" from="MarginContainer/MainLayout/ItemsAndTray/TrayArea" to="." method="_on_tray_pressed"]
+[connection signal="pressed" from="MarginContainer/MainLayout/KeypadPanel/Keypad/Row1/BtnA" to="MarginContainer/MainLayout/KeypadPanel/Keypad" method="press_char" binds= ["A"]]
+[connection signal="pressed" from="MarginContainer/MainLayout/KeypadPanel/Keypad/Row1/Btn1" to="MarginContainer/MainLayout/KeypadPanel/Keypad" method="press_char" binds= ["1"]]
+[connection signal="pressed" from="MarginContainer/MainLayout/KeypadPanel/Keypad/Row1/Btn2" to="MarginContainer/MainLayout/KeypadPanel/Keypad" method="press_char" binds= ["2"]]
+[connection signal="pressed" from="MarginContainer/MainLayout/KeypadPanel/Keypad/Row2/BtnB" to="MarginContainer/MainLayout/KeypadPanel/Keypad" method="press_char" binds= ["B"]]
+[connection signal="pressed" from="MarginContainer/MainLayout/KeypadPanel/Keypad/Row2/Btn3" to="MarginContainer/MainLayout/KeypadPanel/Keypad" method="press_char" binds= ["3"]]
+[connection signal="pressed" from="MarginContainer/MainLayout/KeypadPanel/Keypad/Row2/Btn4" to="MarginContainer/MainLayout/KeypadPanel/Keypad" method="press_char" binds= ["4"]]
+[connection signal="pressed" from="MarginContainer/MainLayout/KeypadPanel/Keypad/Row3/BtnC" to="MarginContainer/MainLayout/KeypadPanel/Keypad" method="press_char" binds= ["C"]]
+[connection signal="pressed" from="MarginContainer/MainLayout/KeypadPanel/Keypad/Row3/Btn5" to="MarginContainer/MainLayout/KeypadPanel/Keypad" method="press_char" binds= ["5"]]
+[connection signal="pressed" from="MarginContainer/MainLayout/KeypadPanel/Keypad/Row3/Btn6" to="MarginContainer/MainLayout/KeypadPanel/Keypad" method="press_char" binds= ["6"]]
+[connection signal="pressed" from="MarginContainer/MainLayout/KeypadPanel/Keypad/Row4/BtnD" to="MarginContainer/MainLayout/KeypadPanel/Keypad" method="press_char" binds= ["D"]]
+[connection signal="pressed" from="MarginContainer/MainLayout/KeypadPanel/Keypad/Row4/Btn7" to="MarginContainer/MainLayout/KeypadPanel/Keypad" method="press_char" binds= ["7"]]
+[connection signal="pressed" from="MarginContainer/MainLayout/KeypadPanel/Keypad/Row4/Btn8" to="MarginContainer/MainLayout/KeypadPanel/Keypad" method="press_char" binds= ["8"]]
+[connection signal="pressed" from="MarginContainer/MainLayout/KeypadPanel/Keypad/Row5/BtnClear" to="MarginContainer/MainLayout/KeypadPanel/Keypad" method="press_clear"]
+[connection signal="pressed" from="MarginContainer/MainLayout/KeypadPanel/Keypad/Row5/Btn9" to="MarginContainer/MainLayout/KeypadPanel/Keypad" method="press_char" binds= ["9"]]
+[connection signal="pressed" from="MarginContainer/MainLayout/KeypadPanel/Keypad/Row5/Btn0" to="MarginContainer/MainLayout/KeypadPanel/Keypad" method="press_char" binds= ["0"]]
+[connection signal="pressed" from="MarginContainer/MainLayout/KeypadPanel/Keypad/Row6/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="MarginContainer/MainLayout/KeypadPanel/Keypad/Row6/BtnEnter" to="MarginContainer/MainLayout/KeypadPanel/Keypad" method="press_enter"]

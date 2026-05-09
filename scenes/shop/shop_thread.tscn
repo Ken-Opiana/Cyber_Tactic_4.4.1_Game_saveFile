@@ -1,12 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2fri1atjmojb"]
+[gd_scene format=3 uid="uid://b2fri1atjmojb"]
 
 [ext_resource type="Script" uid="uid://try4g5bpiloc" path="res://scenes/shop/shop_thread.gd" id="1_1inwf"]
 [ext_resource type="PackedScene" uid="uid://dy03obqy51h0k" path="res://scenes/thread_handler/thread_ui.tscn" id="1_ndjpn"]
 [ext_resource type="Resource" uid="uid://44a423e8clh1" path="res://threads/extra_energy.tres" id="2_vu2cy"]
-[ext_resource type="FontFile" uid="uid://7ucfniysa1ko" path="res://art/Font Styles/pixel_rpg.ttf" id="4_lya68"]
+[ext_resource type="FontFile" uid="uid://c1mfnubgq43co" path="res://art/Font Styles/Monocraft.ttc" id="4_er4wc"]
 [ext_resource type="Texture2D" uid="uid://c4hcddu2md8wb" path="res://art/Cache10.png" id="5_2eusy"]
 
-[node name="ShopThread" type="VBoxContainer"]
+[node name="ShopThread" type="VBoxContainer" unique_id=1944731937]
 custom_minimum_size = Vector2(40, 43)
 offset_right = 40.0
 offset_bottom = 40.0
@@ -14,39 +14,38 @@ theme_override_constants/separation = 2
 script = ExtResource("1_1inwf")
 thread = ExtResource("2_vu2cy")
 
-[node name="ThreadContainer" type="CenterContainer" parent="."]
+[node name="ThreadContainer" type="CenterContainer" parent="." unique_id=1919406654]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="ThreadUI" parent="ThreadContainer" instance=ExtResource("1_ndjpn")]
+[node name="ThreadUI" parent="ThreadContainer" unique_id=446878890 instance=ExtResource("1_ndjpn")]
 layout_mode = 2
 
-[node name="Price" type="HBoxContainer" parent="."]
+[node name="Price" type="HBoxContainer" parent="." unique_id=1738208973]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 2
 alignment = 1
 
-[node name="PriceLabel" type="Label" parent="Price"]
+[node name="PriceLabel" type="Label" parent="Price" unique_id=1077483891]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_lya68")
-theme_override_font_sizes/font_size = 6
+theme_override_fonts/font = ExtResource("4_er4wc")
+theme_override_font_sizes/font_size = 9
 text = "999"
 
-[node name="GoldIcon" type="TextureRect" parent="Price"]
+[node name="GoldIcon" type="TextureRect" parent="Price" unique_id=101586033]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 texture = ExtResource("5_2eusy")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="BuyButton" type="Button" parent="."]
+[node name="CodeLabel" type="Label" parent="." unique_id=2136996495]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 13)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_lya68")
-theme_override_font_sizes/font_size = 6
-text = "Buy"
-
-[connection signal="pressed" from="BuyButton" to="." method="_on_buy_button_pressed"]
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_er4wc")
+theme_override_font_sizes/font_size = 9
+text = "999"

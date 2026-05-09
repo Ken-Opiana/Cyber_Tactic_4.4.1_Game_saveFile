@@ -20,12 +20,26 @@ const SAVE_PATH := "user://savegame.tres"
 @export var stats_tracker: RunStatsTracker
 @export var was_in_hub: bool = false
 
-@export var shop_card_ids: Array[String]   = []
-@export var shop_card_prices: Array[int]   = []
-@export var shop_sold_card_ids: Array[String] = []
-@export var shop_thread_ids: Array[String] = []
-@export var shop_thread_prices: Array[int] = []
+# ── Existing shop fields ───────────────────────────────────────────────────────
+@export var shop_card_ids: Array[String]        = []
+@export var shop_card_prices: Array[int]        = []
+@export var shop_sold_card_ids: Array[String]   = []
+@export var shop_thread_ids: Array[String]      = []
+@export var shop_thread_prices: Array[int]      = []
 @export var shop_sold_thread_ids: Array[String] = []
+
+# ── New vending machine shop fields ───────────────────────────────────────────
+# Randomly generated AB12-style slot codes, one per item (cards first, then threads).
+# Index order matches shop_card_ids + shop_thread_ids concatenated.
+@export var shop_slot_codes: Array[String]      = []
+
+# Items currently sitting in the PUSH tray (bought but not yet collected).
+@export var shop_tray_card_ids: Array[String]   = []
+@export var shop_tray_thread_ids: Array[String] = []
+
+# Tracks whether the CouponsThread discount has already been applied to this
+# shop visit's prices. Prevents re-applying the discount on every save/load.
+@export var shop_coupon_applied: bool = false
 
 
 func save_data() -> void:

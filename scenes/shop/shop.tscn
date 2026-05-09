@@ -3,76 +3,15 @@
 [ext_resource type="Script" uid="uid://2ju4bjvgrm1i" path="res://scenes/shop/shop.gd" id="1_qxddl"]
 [ext_resource type="Script" uid="uid://jie6cbv6kc3m" path="res://custom_resources/thread_passive.gd" id="2_k4e0x"]
 [ext_resource type="Resource" uid="uid://44a423e8clh1" path="res://threads/extra_energy.tres" id="3_1p8uf"]
-[ext_resource type="Texture2D" uid="uid://bww55fdwfblxx" path="res://art/shopkeeper_blink.png" id="3_ho6rr"]
 [ext_resource type="Resource" uid="uid://cwxlm3oyg546w" path="res://threads/shockwave.tres" id="4_7rtu0"]
-[ext_resource type="FontFile" uid="uid://d3fuaowohtamf" path="res://art/Font Styles/PressStart2P-Regular.ttf" id="4_a2yby"]
 [ext_resource type="Resource" uid="uid://hmap8l86svk1" path="res://threads/coupons.tres" id="5_72muf"]
-[ext_resource type="PackedScene" uid="uid://c4levpjon1c5s" path="res://scenes/shop/shop_card.tscn" id="5_npuc3"]
 [ext_resource type="Resource" uid="uid://c014g8rpo2k1t" path="res://threads/reinforced_block.tres" id="6_kcjqd"]
-[ext_resource type="PackedScene" uid="uid://istosvrl2ng1" path="res://scenes/ui/card_tooltip_pop_up.tscn" id="6_p3200"]
-[ext_resource type="PackedScene" uid="uid://b2fri1atjmojb" path="res://scenes/shop/shop_thread.tscn" id="6_tgpmw"]
 [ext_resource type="Resource" uid="uid://c71lq6c273fb8" path="res://threads/health_module.tres" id="8_6kbe7"]
 [ext_resource type="Resource" uid="uid://bgonfdnsivdou" path="res://threads/recycle_bin.tres" id="9_hbyua"]
-[ext_resource type="Texture2D" uid="uid://dtwal56x2wcr7" path="res://art/shopkeeper.png" id="9_k5co3"]
 [ext_resource type="PackedScene" uid="uid://bb71f8mjtb5fh" path="res://scenes/modifier_handler/modifier_handler.tscn" id="13_dqlyb"]
 [ext_resource type="PackedScene" uid="uid://0nnepaeuhgih" path="res://scenes/modifier_handler/modifier.tscn" id="14_w60y6"]
 
-[sub_resource type="Gradient" id="Gradient_bdoxw"]
-colors = PackedColorArray(0, 0, 0, 1, 0, 0.00392157, 0.486275, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_jvmkg"]
-gradient = SubResource("Gradient_bdoxw")
-fill_from = Vector2(0.5, 0)
-fill_to = Vector2(0.5, 1)
-metadata/_snap_enabled = true
-metadata/_snap_count = 8
-
-[sub_resource type="Animation" id="Animation_wg284"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Shopkeeper:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("9_k5co3")]
-}
-
-[sub_resource type="Animation" id="Animation_vbb02"]
-resource_name = "blink"
-length = 0.15
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Shopkeeper:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.15),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [ExtResource("3_ho6rr"), ExtResource("9_k5co3")]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_3v51k"]
-_data = {
-&"RESET": SubResource("Animation_wg284"),
-&"blink": SubResource("Animation_vbb02")
-}
-
-[sub_resource type="LabelSettings" id="LabelSettings_8hvqd"]
-font = ExtResource("4_a2yby")
-font_size = 24
-
-[sub_resource type="LabelSettings" id="LabelSettings_k5co3"]
-font_size = 32
-
-[node name="Shop" type="Control" unique_id=1551131522]
+[node name="Shop" type="Control" unique_id=371553422]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -83,141 +22,16 @@ mouse_filter = 2
 script = ExtResource("1_qxddl")
 shop_threads = Array[ExtResource("2_k4e0x")]([ExtResource("3_1p8uf"), ExtResource("4_7rtu0"), ExtResource("5_72muf"), ExtResource("6_kcjqd"), ExtResource("8_6kbe7"), ExtResource("9_hbyua")])
 
-[node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=907651257]
-layer = 0
-
-[node name="Background" type="TextureRect" parent="BackgroundLayer" unique_id=381639456]
+[node name="UIContainer" type="Control" parent="." unique_id=1145141072]
+unique_name_in_owner = true
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture2D_jvmkg")
 
-[node name="DecorationLayer" type="CanvasLayer" parent="." unique_id=2112763018]
+[node name="ModifierHandler" parent="." unique_id=348826235 instance=ExtResource("13_dqlyb")]
 
-[node name="Shopkeeper" type="TextureRect" parent="DecorationLayer" unique_id=383562911]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = -218.0
-offset_right = 245.0
-offset_bottom = -33.0
-grow_vertical = 0
-texture = ExtResource("9_k5co3")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="ShopkeeperAnimation" type="AnimationPlayer" parent="DecorationLayer" unique_id=1049938912]
-unique_name_in_owner = true
-libraries/ = SubResource("AnimationLibrary_3v51k")
-
-[node name="BlinkTimer" type="Timer" parent="DecorationLayer" unique_id=1812319904]
-unique_name_in_owner = true
-one_shot = true
-
-[node name="UILayer" type="CanvasLayer" parent="." unique_id=1862791437]
-layer = 2
-
-[node name="Title" type="Label" parent="UILayer" unique_id=26871261]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 54.0
-offset_top = -101.0
-offset_right = 150.0
-offset_bottom = -77.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Shop"
-label_settings = SubResource("LabelSettings_8hvqd")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label" type="Label" parent="UILayer" unique_id=2091950213]
-offset_left = 363.0
-offset_top = 110.0
-offset_right = 479.0
-offset_bottom = 136.0
-text = "Take your time"
-label_settings = SubResource("LabelSettings_k5co3")
-
-[node name="BackButton" type="Button" parent="UILayer" unique_id=1780462959]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -242.0
-offset_top = -82.0
-offset_right = -142.0
-offset_bottom = -42.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 48
-text = "Leave"
-
-[node name="ShopContent" type="VBoxContainer" parent="UILayer" unique_id=1464026272]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -46.0
-offset_top = -29.0
-offset_right = 264.0
-offset_bottom = 99.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 13
-
-[node name="Cards" type="HBoxContainer" parent="UILayer/ShopContent" unique_id=1507261830]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_constants/separation = 50
-
-[node name="ShopCard" parent="UILayer/ShopContent/Cards" unique_id=1782506121 instance=ExtResource("5_npuc3")]
-layout_mode = 2
-
-[node name="ShopCard2" parent="UILayer/ShopContent/Cards" unique_id=1166489075 instance=ExtResource("5_npuc3")]
-layout_mode = 2
-
-[node name="ShopCard3" parent="UILayer/ShopContent/Cards" unique_id=2007435462 instance=ExtResource("5_npuc3")]
-layout_mode = 2
-
-[node name="ShopCard4" parent="UILayer/ShopContent/Cards" unique_id=1591039642 instance=ExtResource("5_npuc3")]
-layout_mode = 2
-
-[node name="Threads" type="HBoxContainer" parent="UILayer/ShopContent" unique_id=924867116]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_constants/separation = 50
-
-[node name="ShopThread" parent="UILayer/ShopContent/Threads" unique_id=217768961 instance=ExtResource("6_tgpmw")]
-layout_mode = 2
-
-[node name="ShopThread2" parent="UILayer/ShopContent/Threads" unique_id=1260869824 instance=ExtResource("6_tgpmw")]
-layout_mode = 2
-
-[node name="ShopThread3" parent="UILayer/ShopContent/Threads" unique_id=262459697 instance=ExtResource("6_tgpmw")]
-layout_mode = 2
-
-[node name="ShopThread4" parent="UILayer/ShopContent/Threads" unique_id=513443742 instance=ExtResource("6_tgpmw")]
-layout_mode = 2
-
-[node name="CardTooltipPopup" type="CanvasLayer" parent="." unique_id=1355911813]
-layer = 3
-
-[node name="CardTooltipPopUp" parent="CardTooltipPopup" unique_id=2093487790 instance=ExtResource("6_p3200")]
-unique_name_in_owner = true
-visible = false
-
-[node name="ModifierHandler" parent="." unique_id=1073242090 instance=ExtResource("13_dqlyb")]
-
-[node name="ShopCostModifier" parent="ModifierHandler" unique_id=921637203 instance=ExtResource("14_w60y6")]
+[node name="ShopCostModifier" parent="ModifierHandler" unique_id=1525611481 instance=ExtResource("14_w60y6")]
 type = 4
-
-[connection signal="pressed" from="UILayer/BackButton" to="." method="_on_back_button_pressed"]
