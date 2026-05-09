@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dy03obqy51h0k"]
+[gd_scene format=3 uid="uid://dy03obqy51h0k"]
 
 [ext_resource type="Texture2D" uid="uid://cv1j6a1gyacww" path="res://art/relic_anvil.png" id="1_850nk"]
 [ext_resource type="Script" uid="uid://bbfjd7fd2nm4g" path="res://scenes/thread_handler/thread_ui.gd" id="1_o16ei"]
@@ -66,13 +66,13 @@ _data = {
 &"flash": SubResource("Animation_mgtxk")
 }
 
-[node name="ThreadUI" type="Control"]
+[node name="ThreadUI" type="Control" unique_id=1820470791]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_o16ei")
 
-[node name="Icon" type="TextureRect" parent="."]
+[node name="Icon" type="TextureRect" parent="." unique_id=734026727]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 0
 offset_right = 16.0
@@ -82,9 +82,7 @@ texture = ExtResource("1_850nk")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_bnvtl")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1277589879]
+libraries/ = SubResource("AnimationLibrary_bnvtl")
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

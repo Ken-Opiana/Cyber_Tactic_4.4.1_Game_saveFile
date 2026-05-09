@@ -6,8 +6,6 @@ signal tray_collected(card_ids: Array[String], thread_ids: Array[String])
 
 const SHOP_CARD_SCENE   = preload("res://scenes/shop/shop_card.tscn")
 const SHOP_THREAD_SCENE = preload("res://scenes/shop/shop_thread.tscn")
-const SHOP_CARD_UI      = preload("res://scenes/ui/card_menu_ui.tscn")
-const SHOP_THREAD_UI    = preload("res://scenes/thread_handler/thread_ui.tscn")
 
 # ── Injected by Shop ───────────────────────────────────────────────────────────
 var char_stats: CharacterStats
@@ -24,8 +22,6 @@ var _sold_card_ids: Array[String]   = []
 var _thread_ids: Array[String]      = []
 var _thread_prices: Array[int]      = []
 var _sold_thread_ids: Array[String] = []
-var _tray_card_ids: Array[String]   = []
-var _tray_thread_ids: Array[String] = []
 
 # ── Runtime slot scene instances ───────────────────────────────────────────────
 var _card_slots: Array[ShopCard]     = []
@@ -44,7 +40,11 @@ var _thread_slots: Array[ShopThread] = []
 func _ready() -> void:
 	# tray_area.pressed is connected via .tscn — do NOT connect again here.
 	keypad.code_entered.connect(_on_code_entered)
-	_refresh_tray_ui()
+	# Tray is decorative only now — items auto-claim on purchase.
+	tray_area.disabled = true
+	tray_contents.visible = false
+	if tray_label:
+		tray_label.visible = true
 
 
 # ── Public API ─────────────────────────────────────────────────────────────────
@@ -62,18 +62,26 @@ func populate(
 	_thread_prices    = thread_prices.duplicate()
 	_sold_thread_ids  = sold_thread_ids.duplicate()
 	_slot_codes       = slot_codes.duplicate()
-	_tray_card_ids    = tray_card_ids.duplicate()
-	_tray_thread_ids  = tray_thread_ids.duplicate()
+
+	# Legacy save migration: if a save from the old click-to-claim flow has items
+	# stuck in the tray, claim them immediately on shop entry so they aren't lost.
+	if not tray_card_ids.is_empty() or not tray_thread_ids.is_empty():
+		call_deferred("_emit_legacy_claim", tray_card_ids.duplicate(), tray_thread_ids.duplicate())
+
 	_build_slots()
-	_rebuild_tray_visuals()
+
+
+func _emit_legacy_claim(card_ids: Array[String], thread_ids: Array[String]) -> void:
+	tray_collected.emit(card_ids, thread_ids)
 
 
 func set_available_threads(threads: Array[ThreadPassive]) -> void:
 	_all_threads = threads
 
 func get_slot_codes()      -> Array[String]: return _slot_codes
-func get_tray_card_ids()   -> Array[String]: return _tray_card_ids
-func get_tray_thread_ids() -> Array[String]: return _tray_thread_ids
+# Tray arrays are always empty under the auto-claim flow — kept for save compat.
+func get_tray_card_ids()   -> Array[String]: return [] as Array[String]
+func get_tray_thread_ids() -> Array[String]: return [] as Array[String]
 func get_sold_card_ids()   -> Array[String]: return _sold_card_ids
 func get_sold_thread_ids() -> Array[String]: return _sold_thread_ids
 
@@ -144,8 +152,8 @@ func _build_slots() -> void:
 			var thread := _find_thread(_thread_ids[i])
 			if thread:
 				slot.setup(thread, price, code)
-
-	_refresh_affordability()
+				# No tooltip wiring needed — ThreadUI emits Events.thread_tooltip_requested
+				# directly from its own _on_gui_input, and the Run scene listens for it.
 
 	_refresh_affordability()
 
@@ -201,18 +209,20 @@ func _process_purchase(result: String) -> void:
 
 	if kind == "card":
 		var price := _card_prices[idx]
+		var card_id := _card_ids[idx]
 		run_stats.gold -= price
-		_sold_card_ids.append(_card_ids[idx])
-		_tray_card_ids.append(_card_ids[idx])
-		_animate_drop_card(idx)
-		Events.shop_card_bought.emit(_find_card(_card_ids[idx]), price)
+		_sold_card_ids.append(card_id)
+		Events.shop_card_bought.emit(_find_card(card_id), price)
+		# Claim immediately — straight to inventory, no tray.
+		tray_collected.emit([card_id] as Array[String], [] as Array[String])
 	else:
 		var price := _thread_prices[idx]
+		var thread_id := _thread_ids[idx]
 		run_stats.gold -= price
-		_sold_thread_ids.append(_thread_ids[idx])
-		_tray_thread_ids.append(_thread_ids[idx])
-		_animate_drop_thread(idx)
-		Events.shop_thread_bought.emit(_find_thread(_thread_ids[idx]), price)
+		_sold_thread_ids.append(thread_id)
+		Events.shop_thread_bought.emit(_find_thread(thread_id), price)
+		# Claim immediately — straight to inventory, no tray.
+		tray_collected.emit([] as Array[String], [thread_id] as Array[String])
 
 	# Remove the slot node entirely instead of showing SOLD OUT.
 	if kind == "card" and idx < _card_slots.size():
@@ -242,96 +252,12 @@ func _refresh_affordability() -> void:
 			slot.update_affordability(gold)
 
 
-# ── Drop animation ─────────────────────────────────────────────────────────────
-
-func _animate_drop_card(idx: int) -> void:
-	if idx >= _card_slots.size():
-		return
-	var slot      := _card_slots[idx]
-	var container := slot.card_container
-	if container and container.get_child_count() > 0:
-		_do_drop_animation(container.get_child(0))
-
-
-func _animate_drop_thread(idx: int) -> void:
-	if idx >= _thread_slots.size():
-		return
-	var slot      := _thread_slots[idx]
-	var container := slot.thread_container
-	if container and container.get_child_count() > 0:
-		_do_drop_animation(container.get_child(0))
-
-
-func _do_drop_animation(item_node: Control) -> void:
-	var start_pos := item_node.global_position
-	var tray_pos  := tray_area.global_position + tray_area.size * 0.5 - Vector2(16, 16)
-
-	var canvas := _get_drop_canvas()
-	var ghost  := item_node.duplicate() as Control
-	canvas.add_child(ghost)
-	ghost.global_position = start_pos
-	item_node.visible     = false
-
-	var tween := create_tween()
-	tween.set_ease(Tween.EASE_IN)
-	tween.set_trans(Tween.TRANS_QUAD)
-	tween.tween_property(ghost, "global_position", tray_pos, 0.45)
-	tween.tween_callback(func():
-		ghost.queue_free()
-		_rebuild_tray_visuals()
-	)
-
-
-func _get_drop_canvas() -> CanvasLayer:
-	var root     := get_tree().root
-	var existing := root.get_node_or_null("DropAnimationLayer")
-	if existing:
-		return existing as CanvasLayer
-	var layer   := CanvasLayer.new()
-	layer.name  = "DropAnimationLayer"
-	layer.layer = 10
-	root.add_child(layer)
-	return layer
-
-
-# ── Tray ───────────────────────────────────────────────────────────────────────
-
-func _refresh_tray_ui() -> void:
-	if tray_contents:
-		_rebuild_tray_visuals()
-
-
-func _rebuild_tray_visuals() -> void:
-	for child in tray_contents.get_children():
-		child.queue_free()
-
-	var has_items := not _tray_card_ids.is_empty() or not _tray_thread_ids.is_empty()
-	tray_label.visible    = not has_items
-	tray_contents.visible = has_items
-	tray_area.disabled    = not has_items
-
-	for cid in _tray_card_ids:
-		var card := _find_card(cid)
-		if card:
-			var card_ui := SHOP_CARD_UI.instantiate() as CardMenuUI
-			tray_contents.add_child(card_ui)
-			card_ui.card = card
-
-	for tid in _tray_thread_ids:
-		var thread := _find_thread(tid)
-		if thread:
-			var thread_ui := SHOP_THREAD_UI.instantiate() as ThreadUI
-			tray_contents.add_child(thread_ui)
-			thread_ui.thread_passive = thread
-
+# ── Tray (decorative only) ─────────────────────────────────────────────────────
 
 func _on_tray_pressed() -> void:
-	if _tray_card_ids.is_empty() and _tray_thread_ids.is_empty():
-		return
-	tray_collected.emit(_tray_card_ids.duplicate(), _tray_thread_ids.duplicate())
-	_tray_card_ids.clear()
-	_tray_thread_ids.clear()
-	_rebuild_tray_visuals()
+	# Tray click is no longer used — items are auto-claimed on purchase.
+	# Method kept because the signal is wired in the .tscn.
+	pass
 
 
 # ── Back ───────────────────────────────────────────────────────────────────────

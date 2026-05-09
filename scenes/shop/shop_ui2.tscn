@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://d4dvg2swfvhq" path="res://art/keypad_buttons/keypad_panels_press/num_9_press.png" id="34_dbu1o"]
 [ext_resource type="Texture2D" uid="uid://dpuu1r258bxhf" path="res://art/keypad_buttons/keypad_panels/num_0.png" id="35_ic0yb"]
 [ext_resource type="Texture2D" uid="uid://dml7527xvk2bv" path="res://art/keypad_buttons/keypad_panels_press/num_0_press.png" id="36_2m7ss"]
+[ext_resource type="PackedScene" uid="uid://cyj73muy4ysx2" path="res://scenes/thread_handler/thread_tooltip.tscn" id="41_2na17"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hknpc"]
 
@@ -294,7 +295,7 @@ size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("30_6u5d4")
 theme_override_font_sizes/font_size = 14
-text = "PUSH  —  Click to collect"
+text = "PUSH"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -589,6 +590,13 @@ text = "ENTER"
 layer = 3
 
 [node name="CardTooltipPopUp" parent="CardTooltipPopup" unique_id=973334654 instance=ExtResource("3_tooltip")]
+unique_name_in_owner = true
+visible = false
+
+[node name="ThreadTooltipPopup" type="CanvasLayer" parent="." unique_id=519389921]
+layer = 3
+
+[node name="ThreadTooltip" parent="ThreadTooltipPopup" unique_id=475651730 instance=ExtResource("41_2na17")]
 unique_name_in_owner = true
 visible = false
 
