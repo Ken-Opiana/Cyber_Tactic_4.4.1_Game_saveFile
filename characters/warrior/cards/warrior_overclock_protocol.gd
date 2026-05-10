@@ -1,6 +1,6 @@
 extends Card
 
-const OVERCLOCK_STATUS := preload("res://statuses/warrior_overclock_protocol_status.tres")
+const OVERCLOCK_STATUS := preload("res://statuses/overclock_protocol_status.tres")
 
 var stacks := 1
 

@@ -1,6 +1,6 @@
 extends Card
 
-const REACTIVE_FIREWALL_STATUS := preload("res://statuses/warrior_reactive_firewall_matrix_status.tres")
+const REACTIVE_FIREWALL_STATUS := preload("res://statuses/reactive_firewall_matrix_status.tres")
 
 var stacks := 4
 

@@ -1,9 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://ci8e17xab2tc6"]
+[gd_scene format=3 uid="uid://ci8e17xab2tc6"]
 
 [ext_resource type="Script" uid="uid://be8vqlh435fgm" path="res://scenes/battle/battle_sim.gd" id="1_op63c"]
 [ext_resource type="Resource" uid="uid://co6ar47di3crh" path="res://characters/warrior/warrior.tres" id="2_hqfvi"]
 [ext_resource type="Resource" uid="uid://byywdf8pnmwa4" path="res://characters/warrior/warrior_tutorial.tres" id="2_tg886"]
-[ext_resource type="AudioStream" uid="uid://dbwpqsyi43vky" path="res://art/music/battle tutoiral.mp3" id="3_tg886"]
 [ext_resource type="Texture2D" uid="uid://lugennxj0o6x" path="res://art/battle_background1.png" id="4_qy2ry"]
 [ext_resource type="Script" uid="uid://drdg52gxcma04" path="res://scenes/battle/enemy_handler_sim.gd" id="5_tg886"]
 [ext_resource type="PackedScene" uid="uid://306utgcvnsbs" path="res://scenes/enemy/enemy.tscn" id="6_o4ubv"]
@@ -24,47 +23,46 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ubsi8"]
 size = Vector2(641, 222)
 
-[node name="Battle" type="Node2D"]
+[node name="Battle" type="Node2D" unique_id=1668626004]
 script = ExtResource("1_op63c")
 char_stats = ExtResource("2_tg886")
-music = ExtResource("3_tg886")
 metadata/_edit_lock_ = true
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="." unique_id=1043363096]
 self_modulate = Color(0.47816715, 0.47816715, 0.47816715, 1)
 scale = Vector2(0.5051221, 0.4979253)
 texture = ExtResource("4_qy2ry")
 centered = false
 
-[node name="CardDropArea" type="Area2D" parent="."]
+[node name="CardDropArea" type="Area2D" parent="." unique_id=708027506]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea" unique_id=694086242]
 position = Vector2(320.5, 134)
 shape = SubResource("RectangleShape2D_ubsi8")
 debug_color = Color(0, 0.6, 0.701961, 0.129412)
 
-[node name="EnemyHandler" type="Node2D" parent="." groups=["enemy_handler"]]
+[node name="EnemyHandler" type="Node2D" parent="." unique_id=925906402 groups=["enemy_handler"]]
 script = ExtResource("5_tg886")
 
-[node name="MalwareEnemy" parent="EnemyHandler" instance=ExtResource("6_o4ubv")]
+[node name="MalwareEnemy" parent="EnemyHandler" unique_id=1829955616 instance=ExtResource("6_o4ubv")]
 position = Vector2(511, 185)
 stats = ExtResource("7_tg886")
 
-[node name="Player" parent="." instance=ExtResource("9_mtyt1")]
+[node name="Player" parent="." unique_id=252720771 instance=ExtResource("9_mtyt1")]
 position = Vector2(71, 171)
 stats = ExtResource("2_tg886")
 
-[node name="CardTargetSelector" parent="." instance=ExtResource("10_hnocq")]
+[node name="CardTargetSelector" parent="." unique_id=501887601 instance=ExtResource("10_hnocq")]
 
-[node name="PlayerHandler" type="Node" parent="." node_paths=PackedStringArray("hand") groups=["player_handler"]]
+[node name="PlayerHandler" type="Node" parent="." unique_id=1226489629 node_paths=PackedStringArray("hand") groups=["player_handler"]]
 script = ExtResource("9_op63c")
 hand = NodePath("../BattleUI/Hand")
 
-[node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
+[node name="BattleUI" type="CanvasLayer" parent="." unique_id=1916753997 groups=["ui_layer"]]
 script = ExtResource("10_op63c")
 
-[node name="Hand" type="HBoxContainer" parent="BattleUI" node_paths=PackedStringArray("player")]
+[node name="Hand" type="HBoxContainer" parent="BattleUI" unique_id=217140370 node_paths=PackedStringArray("player")]
 unique_name_in_owner = true
 anchors_preset = 7
 anchor_left = 0.5
@@ -80,13 +78,13 @@ alignment = 1
 script = ExtResource("13_u4nv1")
 player = NodePath("../../Player")
 
-[node name="ManaUI" parent="BattleUI" instance=ExtResource("14_ml47f")]
+[node name="ManaUI" parent="BattleUI" unique_id=1330426002 instance=ExtResource("14_ml47f")]
 offset_top = -69.0
 offset_right = 65.0
 offset_bottom = -9.0
 char_stats = ExtResource("2_hqfvi")
 
-[node name="EndTurnButton" type="Button" parent="BattleUI"]
+[node name="EndTurnButton" type="Button" parent="BattleUI" unique_id=848836590]
 unique_name_in_owner = true
 anchors_preset = 3
 anchor_left = 1.0
@@ -103,20 +101,20 @@ theme = ExtResource("15_x2t68")
 theme_override_font_sizes/font_size = 32
 text = "End Turn"
 
-[node name="Tooltip" parent="BattleUI" instance=ExtResource("19_52umt")]
+[node name="Tooltip" parent="BattleUI" unique_id=1797014011 instance=ExtResource("19_52umt")]
 offset_left = -123.0
 offset_top = 20.0
 offset_right = 124.0
 offset_bottom = 80.0
 
-[node name="EnemyTooltipPopup" parent="BattleUI" instance=ExtResource("20_4hjvj")]
+[node name="EnemyTooltipPopup" parent="BattleUI" unique_id=120686006 instance=ExtResource("20_4hjvj")]
 visible = false
 
-[node name="RedFlash" type="CanvasLayer" parent="."]
+[node name="RedFlash" type="CanvasLayer" parent="." unique_id=445961013]
 layer = 2
 script = ExtResource("21_mmino")
 
-[node name="ColorRect" type="ColorRect" parent="RedFlash"]
+[node name="ColorRect" type="ColorRect" parent="RedFlash" unique_id=1558023430]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -125,23 +123,23 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(1, 0.443137, 0.443137, 0)
 
-[node name="Timer" type="Timer" parent="RedFlash"]
+[node name="Timer" type="Timer" parent="RedFlash" unique_id=1387583259]
 wait_time = 0.1
 one_shot = true
 
-[node name="BattleOverLayer" type="CanvasLayer" parent="."]
+[node name="BattleOverLayer" type="CanvasLayer" parent="." unique_id=665344220]
 layer = 2
 
-[node name="BattleOverPanelSim" parent="BattleOverLayer" instance=ExtResource("19_tg886")]
+[node name="BattleOverPanelSim" parent="BattleOverLayer" unique_id=228196476 instance=ExtResource("19_tg886")]
 
-[node name="DialogueLayer" type="CanvasLayer" parent="."]
+[node name="DialogueLayer" type="CanvasLayer" parent="." unique_id=466137175]
 layer = 4
 
-[node name="DialogueUI" parent="DialogueLayer" instance=ExtResource("19_wp5al")]
+[node name="DialogueUI" parent="DialogueLayer" unique_id=585319193 instance=ExtResource("19_wp5al")]
 unique_name_in_owner = true
 visible = false
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1933239682]
 offset_top = 267.0
 offset_right = 640.0
 offset_bottom = 362.0
