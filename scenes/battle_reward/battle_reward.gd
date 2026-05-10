@@ -28,6 +28,7 @@ var pending_gold := 0
 var pending_threads: Array[ThreadPassive] = []
 var has_card_reward := false
 var rewards_claimed := false
+var rewards_exited := false
 
 
 func _ready() -> void:
@@ -193,13 +194,21 @@ func _get_random_available_card(available_cards: Array[Card], with_rarity: Card.
 
 
 func _on_card_reward_taken(card: Card) -> void:
+	if rewards_exited:
+		return
+	rewards_exited = true
+	
 	if card and character_stats:
 		character_stats.deck.add_card(card)
 		Events.card_reward_selected.emit(card)
 	
-	# After card selection (or skip), show continue button
-	continue_button.show()
+	# Card reward is the final step — exit battle directly instead of
+	# showing a redundant Continue button.
+	Events.battle_reward_exited.emit()
 
 
 func _on_continue_pressed() -> void:
+	if rewards_exited:
+		return
+	rewards_exited = true
 	Events.battle_reward_exited.emit()
