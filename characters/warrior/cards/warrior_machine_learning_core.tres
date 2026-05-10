@@ -11,5 +11,5 @@ type = 2
 rarity = 1
 cost = 1
 icon = ExtResource("1_np055")
-tooltip_text = "[center]Whenever you exhaust a card, draw 1 card.[/center]"
+tooltip_text = "[center]Whenever you remove a card, draw 1 card.[/center]"
 metadata/_custom_type_script = "uid://db7gxbb4g4qbl"
