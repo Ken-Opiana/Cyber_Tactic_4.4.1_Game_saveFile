@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://bsdmli1kkgf5v"]
+
+[ext_resource type="Texture2D" uid="uid://cdm6njvv28d14" path="res://art/fresh_icons/defender/system_hardening.png" id="1_84eb6"]
+[ext_resource type="Script" uid="uid://cfcy6gk2xrkj3" path="res://characters/warrior/cards/warrior_system_hardening.gd" id="1_tiban"]
+
+[resource]
+script = ExtResource("1_tiban")
+name = "System Hardening"
+id = "warrior_system_hardening"
+type = 1
+cost = 1
+icon = ExtResource("1_84eb6")
+tooltip_text = "[center]Gain [color='0044ff']%s[/color] Defense. Exhaust 1 random card from your hand.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

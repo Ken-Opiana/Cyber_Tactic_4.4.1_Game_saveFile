@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://rsk8d12egnnf" path="res://scenes/ui/card_menu_ui.tscn" id="1_u1hn7"]
 [ext_resource type="Script" uid="uid://db7gxbb4g4qbl" path="res://custom_resources/card.gd" id="2_cvuw6"]
 [ext_resource type="PackedScene" uid="uid://istosvrl2ng1" path="res://scenes/ui/card_tooltip_pop_up.tscn" id="2_db3cx"]
-[ext_resource type="Resource" uid="uid://kyu5l54a2ljg" path="res://characters/warrior/cards/student_cybersword_slash.tres" id="3_pfit7"]
-[ext_resource type="Resource" uid="uid://cavj5bacvpmrd" path="res://characters/warrior/cards/warrior_big_slam.tres" id="4_j87tl"]
-[ext_resource type="Resource" uid="uid://bl66ldjcrh1ii" path="res://characters/warrior/cards/warrior_true_strength.tres" id="5_5vnx4"]
+[ext_resource type="Resource" uid="uid://kyu5l54a2ljg" path="res://characters/warrior/cards/warrior_network_sweep.tres" id="3_pfit7"]
+[ext_resource type="Resource" uid="uid://cavj5bacvpmrd" path="res://characters/warrior/cards/warrior_exploit_strike.tres" id="4_j87tl"]
+[ext_resource type="Resource" uid="uid://bl66ldjcrh1ii" path="res://characters/warrior/cards/warrior_core_overdrive.tres" id="5_5vnx4"]
 [ext_resource type="FontFile" uid="uid://dyuep3t4l8j4" path="res://art/Font Styles/PublicPixel-rv0pA.ttf" id="6_14wmn"]
 [ext_resource type="FontFile" uid="uid://c1mfnubgq43co" path="res://art/Font Styles/Monocraft.ttc" id="8_14wmn"]
 

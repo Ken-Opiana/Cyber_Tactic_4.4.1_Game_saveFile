@@ -1,0 +1,17 @@
+[gd_resource type="Resource" format=3 uid="uid://do46eyivxip6c"]
+
+[ext_resource type="Script" uid="uid://bk3s4hej3vilb" path="res://characters/warrior/cards/warrior_threat_scan.gd" id="1_r0jjl"]
+[ext_resource type="Texture2D" uid="uid://dbqywgw7meq2x" path="res://art/fresh_icons/defender/threat_scan.png" id="1_sdv5p"]
+
+[resource]
+script = ExtResource("1_r0jjl")
+name = "Threat Scan"
+id = "warrior_threat_scan"
+type = 1
+rarity = 1
+target = 2
+remove = true
+icon = ExtResource("1_sdv5p")
+tooltip_text = "[center]Apply 1 [color='ffdf00']Weakened[/color] to all enemies.[/center]
+[center][color=light_slate_gray]Remove - removed from combat when played. Returns to deck at the end of combat[/color][/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

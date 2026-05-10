@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://bdvrrlaqb2ro7"]
+
+[ext_resource type="Texture2D" uid="uid://cnqthygdb2tib" path="res://art/fresh_icons/defender/machine_learning_core.png" id="1_np055"]
+[ext_resource type="Script" uid="uid://bkrccfou0v6sn" path="res://characters/warrior/cards/warrior_machine_learning_core.gd" id="2_gr18k"]
+
+[resource]
+script = ExtResource("2_gr18k")
+name = "Machine Learning Core"
+id = "warrior_machine_learning_core"
+type = 2
+rarity = 1
+cost = 1
+icon = ExtResource("1_np055")
+tooltip_text = "[center]Whenever you exhaust a card, draw 1 card.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://daiht3oljvjoj"]
+
+[ext_resource type="Texture2D" uid="uid://b2tm0hhxyfxui" path="res://art/fresh_icons/defender/packet_strike.png" id="1_jnp4n"]
+[ext_resource type="Script" uid="uid://bel2a66awwo8i" path="res://characters/warrior/cards/warrior_packet_strike.gd" id="2_f2v25"]
+[ext_resource type="AudioStream" uid="uid://mld5qltxsv80" path="res://art/sfx/synth.wav" id="3_hlepo"]
+
+[resource]
+script = ExtResource("2_f2v25")
+name = "Packet Strike"
+id = "warrior_packet_strike"
+target = 1
+cost = 1
+icon = ExtResource("1_jnp4n")
+tooltip_text = "[center]Target [color=\"#FFFF00\"]single[/color] enemy to deal [color=\"ff0000\"]%s[/color] damage.[/center]"
+sound = ExtResource("3_hlepo")

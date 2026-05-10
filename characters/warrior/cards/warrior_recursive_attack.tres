@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://mk3lwrrugncf"]
+
+[ext_resource type="Texture2D" uid="uid://dmugwlij4xa1c" path="res://art/fresh_icons/defender/recursive_attack.png" id="1_62t7q"]
+[ext_resource type="Script" uid="uid://qraib38s2eh2" path="res://characters/warrior/cards/warrior_recursive_attack.gd" id="1_bow1y"]
+
+[resource]
+script = ExtResource("1_bow1y")
+name = "Recursive Attack"
+id = "warrior_recursive_attack"
+rarity = 1
+target = 1
+cost = 1
+icon = ExtResource("1_62t7q")
+tooltip_text = "[center]Deal [color='ff0000']%s[/color] damage. +%s damage this combat.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

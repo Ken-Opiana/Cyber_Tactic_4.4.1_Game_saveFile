@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://bsaqt0ojbpbm5"]
+
+[ext_resource type="Texture2D" uid="uid://b1n4cgh8btlg4" path="res://art/fresh_icons/defender/encryption_layer.png" id="1_0j5af"]
+[ext_resource type="Script" uid="uid://b81268asv3nhk" path="res://characters/warrior/cards/warrior_encryption_layer.gd" id="1_4ifbe"]
+
+[resource]
+script = ExtResource("1_4ifbe")
+name = "Encryption Layer"
+id = "warrior_encryption_layer"
+type = 1
+rarity = 1
+cost = 2
+icon = ExtResource("1_0j5af")
+tooltip_text = "[center]Double your Defense.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

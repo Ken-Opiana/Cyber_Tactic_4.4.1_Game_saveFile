@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://bouufnfw0xyi6"]
+
+[ext_resource type="Texture2D" uid="uid://dicupl87ik4re" path="res://art/fresh_icons/defender/signal_disruption.png" id="1_akq80"]
+[ext_resource type="Script" uid="uid://bwmxijw23q8u2" path="res://characters/warrior/cards/warrior_signal_disruption.gd" id="2_fmfvi"]
+
+[resource]
+script = ExtResource("2_fmfvi")
+name = "Signal Disruption"
+id = "warrior_signal_disruption"
+target = 1
+cost = 2
+icon = ExtResource("1_akq80")
+tooltip_text = "[center]Deal [color='ff0000']%s[/color] damage and apply 2 [color='ffdf00']Weakened[/color].[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

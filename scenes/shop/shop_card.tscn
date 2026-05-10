@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bu3dx65ejjyr1" path="res://scenes/shop/shop_card.gd" id="1_5q1iu"]
 [ext_resource type="PackedScene" uid="uid://rsk8d12egnnf" path="res://scenes/ui/card_menu_ui.tscn" id="1_alfhh"]
-[ext_resource type="Resource" uid="uid://kyu5l54a2ljg" path="res://characters/warrior/cards/student_cybersword_slash.tres" id="2_4ldbr"]
+[ext_resource type="Resource" uid="uid://kyu5l54a2ljg" path="res://characters/warrior/cards/warrior_network_sweep.tres" id="2_4ldbr"]
 [ext_resource type="FontFile" uid="uid://c1mfnubgq43co" path="res://art/Font Styles/Monocraft.ttc" id="4_ve2vk"]
 [ext_resource type="Texture2D" uid="uid://c4hcddu2md8wb" path="res://art/Cache10.png" id="5_jhj4o"]
 

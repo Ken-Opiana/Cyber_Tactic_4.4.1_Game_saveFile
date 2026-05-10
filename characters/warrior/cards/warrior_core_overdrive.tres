@@ -1,0 +1,16 @@
+[gd_resource type="Resource" format=3 uid="uid://bl66ldjcrh1ii"]
+
+[ext_resource type="Texture2D" uid="uid://dps5wud0ij802" path="res://art/fresh_icons/defender/core_overdrive.png" id="1_gx5qb"]
+[ext_resource type="Script" uid="uid://lmbnuys5qg1o" path="res://characters/warrior/cards/warrior_core_overdrive.gd" id="2_fnrbk"]
+
+[resource]
+script = ExtResource("2_fnrbk")
+name = "Core Overdrive"
+id = "warrior_core_overdrive"
+type = 2
+rarity = 2
+cost = 3
+remove = true
+icon = ExtResource("1_gx5qb")
+tooltip_text = "[center]At the start of your turn, gain 2 [color=\"ffdf00\"]Power[/color]. Remove[/center]
+[center][color=light_slate_gray]Remove - removed from combat when played. Returns to deck at the end of combat[/color][/center]"

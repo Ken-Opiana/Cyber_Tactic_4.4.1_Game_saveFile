@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MachineLearningCore" format=3 uid="uid://5klt55xpbtmi"]
+
+[ext_resource type="Texture2D" uid="uid://bql2458dcuq3d" path="res://art/fresh_icons/defender/machine_learning_core_16.png" id="1_l1yoo"]
+[ext_resource type="Script" uid="uid://26gufw0i45oq" path="res://statuses/machine_learning_core_status.gd" id="1_wwo7s"]
+
+[resource]
+script = ExtResource("1_wwo7s")
+id = "machine_learning_core"
+type = 2
+effect_type = 1
+stack_type = 1
+stacks = 1
+icon = ExtResource("1_l1yoo")
+tooltip = "Machine Learning Core: whenever you exhaust a card, draw %s card(s)."
+metadata/_custom_type_script = "uid://v7sfotas0ox0"

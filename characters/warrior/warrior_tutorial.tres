@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharacterStats" load_steps=8 format=3 uid="uid://byywdf8pnmwa4"]
+[gd_resource type="Resource" script_class="CharacterStats" format=3 uid="uid://byywdf8pnmwa4"]
 
 [ext_resource type="Texture2D" uid="uid://bjo47ds8vcbi3" path="res://art/pixil-frame-0.png" id="1_m6luv"]
 [ext_resource type="Resource" uid="uid://ceybpc07sti3p" path="res://characters/warrior/warrior_draftable_cards.tres" id="2_oj62x"]

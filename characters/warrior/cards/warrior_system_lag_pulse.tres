@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://ble1sxqsjuq5"]
+
+[ext_resource type="Texture2D" uid="uid://b6yx2uto58s8h" path="res://art/fresh_icons/defender/system_lag_pulse.png" id="1_serpl"]
+[ext_resource type="Script" uid="uid://dm7hfnoddnkv" path="res://characters/warrior/cards/warrior_system_lag_pulse.gd" id="2_mnah6"]
+
+[resource]
+script = ExtResource("2_mnah6")
+name = "System Lag Pulse"
+id = "warrior_warrior_system_lag_pulse"
+target = 2
+cost = 1
+icon = ExtResource("1_serpl")
+tooltip_text = "[center]Deal [color='ff0000']%s[/color] damage and apply 1 [color='ffdf00']Vulnerable[/color] to all enemies.[/center]
+[center][color=light_slate_gray]Vulnerable: take 50% more damage from attacks[/color][/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

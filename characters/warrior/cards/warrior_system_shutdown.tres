@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://bdpc0kbdqollq"]
+
+[ext_resource type="Script" uid="uid://beq14kkyl4iiu" path="res://characters/warrior/cards/warrior_system_shutdown.gd" id="1_2i2ht"]
+[ext_resource type="Texture2D" uid="uid://cyqfvi6qcxtgx" path="res://art/fresh_icons/defender/system_shutdown.png" id="1_ldna6"]
+
+[resource]
+script = ExtResource("1_2i2ht")
+name = "System Shutdown"
+id = "warrior_system_shutdown"
+rarity = 2
+target = 1
+cost = 3
+icon = ExtResource("1_ldna6")
+tooltip_text = "[center]Deal [color='ff0000']%s[/color] damage.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

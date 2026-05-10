@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://dyh8ee0a663qd"]
+
+[ext_resource type="Texture2D" uid="uid://cbwy7ijj4mydk" path="res://art/fresh_icons/defender/reactive_firewall_matrix.png" id="1_df3gq"]
+[ext_resource type="Script" uid="uid://bjcgix0idywet" path="res://characters/warrior/cards/warrior_reactive_firewall_matrix.gd" id="2_sxgxs"]
+
+[resource]
+script = ExtResource("2_sxgxs")
+name = "Reactive Firewall Matirx"
+id = "warrior_reactive_firewall_matirx"
+type = 2
+rarity = 2
+cost = 2
+icon = ExtResource("1_df3gq")
+tooltip_text = "[center]Whenever you gain Defense, deal 4 damage to a random enemy.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

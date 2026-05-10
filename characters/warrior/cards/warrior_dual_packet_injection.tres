@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://nstmqsyj4ugp"]
+
+[ext_resource type="Texture2D" uid="uid://ig6dla44eorj" path="res://art/fresh_icons/defender/dual_packet_injection.png" id="1_8aj4m"]
+[ext_resource type="Script" uid="uid://chjx2ial7x25x" path="res://characters/warrior/cards/warrior_dual_packet_injection.gd" id="2_jhx0n"]
+
+[resource]
+script = ExtResource("2_jhx0n")
+name = "Dual Packet Injection"
+id = "warrior_dual_packet_injection"
+target = 1
+cost = 1
+icon = ExtResource("1_8aj4m")
+tooltip_text = "Deals [color=\"ff0000\"]%s[/color] damage to a single enemy two times."
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

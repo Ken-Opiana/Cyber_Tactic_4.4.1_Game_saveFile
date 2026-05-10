@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://bav5foakohv15"]
+
+[ext_resource type="Texture2D" uid="uid://o80ms40mv0hb" path="res://art/fresh_icons/defender/overclock_protocol.png" id="1_3ygyb"]
+[ext_resource type="Script" uid="uid://dbsjcg3f0o0x0" path="res://characters/warrior/cards/warrior_overclock_protocol.gd" id="1_ao6o2"]
+
+[resource]
+script = ExtResource("1_ao6o2")
+name = "Overclock Protocol"
+id = "warrior_overclock_protocol"
+type = 2
+rarity = 1
+cost = 1
+icon = ExtResource("1_3ygyb")
+tooltip_text = "[center]Whenever a card makes you lose HP, gain 1 [color='ffdf00']Power[/color].[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

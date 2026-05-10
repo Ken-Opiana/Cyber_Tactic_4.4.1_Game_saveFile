@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AdaptiveDefenseSystem" format=3 uid="uid://dq6c61opnxg4d"]
+
+[ext_resource type="Texture2D" uid="uid://55tne2nldv2b" path="res://art/fresh_icons/defender/adaptive_defense_system_16.png" id="1_b8cfq"]
+[ext_resource type="Script" uid="uid://bt62a3reuxfpy" path="res://statuses/adaptive_defense_system_status.gd" id="2_il6pg"]
+
+[resource]
+script = ExtResource("2_il6pg")
+id = "adaptive_defense_system_status"
+type = 2
+effect_type = 1
+stack_type = 1
+stacks = 1
+icon = ExtResource("1_b8cfq")
+tooltip = "Adaptive Defense System: whenever you remove a card, gain %s Defense."
+metadata/_custom_type_script = "uid://v7sfotas0ox0"

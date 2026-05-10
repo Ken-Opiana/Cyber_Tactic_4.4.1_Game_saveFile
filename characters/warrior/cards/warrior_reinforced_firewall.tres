@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://c8haybf4aas83"]
+
+[ext_resource type="Texture2D" uid="uid://dr1e7qxvb81no" path="res://art/fresh_icons/defender/reinforced_firewall.png" id="1_cdhg6"]
+[ext_resource type="Script" uid="uid://wa44d877we4t" path="res://characters/warrior/cards/warrior_reinforced_firewall.gd" id="1_e1yib"]
+
+[resource]
+script = ExtResource("1_e1yib")
+name = "Reinforced Firewall"
+id = "warrior_reinforced_firewall"
+type = 1
+cost = 1
+icon = ExtResource("1_cdhg6")
+tooltip_text = "[center]Gain [color='0044ff']%s[/color] Defense. Draw 1 card.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

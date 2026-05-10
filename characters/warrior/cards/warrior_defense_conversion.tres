@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://dnig3k5quv58u"]
+
+[ext_resource type="Texture2D" uid="uid://caw4rqdkl311q" path="res://art/fresh_icons/defender/defense_conversion.png" id="1_ux1ns"]
+[ext_resource type="Script" uid="uid://1dvb7ndoql7f" path="res://characters/warrior/cards/warrior_defense_conversion.gd" id="2_212nx"]
+
+[resource]
+script = ExtResource("2_212nx")
+name = "Defense Conversion"
+id = "warrior_defense_conversion"
+target = 1
+cost = 1
+icon = ExtResource("1_ux1ns")
+tooltip_text = "[center]Deal damage equal to your Defense.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

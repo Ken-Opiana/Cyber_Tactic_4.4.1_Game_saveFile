@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://c11pyx27p6vnm"]
+
+[ext_resource type="Texture2D" uid="uid://bido825jt4h16" path="res://art/refresh.png" id="1_a8r16"]
+[ext_resource type="Script" uid="uid://calit5jr1jg2" path="res://characters/warrior/cards/warrior_refresh.gd" id="2_sp0b0"]
+
+[resource]
+script = ExtResource("2_sp0b0")
+name = "Refresh"
+id = "warrior_refresh"
+type = 1
+remove = true
+icon = ExtResource("1_a8r16")
+tooltip_text = "[center]Draw 1 card. Put a card from your hand on top of your draw pile.[/center]
+[center][color=light_slate_gray]Remove - removed from combat when played. Returns to deck at the end of combat.[/color][/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

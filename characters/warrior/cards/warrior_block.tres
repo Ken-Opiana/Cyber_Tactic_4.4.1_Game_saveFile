@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=4 format=3 uid="uid://cusemvfvh0inm"]
+[gd_resource type="Resource" format=3 uid="uid://cusemvfvh0inm"]
 
 [ext_resource type="Texture2D" uid="uid://p0yqsrixsboc" path="res://art/tile_0102.png" id="1_bd3y4"]
 [ext_resource type="Script" uid="uid://g3hrqh0bultl" path="res://characters/warrior/cards/warrior_block.gd" id="2_b1a5w"]

@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="CardPile" load_steps=6 format=3 uid="uid://cowpt7h8htwl"]
+[gd_resource type="Resource" script_class="CardPile" format=3 uid="uid://cowpt7h8htwl"]
 
 [ext_resource type="Script" uid="uid://db7gxbb4g4qbl" path="res://custom_resources/card.gd" id="1_3siyn"]
-[ext_resource type="Resource" uid="uid://daiht3oljvjoj" path="res://characters/warrior/cards/warrior_cybersword_attack.tres" id="2_uwk83"]
+[ext_resource type="Resource" uid="uid://daiht3oljvjoj" path="res://characters/warrior/cards/warrior_packet_strike.tres" id="2_uwk83"]
 [ext_resource type="Script" uid="uid://do5h7q7uufehy" path="res://custom_resources/card_pile.gd" id="2_ydpsy"]
 [ext_resource type="Resource" uid="uid://cusemvfvh0inm" path="res://characters/warrior/cards/warrior_block.tres" id="3_xu32s"]
-[ext_resource type="Resource" uid="uid://ble1sxqsjuq5" path="res://characters/warrior/cards/scanwave.tres" id="4_ne0bc"]
+[ext_resource type="Resource" uid="uid://ble1sxqsjuq5" path="res://characters/warrior/cards/warrior_system_lag_pulse.tres" id="4_ne0bc"]
 
 [resource]
 script = ExtResource("2_ydpsy")

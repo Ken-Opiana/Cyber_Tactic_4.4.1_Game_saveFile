@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://b171ekorhtri5"]
+
+[ext_resource type="Texture2D" uid="uid://bl5u6hub3ihx1" path="res://art/fresh_icons/defender/adaptive_defense_system.png" id="1_1ltdp"]
+[ext_resource type="Script" uid="uid://0ejx508250om" path="res://characters/warrior/cards/warrior_adaptive_defense_system.gd" id="1_l6lh7"]
+
+[resource]
+script = ExtResource("1_l6lh7")
+name = "Adaptive Defense System"
+id = "warrior_adaptive_defense_system"
+type = 2
+rarity = 1
+cost = 1
+icon = ExtResource("1_1ltdp")
+tooltip_text = "[center]Whenever you remove a card, gain 3 Defense.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

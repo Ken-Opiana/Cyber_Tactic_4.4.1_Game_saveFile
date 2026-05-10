@@ -1,0 +1,17 @@
+[gd_resource type="Resource" format=3 uid="uid://duyq7ex24ysyc"]
+
+[ext_resource type="Texture2D" uid="uid://68xpu4sh6vva" path="res://art/fresh_icons/defender/cpu_boost.png" id="1_cin08"]
+[ext_resource type="Script" uid="uid://c1q56utmgerm8" path="res://characters/warrior/cards/warrior_cpu_boost.gd" id="2_deuqg"]
+[ext_resource type="AudioStream" uid="uid://thywpalb0dr3" path="res://art/sfx/power_up2.wav" id="3_1jccg"]
+
+[resource]
+script = ExtResource("2_deuqg")
+name = "CPU Boost"
+id = "warrior_cpu_boost"
+type = 2
+rarity = 1
+cost = 1
+icon = ExtResource("1_cin08")
+tooltip_text = "[center]Gain 2 [color='ffdf00']Power[/color].[/center]"
+sound = ExtResource("3_1jccg")
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

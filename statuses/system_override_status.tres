@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SystemOverrideStatus" format=3 uid="uid://n2onpig1y377"]
+
+[ext_resource type="Texture2D" uid="uid://dqci1ua08kqwu" path="res://art/fresh_icons/defender/system_override_16.png" id="1_j1nj7"]
+[ext_resource type="Script" uid="uid://fhiu8m86pfsa" path="res://statuses/system_override_status.gd" id="1_rfahq"]
+
+[resource]
+script = ExtResource("1_rfahq")
+id = "system_override_status"
+effect_type = 1
+stack_type = 1
+icon = ExtResource("1_j1nj7")
+tooltip = "System Override: at the start of the turn, draw %s card(s) and lose %s HP."
+metadata/_custom_type_script = "uid://v7sfotas0ox0"

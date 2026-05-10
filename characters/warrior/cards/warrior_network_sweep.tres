@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://kyu5l54a2ljg"]
+
+[ext_resource type="Texture2D" uid="uid://dqxd2l5koy0jn" path="res://art/fresh_icons/defender/network_sweep.png" id="1_xddpm"]
+[ext_resource type="Script" uid="uid://g5n676vk8j50" path="res://characters/warrior/cards/warrior_network_sweep.gd" id="2_65cg5"]
+[ext_resource type="AudioStream" uid="uid://bty1q3l7ltsla" path="res://art/sfx/hitHurt.wav" id="3_7urdb"]
+
+[resource]
+script = ExtResource("2_65cg5")
+name = "Network Sweep"
+id = "warrior_network_sweep"
+target = 2
+cost = 1
+icon = ExtResource("1_xddpm")
+tooltip_text = "[center]Targets [color=\"#FFFF00\"]all enemies[/color] enemy to deal [color=\"ff0000\"]%s[/color] damage.[/center]"
+sound = ExtResource("3_7urdb")

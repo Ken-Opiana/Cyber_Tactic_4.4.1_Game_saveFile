@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://bawcd412h4y3s"]
+
+[ext_resource type="Texture2D" uid="uid://cac5rum1i0ayw" path="res://art/fresh_icons/defender/overclock_crash.png" id="1_q1adk"]
+[ext_resource type="Script" uid="uid://bm0othv7vmibm" path="res://characters/warrior/cards/warrior_overclock_crash.gd" id="1_x5340"]
+
+[resource]
+script = ExtResource("1_x5340")
+name = "Overclock Crash"
+id = "warrior_overclock_crash"
+rarity = 1
+target = 1
+cost = 1
+icon = ExtResource("1_q1adk")
+tooltip_text = "[center]Deal [color='ff0000']%s[/color] damage and lose 2 HP.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"
