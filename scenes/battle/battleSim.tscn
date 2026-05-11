@@ -42,11 +42,11 @@ handle_input_locally = false
 size = Vector2i(640, 360)
 script = ExtResource("3_tg886")
 glb_scene = ExtResource("4_umagr")
+light_energy = 0.5
+ambient_energy = 0.1
+clear_color = Color(0.7388505, 0.7407428, 0.8195174, 1)
 
 [node name="First_Battle_Background" parent="Background3D/BackgroundViewport" unique_id=1869160169 instance=ExtResource("4_umagr")]
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Background3D/BackgroundViewport" unique_id=1659047877]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.82623, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Background3D/BackgroundViewport" unique_id=1838404696]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -10.906162, 0.34558344, 0)
@@ -63,7 +63,7 @@ debug_color = Color(0, 0.6, 0.701961, 0.129412)
 script = ExtResource("5_tg886")
 
 [node name="MalwareEnemy" parent="EnemyHandler" unique_id=1829955616 instance=ExtResource("6_o4ubv")]
-position = Vector2(511, 185)
+position = Vector2(465, 185)
 stats = ExtResource("7_tg886")
 
 [node name="Player" parent="." unique_id=252720771 instance=ExtResource("9_mtyt1")]
