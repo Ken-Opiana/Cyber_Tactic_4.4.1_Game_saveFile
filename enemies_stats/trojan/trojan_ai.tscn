@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bcjbunymsjbfc"]
+[gd_scene format=3 uid="uid://bcjbunymsjbfc"]
 
 [ext_resource type="Script" uid="uid://dych0ejsny60v" path="res://scenes/enemy/enemy_action_picker.gd" id="1_butds"]
 [ext_resource type="Script" uid="uid://bq08y1jlandit" path="res://enemies_stats/trojan/trojan_attack_action.gd" id="2_pfu0n"]
@@ -29,29 +29,32 @@ script = ExtResource("4_jhbbn")
 icon = ExtResource("10_btxm2")
 metadata/_custom_type_script = "uid://dly8oycd8fytg"
 
-[node name="TrojanAI" type="Node"]
+[node name="TrojanAI" type="Node" unique_id=1437606017]
 script = ExtResource("1_butds")
 metadata/_custom_type_script = "uid://dych0ejsny60v"
 
-[node name="AttackAction" type="Node" parent="."]
+[node name="AttackAction" type="Node" parent="." unique_id=1023548754]
 script = ExtResource("2_pfu0n")
 block_sound = ExtResource("3_irkf1")
 intent = SubResource("Resource_1vffr")
 sound = ExtResource("6_jtgol")
+description = "This enemy intends to attack"
 type = 1
 chance_weight = 2.0
 metadata/_custom_type_script = "uid://fffrdohulik0"
 
-[node name="AttackDebuffAction" type="Node" parent="."]
+[node name="AttackDebuffAction" type="Node" parent="." unique_id=2034672308]
 script = ExtResource("5_pfu0n")
 intent = SubResource("Resource_jtgol")
 sound = ExtResource("6_jtgol")
+description = "This enemy intends to attack and inflict a debuff"
 type = 1
 chance_weight = 1.0
 metadata/_custom_type_script = "uid://fffrdohulik0"
 
-[node name="BuffAction" type="Node" parent="."]
+[node name="BuffAction" type="Node" parent="." unique_id=2095913775]
 script = ExtResource("9_ywhax")
 intent = SubResource("Resource_u8u2i")
 sound = ExtResource("11_tqe2i")
+description = "Gain a buff"
 metadata/_custom_type_script = "uid://fffrdohulik0"

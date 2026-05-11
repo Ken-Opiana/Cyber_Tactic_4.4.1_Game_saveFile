@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyStats" load_steps=8 format=3 uid="uid://uy3e52yhtsei"]
+[gd_resource type="Resource" script_class="EnemyStats" format=3 uid="uid://uy3e52yhtsei"]
 
 [ext_resource type="PackedScene" uid="uid://d1luu5u334kps" path="res://enemies_stats/toxic_ghost/toxic_ghost_ai.tscn" id="1_rr2lt"]
 [ext_resource type="Texture2D" uid="uid://61n5m4hwmpcc" path="res://art/tile_0108.png" id="1_uys0k"]

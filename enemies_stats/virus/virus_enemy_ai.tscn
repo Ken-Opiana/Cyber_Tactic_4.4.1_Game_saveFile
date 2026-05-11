@@ -26,7 +26,7 @@ script = ExtResource("1_wltji")
 script = ExtResource("2_ybtl6")
 intent = SubResource("Resource_3lw5v")
 sound = ExtResource("5_21wbc")
-description = "Attacks"
+description = "This enemy intends to attack"
 type = 1
 chance_weight = 1.0
 
@@ -34,6 +34,6 @@ chance_weight = 1.0
 script = ExtResource("3_wxsdj")
 intent = SubResource("Resource_nx1d7")
 sound = ExtResource("8_4s7fq")
-description = "Blocks"
+description = "This enemy intends to block"
 type = 1
 chance_weight = 0.8

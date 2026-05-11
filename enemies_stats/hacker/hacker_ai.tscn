@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://xxhla226qpvh"]
+[gd_scene format=3 uid="uid://xxhla226qpvh"]
 
 [ext_resource type="Script" uid="uid://dych0ejsny60v" path="res://scenes/enemy/enemy_action_picker.gd" id="1_5q482"]
 [ext_resource type="Script" uid="uid://fefnblp345hc" path="res://enemies_stats/hacker/hacker_attack_action.gd" id="2_ecib0"]
@@ -37,36 +37,40 @@ script = ExtResource("5_nqc7c")
 icon = ExtResource("11_ecib0")
 metadata/_custom_type_script = "uid://dly8oycd8fytg"
 
-[node name="HackerAI" type="Node"]
+[node name="HackerAI" type="Node" unique_id=713961067]
 script = ExtResource("1_5q482")
 metadata/_custom_type_script = "uid://dych0ejsny60v"
 
-[node name="AttackAction" type="Node" parent="."]
+[node name="AttackAction" type="Node" parent="." unique_id=1171924673]
 script = ExtResource("2_ecib0")
 intent = SubResource("Resource_ecib0")
 sound = ExtResource("6_jsi4u")
+description = "This enemy intends to attack"
 type = 1
 chance_weight = 1.0
 metadata/_custom_type_script = "uid://fffrdohulik0"
 
-[node name="BlockDebuffAction" type="Node" parent="."]
+[node name="BlockDebuffAction" type="Node" parent="." unique_id=428872576]
 script = ExtResource("3_jsi4u")
 intent = SubResource("Resource_luxhx")
 sound = ExtResource("6_cinlo")
+description = "This enemy intends to block and gain a debuff"
 type = 1
 chance_weight = 1.0
 metadata/_custom_type_script = "uid://fffrdohulik0"
 
-[node name="AttackCardDebuffAction" type="Node" parent="."]
+[node name="AttackCardDebuffAction" type="Node" parent="." unique_id=1572500162]
 script = ExtResource("3_l32w7")
 intent = SubResource("Resource_0poqd")
 sound = ExtResource("6_jsi4u")
+description = "This enemy intends to attack and add a card to the target"
 type = 1
 chance_weight = 0.5
 metadata/_custom_type_script = "uid://fffrdohulik0"
 
-[node name="BuffAction" type="Node" parent="."]
+[node name="BuffAction" type="Node" parent="." unique_id=563729058]
 script = ExtResource("10_luxhx")
 intent = SubResource("Resource_1wauk")
 sound = ExtResource("12_x4lfg")
+description = "This enemy intends to gain a buff"
 metadata/_custom_type_script = "uid://fffrdohulik0"
