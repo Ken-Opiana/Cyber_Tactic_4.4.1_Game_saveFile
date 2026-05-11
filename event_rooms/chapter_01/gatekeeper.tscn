@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://qmwqee4axrxb"]
+
+[ext_resource type="Script" uid="uid://crdjnmsaj8mac" path="res://event_rooms/chapter_01/gatekeeper.gd" id="1_gtkpr"]
+[ext_resource type="Texture2D" uid="uid://dcrte00goehj1" path="res://art/gatekeeper.png" id="2_2ofee"]
+[ext_resource type="PackedScene" uid="uid://dnn5kg0tp0d22" path="res://scenes/event_rooms/event_room_button.tscn" id="2_gtkbtn"]
+
+[node name="Gatekeeper" type="Control" unique_id=2079564202]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gtkpr")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1266524982]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1, 0.15, 0.3, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=842568851]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="EventImage" type="TextureRect" parent="HBoxContainer" unique_id=1511028025]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 360)
+layout_mode = 2
+texture = ExtResource("2_2ofee")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" unique_id=31817343]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="IntroScreen" type="VBoxContainer" parent="HBoxContainer/CenterContainer" unique_id=1231548466]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="EventTitleLabel" type="Label" parent="HBoxContainer/CenterContainer/IntroScreen" unique_id=972701256]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "The Gatekeeper"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/CenterContainer/IntroScreen" unique_id=1416994147]
+layout_mode = 2
+
+[node name="EventDescription" type="RichTextLabel" parent="HBoxContainer/CenterContainer/IntroScreen" unique_id=1117100130]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 180)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]A corrupted checkpoint blocks the way...[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="StartButton" parent="HBoxContainer/CenterContainer/IntroScreen" unique_id=1270549764 instance=ExtResource("2_gtkbtn")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "Approach the checkpoint"
+
+[node name="EventMenu" type="VBoxContainer" parent="HBoxContainer/CenterContainer" unique_id=662209921]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MenuLabel" type="Label" parent="HBoxContainer/CenterContainer/EventMenu" unique_id=1024386514]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "How do you get through?"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/CenterContainer/EventMenu" unique_id=1066069313]
+layout_mode = 2
+
+[node name="PayButton" parent="HBoxContainer/CenterContainer/EventMenu" unique_id=489052777 instance=ExtResource("2_gtkbtn")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(380, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 16
+text = "Pay the toll"
+autowrap_mode = 2
+
+[node name="FightButton" parent="HBoxContainer/CenterContainer/EventMenu" unique_id=1317075246 instance=ExtResource("2_gtkbtn")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(380, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 16
+text = "Fight your way through"
+autowrap_mode = 2
+
+[node name="ProxyButton" parent="HBoxContainer/CenterContainer/EventMenu" unique_id=1467028786 instance=ExtResource("2_gtkbtn")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(380, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 16
+text = "Use Phantom Proxy"
+autowrap_mode = 2
+
+[node name="EventAfterMath" type="VBoxContainer" parent="HBoxContainer/CenterContainer" unique_id=751057322]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="AftermathText" type="RichTextLabel" parent="HBoxContainer/CenterContainer/EventAfterMath" unique_id=959544336]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 240)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Result text goes here.[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="ContinueButton" parent="HBoxContainer/CenterContainer/EventAfterMath" unique_id=589960918 instance=ExtResource("2_gtkbtn")]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Continue"

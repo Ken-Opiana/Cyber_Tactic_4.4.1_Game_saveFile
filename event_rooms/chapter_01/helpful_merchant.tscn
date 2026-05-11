@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://i8w1ta4ehqth"]
+[gd_scene format=3 uid="uid://i8w1ta4ehqth"]
 
 [ext_resource type="Script" uid="uid://da2dt2d7sjnem" path="res://event_rooms/chapter_01/helpful_merchant.gd" id="1_3p0f4"]
 [ext_resource type="Texture2D" uid="uid://dtwal56x2wcr7" path="res://art/shopkeeper.png" id="1_kwp4u"]
@@ -8,7 +8,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_72tdb"]
 font_size = 48
 
-[node name="HelpfulMerchant" type="Control"]
+[node name="HelpfulMerchant" type="Control" unique_id=1650881425]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,7 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3p0f4")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1365155688]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,7 +26,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.08235294, 0.20784314, 1, 0.5568628)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1803104522]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,28 +34,28 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=638350279]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 texture = ExtResource("1_kwp4u")
 stretch_mode = 5
 
-[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" unique_id=1565337620]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="EventMenu" type="VBoxContainer" parent="HBoxContainer/CenterContainer"]
+[node name="EventMenu" type="VBoxContainer" parent="HBoxContainer/CenterContainer" unique_id=1680280686]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/CenterContainer/EventMenu"]
+[node name="Label" type="Label" parent="HBoxContainer/CenterContainer/EventMenu" unique_id=10317030]
 layout_mode = 2
 text = "\"Let's make deal!\""
 label_settings = SubResource("LabelSettings_72tdb")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DuplicateCardButton" parent="HBoxContainer/CenterContainer/EventMenu" instance=ExtResource("2_3p0f4")]
+[node name="DuplicateCardButton" parent="HBoxContainer/CenterContainer/EventMenu" unique_id=1784081282 instance=ExtResource("2_3p0f4")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
@@ -63,25 +63,25 @@ theme_override_font_sizes/font_size = 32
 text = "Duplicate a card
 in your deck"
 
-[node name="PlusMaxHPButton" parent="HBoxContainer/CenterContainer/EventMenu" instance=ExtResource("2_3p0f4")]
+[node name="PlusMaxHPButton" parent="HBoxContainer/CenterContainer/EventMenu" unique_id=1238761617 instance=ExtResource("2_3p0f4")]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Gain 5 Max HP"
 
-[node name="SkipButton" parent="HBoxContainer/CenterContainer/EventMenu" instance=ExtResource("2_3p0f4")]
+[node name="SkipButton" parent="HBoxContainer/CenterContainer/EventMenu" unique_id=1861872012 instance=ExtResource("2_3p0f4")]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Decline offer"
 
-[node name="EventAftermath" type="VBoxContainer" parent="HBoxContainer/CenterContainer"]
+[node name="EventAftermath" type="VBoxContainer" parent="HBoxContainer/CenterContainer" unique_id=725959235]
 unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
-[node name="AftermathText" type="RichTextLabel" parent="HBoxContainer/CenterContainer/EventAftermath"]
+[node name="AftermathText" type="RichTextLabel" parent="HBoxContainer/CenterContainer/EventAftermath" unique_id=1573485659]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
@@ -89,14 +89,14 @@ theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "[center]\"Alright, till we meet again...\"[/center]"
 
-[node name="ContinueButton" parent="HBoxContainer/CenterContainer/EventAftermath" instance=ExtResource("2_3p0f4")]
+[node name="ContinueButton" parent="HBoxContainer/CenterContainer/EventAftermath" unique_id=1132549976 instance=ExtResource("2_3p0f4")]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Continue"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=559804632]
 layer = 5
 
-[node name="DeckView" parent="CanvasLayer" instance=ExtResource("3_mbtdp")]
+[node name="DeckView" parent="CanvasLayer" unique_id=731330691 instance=ExtResource("3_mbtdp")]
 unique_name_in_owner = true
 visible = false

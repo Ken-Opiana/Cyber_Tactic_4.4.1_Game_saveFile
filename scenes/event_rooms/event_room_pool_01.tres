@@ -1,11 +1,12 @@
-[gd_resource type="Resource" script_class="EventRoomPool" load_steps=5 format=3 uid="uid://cjhpms5hechb6"]
+[gd_resource type="Resource" script_class="EventRoomPool" format=3 uid="uid://cjhpms5hechb6"]
 
+[ext_resource type="PackedScene" uid="uid://qmwqee4axrxb" path="res://event_rooms/chapter_01/gatekeeper.tscn" id="1_e00kh"]
 [ext_resource type="Script" uid="uid://c04lmg8ewveto" path="res://custom_resources/event_room_pool.gd" id="1_ravmy"]
-[ext_resource type="PackedScene" uid="uid://colm5ygfux0j5" path="res://event_rooms/chapter_01/quiz_event.tscn" id="2_lsjjn"]
-[ext_resource type="PackedScene" uid="uid://fk8g5yp4ygga" path="res://event_rooms/chapter_01/trojan_quiz_event.tscn" id="3_6tda5"]
-[ext_resource type="PackedScene" uid="uid://djc6rvuspi8dx" path="res://event_rooms/chapter_01/worm_quiz_event.tscn" id="4_6tda5"]
+[ext_resource type="PackedScene" uid="uid://dor1oik4u0plw" path="res://event_rooms/chapter_01/broken_gate.tscn" id="2_6tda5"]
+[ext_resource type="PackedScene" uid="uid://3aacwrafvkux" path="res://event_rooms/chapter_01/ghost_signal.tscn" id="3_f04ia"]
+[ext_resource type="PackedScene" uid="uid://bjo5ckx8g81qt" path="res://event_rooms/chapter_01/locked_files.tscn" id="4_rbmjx"]
 
 [resource]
 script = ExtResource("1_ravmy")
-event_rooms = Array[PackedScene]([ExtResource("2_lsjjn"), ExtResource("3_6tda5"), ExtResource("4_6tda5")])
+event_rooms = Array[PackedScene]([ExtResource("1_e00kh"), ExtResource("2_6tda5"), ExtResource("3_f04ia"), ExtResource("4_rbmjx")])
 metadata/_custom_type_script = "uid://c04lmg8ewveto"

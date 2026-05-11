@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://dor1oik4u0plw"]
+
+[ext_resource type="Script" uid="uid://dm4t48au2q5qi" path="res://event_rooms/chapter_01/broken_gate.gd" id="1_brkgt"]
+[ext_resource type="PackedScene" uid="uid://dnn5kg0tp0d22" path="res://scenes/event_rooms/event_room_button.tscn" id="2_brkbtn"]
+[ext_resource type="Texture2D" uid="uid://dj3vv2eylcfix" path="res://art/broken_gate.png" id="2_yasog"]
+
+[node name="BrokenGate" type="Control" unique_id=559164270]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_brkgt")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1624061459]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1, 0.15, 0.3, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=450089045]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="EventImage" type="TextureRect" parent="HBoxContainer" unique_id=604940967]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 360)
+layout_mode = 2
+texture = ExtResource("2_yasog")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" unique_id=1560964401]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="IntroScreen" type="VBoxContainer" parent="HBoxContainer/CenterContainer" unique_id=224240037]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="EventTitleLabel" type="Label" parent="HBoxContainer/CenterContainer/IntroScreen" unique_id=558768601]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "The Broken Gate"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/CenterContainer/IntroScreen" unique_id=165478469]
+layout_mode = 2
+
+[node name="EventDescription" type="RichTextLabel" parent="HBoxContainer/CenterContainer/IntroScreen" unique_id=336306859]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 180)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]A sealed gate blocks the path...[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="StartButton" parent="HBoxContainer/CenterContainer/IntroScreen" unique_id=8425359 instance=ExtResource("2_brkbtn")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "Approach the gate"
+
+[node name="EventMenu" type="VBoxContainer" parent="HBoxContainer/CenterContainer" unique_id=1566350312]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MenuLabel" type="Label" parent="HBoxContainer/CenterContainer/EventMenu" unique_id=956204174]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Choose your approach"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/CenterContainer/EventMenu" unique_id=73854965]
+layout_mode = 2
+
+[node name="BlastButton" parent="HBoxContainer/CenterContainer/EventMenu" unique_id=2067399697 instance=ExtResource("2_brkbtn")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(380, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 16
+text = "Blast it open (sacrifice 1 Attack card)"
+autowrap_mode = 2
+
+[node name="SearchButton" parent="HBoxContainer/CenterContainer/EventMenu" unique_id=998638969 instance=ExtResource("2_brkbtn")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(380, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 16
+text = "Search the edges (+25 gold)"
+autowrap_mode = 2
+
+[node name="ForceButton" parent="HBoxContainer/CenterContainer/EventMenu" unique_id=748895155 instance=ExtResource("2_brkbtn")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(380, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 16
+text = "Force the bracelet (lose HP, gain reward)"
+autowrap_mode = 2
+
+[node name="EventAfterMath" type="VBoxContainer" parent="HBoxContainer/CenterContainer" unique_id=530130465]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="AftermathText" type="RichTextLabel" parent="HBoxContainer/CenterContainer/EventAfterMath" unique_id=1879553024]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 240)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Result text goes here.[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="ContinueButton" parent="HBoxContainer/CenterContainer/EventAfterMath" unique_id=284811395 instance=ExtResource("2_brkbtn")]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Continue"

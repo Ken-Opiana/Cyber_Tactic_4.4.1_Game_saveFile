@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://bjo5ckx8g81qt"]
+
+[ext_resource type="Script" uid="uid://bkgd4hmtv2dwi" path="res://event_rooms/chapter_01/locked_files.gd" id="1_lkdfl"]
+[ext_resource type="Texture2D" uid="uid://dwj477f2m5hr7" path="res://art/locked_files.png" id="2_iv6b6"]
+[ext_resource type="PackedScene" uid="uid://dnn5kg0tp0d22" path="res://scenes/event_rooms/event_room_button.tscn" id="2_lkdbtn"]
+
+[node name="LockedFiles" type="Control" unique_id=1595635558]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lkdfl")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=964109814]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1, 0.15, 0.3, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=263185153]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="EventImage" type="TextureRect" parent="HBoxContainer" unique_id=1976462955]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 360)
+layout_mode = 2
+texture = ExtResource("2_iv6b6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" unique_id=242422109]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="IntroScreen" type="VBoxContainer" parent="HBoxContainer/CenterContainer" unique_id=182236471]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="EventTitleLabel" type="Label" parent="HBoxContainer/CenterContainer/IntroScreen" unique_id=1720308908]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "The Locked Files"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/CenterContainer/IntroScreen" unique_id=1856012779]
+layout_mode = 2
+
+[node name="EventDescription" type="RichTextLabel" parent="HBoxContainer/CenterContainer/IntroScreen" unique_id=1903079071]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Your files just got locked...[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="StartButton" parent="HBoxContainer/CenterContainer/IntroScreen" unique_id=987488368 instance=ExtResource("2_lkdbtn")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "Respond"
+
+[node name="EventMenu" type="VBoxContainer" parent="HBoxContainer/CenterContainer" unique_id=78041118]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MenuLabel" type="Label" parent="HBoxContainer/CenterContainer/EventMenu" unique_id=1308022843]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "What do you do?"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/CenterContainer/EventMenu" unique_id=1968056378]
+layout_mode = 2
+
+[node name="PullPlugButton" parent="HBoxContainer/CenterContainer/EventMenu" unique_id=525645623 instance=ExtResource("2_lkdbtn")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(380, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 16
+text = "Pull the Plug"
+autowrap_mode = 2
+
+[node name="PayButton" parent="HBoxContainer/CenterContainer/EventMenu" unique_id=1480974883 instance=ExtResource("2_lkdbtn")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(380, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 16
+text = "Pay the Ransom"
+autowrap_mode = 2
+
+[node name="BluffButton" parent="HBoxContainer/CenterContainer/EventMenu" unique_id=2075579193 instance=ExtResource("2_lkdbtn")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(380, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 16
+text = "Call the Bluff"
+autowrap_mode = 2
+
+[node name="EventAfterMath" type="VBoxContainer" parent="HBoxContainer/CenterContainer" unique_id=502167519]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="AftermathText" type="RichTextLabel" parent="HBoxContainer/CenterContainer/EventAfterMath" unique_id=1443219409]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 240)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Result text goes here.[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="ContinueButton" parent="HBoxContainer/CenterContainer/EventAfterMath" unique_id=1795999362 instance=ExtResource("2_lkdbtn")]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Continue"
