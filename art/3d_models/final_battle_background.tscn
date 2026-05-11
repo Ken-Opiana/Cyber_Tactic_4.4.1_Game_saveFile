@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bm0ktbf46wnpo"]
+
+[ext_resource type="PackedScene" uid="uid://bq8xg4bye46cj" path="res://art/3d_models/Final_Battle_Background.glb" id="1_necix"]
+
+[node name="Final_Battle_Background" unique_id=1733592599 instance=ExtResource("1_necix")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Walls" parent="." index="0" unique_id=530068398]
+transform = Transform3D(-90.70865, 0, -0.40312195, 0, 22.915165, 0, 1.5959864, 0, -22.911621, -0.558774, -0.4589696, 0)

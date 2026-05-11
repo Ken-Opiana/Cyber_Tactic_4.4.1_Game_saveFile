@@ -5,7 +5,8 @@
 [ext_resource type="Script" uid="uid://c7qxtsgofswco" path="res://scenes/ui/hand.gd" id="2_dybx0"]
 [ext_resource type="PackedScene" uid="uid://b25jnn2o0ion1" path="res://scenes/player/player.tscn" id="3_arrrb"]
 [ext_resource type="PackedScene" uid="uid://neowwkxk87rp" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_jsmm7"]
-[ext_resource type="Texture2D" uid="uid://lugennxj0o6x" path="res://art/battle_background1.png" id="4_8eh2s"]
+[ext_resource type="Script" uid="uid://lhnmqpmiwci3" path="res://scenes/battle/background_viewport.gd" id="3_n5ix6"]
+[ext_resource type="PackedScene" uid="uid://c0ro1avhspxdt" path="res://art/3d_models/Main_1_Background.glb" id="3_ueicy"]
 [ext_resource type="Resource" uid="uid://co6ar47di3crh" path="res://characters/warrior/warrior.tres" id="4_nhdv7"]
 [ext_resource type="Script" uid="uid://cgojt0i5spdq4" path="res://scenes/enemy/enemy_handler.gd" id="4_pp0u0"]
 [ext_resource type="Resource" uid="uid://di1u2yn8ru2vi" path="res://enemies_stats/virus/virus_enemy.tres" id="5_bry55"]
@@ -53,11 +54,25 @@ script = ExtResource("1_tgtwy")
 char_stats = ExtResource("4_nhdv7")
 metadata/_edit_lock_ = true
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1550462719]
-self_modulate = Color(0.47816715, 0.47816715, 0.47816715, 1)
-scale = Vector2(0.5051221, 0.4979253)
-texture = ExtResource("4_8eh2s")
-centered = false
+[node name="Background3D" type="SubViewportContainer" parent="." unique_id=968013590]
+custom_minimum_size = Vector2(640, 360)
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+stretch = true
+
+[node name="BackgroundViewport" type="SubViewport" parent="Background3D" unique_id=1963083433]
+unique_name_in_owner = true
+handle_input_locally = false
+size = Vector2i(640, 360)
+render_target_update_mode = 4
+script = ExtResource("3_n5ix6")
+glb_scene = ExtResource("3_ueicy")
+
+[node name="Main_1_Background" parent="Background3D/BackgroundViewport" unique_id=378408438 instance=ExtResource("3_ueicy")]
+
+[node name="Camera3D" type="Camera3D" parent="Background3D/BackgroundViewport" unique_id=1976556362]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3767048, 0)
 
 [node name="CardDropArea" type="Area2D" parent="." unique_id=657068141]
 collision_layer = 2
