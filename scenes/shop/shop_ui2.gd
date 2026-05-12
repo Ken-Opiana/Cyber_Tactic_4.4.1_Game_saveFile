@@ -128,10 +128,8 @@ func _build_slots() -> void:
 			var card := _find_card(_card_ids[i])
 			if card:
 				slot.setup(card, price, code)
-				if card_tooltip_popup and slot.card_container.get_child_count() > 0:
-					var card_ui := slot.card_container.get_child(0) as CardMenuUI
-					if card_ui:
-						card_ui.tooltip_requested.connect(card_tooltip_popup.show_tooltip)
+				if card_tooltip_popup:
+					slot.tooltip_requested.connect(card_tooltip_popup.show_tooltip)
 
 	for i in 4:
 		var ci    := i + 4

@@ -1,6 +1,8 @@
 class_name ShopCard
 extends VBoxContainer
 
+signal tooltip_requested(card: Card)
+
 const CARD_MENU_UI = preload("res://scenes/ui/card_menu_ui.tscn")
 
 @export var card: Card : set = set_card
@@ -64,12 +66,16 @@ func mark_as_sold() -> void:
 func set_card(new_card: Card) -> void:
 	if not is_node_ready():
 		await ready
-
+	
 	card = new_card
-
+	
 	for child in card_container.get_children():
 		child.queue_free()
-
+	
 	var new_card_ui := CARD_MENU_UI.instantiate() as CardMenuUI
 	card_container.add_child(new_card_ui)
 	new_card_ui.card = card
+	# Forward inner click→tooltip signal out to ShopUI2.
+	new_card_ui.tooltip_requested.connect(
+		func(c: Card): tooltip_requested.emit(c)
+)
