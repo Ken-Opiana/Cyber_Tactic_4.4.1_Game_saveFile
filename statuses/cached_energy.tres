@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CachedEnergy" format=3 uid="uid://dqwfgtfdpo4mb"]
+
+[ext_resource type="Texture2D" uid="uid://cyfmisdfnabwm" path="res://art/cached_energy_icon.png" id="1_1yf5d"]
+[ext_resource type="Script" uid="uid://d2j8v56y8v5ku" path="res://statuses/cached_energy.gd" id="2_6uemt"]
+
+[resource]
+script = ExtResource("2_6uemt")
+id = "cached_energy"
+type = 2
+effect_type = 1
+stacks = 1
+icon = ExtResource("1_1yf5d")
+tooltip = "Cached Energy: at the start of your next turn, gain %s Energy."
+metadata/_custom_type_script = "uid://v7sfotas0ox0"

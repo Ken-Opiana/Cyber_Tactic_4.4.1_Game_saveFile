@@ -1,0 +1,17 @@
+[gd_resource type="Resource" format=3 uid="uid://byypx5wpbhq0l"]
+
+[ext_resource type="Texture2D" uid="uid://bel6mlh2lxvpc" path="res://art/fresh_icons/pentester/distributed_denial.png" id="1_d4cyd"]
+[ext_resource type="Script" uid="uid://c8xj8srm1d0a" path="res://characters/assassin/cards/assassin_distributed_denial.gd" id="1_rck3v"]
+
+[resource]
+script = ExtResource("1_rck3v")
+name = "Distributed Denial"
+id = "assassin_distributed_denial"
+rarity = 2
+target = 2
+cost = 1
+remove = true
+icon = ExtResource("1_d4cyd")
+tooltip_text = "[center]Deal [color='ff0000']%s[/color] damage to all enemies. [color=\"ffdf00\"]Remove[/color].[/center]
+[center][color=light_slate_gray]Remove - removed from combat when played. Returns to deck at the end of combat[/color][/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://wpjs7s8w5vw6"]
+
+[ext_resource type="Texture2D" uid="uid://dyw7ejiva7fpo" path="res://art/fresh_icons/pentester/cache_reload.png" id="1_xfvtn"]
+[ext_resource type="Script" uid="uid://cr0g6g185qvnl" path="res://characters/assassin/cards/assassin_cache_reload.gd" id="2_jka60"]
+
+[resource]
+script = ExtResource("2_jka60")
+name = "Cache Reload"
+id = "assassin_cache_reload"
+type = 1
+rarity = 1
+cost = 1
+icon = ExtResource("1_xfvtn")
+tooltip_text = "[center]Draw cards until you have 6 cards in hand.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

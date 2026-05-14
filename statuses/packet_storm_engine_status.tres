@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PacketStormEngine" format=3 uid="uid://ecu4ejku2gvj"]
+
+[ext_resource type="Texture2D" uid="uid://ccu8glpr4acqa" path="res://art/fresh_icons/pentester/packet_storm_engine.png" id="1_5bg2l"]
+[ext_resource type="Script" uid="uid://d1jqomyqxr04o" path="res://statuses/packet_storm_engine_status.gd" id="1_r4fht"]
+
+[resource]
+script = ExtResource("1_r4fht")
+id = "packet_storm_engine_status"
+type = 2
+effect_type = 1
+stack_type = 1
+stacks = 1
+icon = ExtResource("1_5bg2l")
+tooltip = "Packet Storm Engine: whenever you play a card, deal 2 damage to all enemies."
+metadata/_custom_type_script = "uid://v7sfotas0ox0"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://dv02f6v66g15m"]
+
+[ext_resource type="Texture2D" uid="uid://ccu8glpr4acqa" path="res://art/fresh_icons/pentester/packet_storm_engine.png" id="1_innld"]
+[ext_resource type="Script" uid="uid://c16xsqmtpgdsp" path="res://characters/assassin/cards/assassin_packet_storm_engine.gd" id="2_0s7nc"]
+
+[resource]
+script = ExtResource("2_0s7nc")
+name = "Packet Storm Engine"
+id = "assassin_packet_storm_engine"
+type = 2
+rarity = 2
+cost = 2
+icon = ExtResource("1_innld")
+tooltip_text = "[center]Whenever you play a card, deal 2 damage to all enemies.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" format=3 uid="uid://dqsi7567wldxl"]
+
+[ext_resource type="Texture2D" uid="uid://dylgy8b67fwcf" path="res://art/fresh_icons/pentester/active_recon.png" id="1_ab6bg"]
+[ext_resource type="Script" uid="uid://chcdse5i6p4u7" path="res://characters/assassin/cards/assassin_active_recon.gd" id="1_y3lc0"]
+
+[resource]
+script = ExtResource("1_y3lc0")
+name = "Active Recon"
+id = "assassin_active_recon"
+type = 1
+rarity = 2
+remove = true
+icon = ExtResource("1_ab6bg")
+tooltip_text = "[center]Gain 1 Energy and draw 2 cards. Remove.[/center]
+[center][color=light_slate_gray]Remove - removed from combat when played. Returns to deck at the end of combat[/color][/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

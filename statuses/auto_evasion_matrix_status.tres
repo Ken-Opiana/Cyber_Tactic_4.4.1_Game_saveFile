@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AutoEvasionMatrix" format=3 uid="uid://wh88etwjyrf5"]
+
+[ext_resource type="Script" uid="uid://b5o2cavy3mkhh" path="res://statuses/auto_evasion_matrix_status.gd" id="1_q2okw"]
+[ext_resource type="Texture2D" uid="uid://bbuxs0p8knb00" path="res://art/fresh_icons/pentester/auto_evasion_matrix.png" id="1_xsf1s"]
+
+[resource]
+script = ExtResource("1_q2okw")
+id = "auto_evasion_matrix_status"
+type = 2
+effect_type = 1
+stacks = 1
+icon = ExtResource("1_xsf1s")
+tooltip = "Auto-Evasion Matrix: whenever you play a card, gain %s block."
+metadata/_custom_type_script = "uid://v7sfotas0ox0"

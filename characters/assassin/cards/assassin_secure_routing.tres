@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://4f6ui0h5wf87"]
+
+[ext_resource type="Texture2D" uid="uid://cncb3h4sn0cy7" path="res://art/fresh_icons/pentester/secure_routing.png" id="1_28cee"]
+[ext_resource type="Script" uid="uid://dk7g8ls8iftfl" path="res://characters/assassin/cards/assassin_secure_routing.gd" id="2_6diqk"]
+
+[resource]
+script = ExtResource("2_6diqk")
+name = "Secure Routing"
+id = "assassin_secure_routing"
+type = 1
+cost = 1
+icon = ExtResource("1_28cee")
+tooltip_text = "[center]Gain [color='0044ff']%s[/color] block. Discard 1 card.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

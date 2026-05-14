@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://nsgcggocww5k"]
+
+[ext_resource type="Texture2D" uid="uid://cdgnst220yhs1" path="res://art/fresh_icons/pentester/phishing_attack.png" id="1_5cumc"]
+[ext_resource type="Script" uid="uid://dypwy7u04n32" path="res://characters/assassin/cards/assassin_phishing_attack.gd" id="1_sdl50"]
+
+[resource]
+script = ExtResource("1_sdl50")
+name = "Phishing Attack"
+id = "assassin_phishing_attack"
+target = 1
+cost = 1
+icon = ExtResource("1_5cumc")
+tooltip_text = "[center]Deal [color='ff0000']%s[/color] damage and apply 1 [color='ffdf00']Vulnerable[/color].[/center]
+[center][color=light_slate_gray]Vulnerable: take 50%% more damage from attacks[/color][/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

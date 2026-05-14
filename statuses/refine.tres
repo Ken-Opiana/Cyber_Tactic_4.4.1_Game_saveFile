@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="RefineStatus" load_steps=3 format=3 uid="uid://dmxpsq5njebvs"]
+[gd_resource type="Resource" script_class="RefineStatus" format=3 uid="uid://dmxpsq5njebvs"]
 
 [ext_resource type="Texture2D" uid="uid://27b6yqhjax8u" path="res://art/refine.png" id="1_01cjh"]
 [ext_resource type="Script" uid="uid://c5kvcb86lrc2f" path="res://statuses/refine.gd" id="2_01cjh"]
@@ -11,5 +11,5 @@ effect_type = 1
 stack_type = 1
 stacks = 1
 icon = ExtResource("1_01cjh")
-tooltip = "Refine: gain %s more Defense from cards."
+tooltip = "Refine: gain %s more block from cards."
 metadata/_custom_type_script = "uid://v7sfotas0ox0"

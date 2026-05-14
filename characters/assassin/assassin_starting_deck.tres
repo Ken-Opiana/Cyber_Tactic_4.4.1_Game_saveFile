@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardPile" format=3 uid="uid://nd5q6v3ubre"]
+
+[ext_resource type="Script" uid="uid://db7gxbb4g4qbl" path="res://custom_resources/card.gd" id="1_fg6dr"]
+[ext_resource type="Script" uid="uid://do5h7q7uufehy" path="res://custom_resources/card_pile.gd" id="2_b4fwa"]
+[ext_resource type="Resource" uid="uid://c8mk61qigpdjg" path="res://characters/assassin/cards/assassin_exploit_probe.tres" id="2_rd37i"]
+[ext_resource type="Resource" uid="uid://ulrkvjo3noe7" path="res://characters/assassin/cards/assassin_proxy_shield.tres" id="3_c1hr0"]
+
+[resource]
+script = ExtResource("2_b4fwa")
+cards = Array[ExtResource("1_fg6dr")]([ExtResource("2_rd37i"), ExtResource("2_rd37i"), ExtResource("2_rd37i"), ExtResource("2_rd37i"), ExtResource("2_rd37i"), ExtResource("3_c1hr0"), ExtResource("3_c1hr0"), ExtResource("3_c1hr0"), ExtResource("3_c1hr0"), null])
+metadata/_custom_type_script = "uid://do5h7q7uufehy"

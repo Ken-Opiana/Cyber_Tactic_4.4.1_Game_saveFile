@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_xu0ir")
-id = "warrior_overclock_protocol"
+id = "warrior_overclock_protocol_status"
 type = 2
 effect_type = 1
 stack_type = 1

@@ -28,6 +28,22 @@ texture = ExtResource("1_qlpom")
 expand_mode = 1
 stretch_mode = 5
 
+[node name="Icon2" type="TextureRect" parent="." unique_id=1025106737]
+layout_mode = 0
+offset_right = 10.0
+offset_bottom = 10.0
+texture = ExtResource("1_qlpom")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Icon3" type="TextureRect" parent="." unique_id=860514580]
+layout_mode = 0
+offset_right = 10.0
+offset_bottom = 10.0
+texture = ExtResource("1_qlpom")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="Duration" type="Label" parent="." unique_id=1274495467]
 layout_mode = 0
 offset_left = 4.0

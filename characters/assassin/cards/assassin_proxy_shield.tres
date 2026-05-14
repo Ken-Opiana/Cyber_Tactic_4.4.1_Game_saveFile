@@ -1,0 +1,16 @@
+[gd_resource type="Resource" format=3 uid="uid://ulrkvjo3noe7"]
+
+[ext_resource type="Texture2D" uid="uid://bn2n0cb1mm7w2" path="res://art/fresh_icons/pentester/proxy_shield.png" id="1_sh5tq"]
+[ext_resource type="Script" uid="uid://dppdfm7v0xxtu" path="res://characters/assassin/cards/assassin_proxy_shield.gd" id="2_moiuo"]
+[ext_resource type="AudioStream" uid="uid://cyltxn5tlirtk" path="res://art/sfx/powerUp.wav" id="3_jh6px"]
+
+[resource]
+script = ExtResource("2_moiuo")
+name = "Proxy Shield"
+id = "assassin_porxy_shield"
+type = 1
+cost = 1
+icon = ExtResource("1_sh5tq")
+tooltip_text = "[center]Gain [color='0044ff']%s[/color] block.[/center]"
+sound = ExtResource("3_jh6px")
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

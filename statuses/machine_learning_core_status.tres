@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_wwo7s")
-id = "machine_learning_core"
+id = "machine_learning_core_status"
 type = 2
 effect_type = 1
 stack_type = 1

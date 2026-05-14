@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://bsu4o1n5hectj"]
+
+[ext_resource type="Script" uid="uid://da2qoqqiaxk75" path="res://characters/assassin/cards/assassin_auto_evasion_matrix.gd" id="1_663x0"]
+[ext_resource type="Texture2D" uid="uid://bbuxs0p8knb00" path="res://art/fresh_icons/pentester/auto_evasion_matrix.png" id="1_o3o3d"]
+
+[resource]
+script = ExtResource("1_663x0")
+name = "Auto-Evasion Matrix"
+id = "assassin_auto_evasion_matrix"
+type = 2
+rarity = 2
+cost = 1
+icon = ExtResource("1_o3o3d")
+tooltip_text = "[center]Whenever you play a card, gain 1 block.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

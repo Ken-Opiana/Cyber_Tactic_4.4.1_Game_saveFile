@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://covv23ioewnyr"]
+
+[ext_resource type="Script" uid="uid://csfo1w20s7l3s" path="res://characters/assassin/cards/assassin_botnet_barrage.gd" id="1_2yg5q"]
+[ext_resource type="Texture2D" uid="uid://dnhcyr6nx1gq6" path="res://art/fresh_icons/pentester/botnet_barrage.png" id="1_u7xcl"]
+
+[resource]
+script = ExtResource("1_2yg5q")
+name = "Botnet Barrage"
+id = "assassin_botnet_barrage"
+target = 2
+cost = 1
+icon = ExtResource("1_u7xcl")
+tooltip_text = "[center]Deal [color='ff0000']%s[/color] damage to all enemies two times.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

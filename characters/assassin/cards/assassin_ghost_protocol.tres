@@ -1,0 +1,16 @@
+[gd_resource type="Resource" format=3 uid="uid://4j6cxan8s6p8"]
+
+[ext_resource type="Script" uid="uid://bm0yxuwtkamac" path="res://characters/assassin/cards/assassin_ghost_protocol.gd" id="1_as1yy"]
+[ext_resource type="Texture2D" uid="uid://cweer6ujonywr" path="res://art/fresh_icons/pentester/ghost_protocol.png" id="1_civog"]
+
+[resource]
+script = ExtResource("1_as1yy")
+name = "Ghost Protocol"
+id = "assassin_ghost_protocol"
+type = 2
+rarity = 1
+cost = 1
+icon = ExtResource("1_civog")
+tooltip_text = "[center]Gain 2 [color='ffdf00']Refine[/color].[/center]
+[center][color=light_slate_gray]Refine -gain more block from cards[/color][/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" format=3 uid="uid://bqcek60gk3g7x"]
+
+[ext_resource type="Texture2D" uid="uid://cerx2wcfxumyy" path="res://art/fresh_icons/pentester/cloaking_script.png" id="1_62de4"]
+[ext_resource type="Script" uid="uid://bqlnp6458f3bw" path="res://characters/assassin/cards/assassin_cloaking_script.gd" id="2_tyd70"]
+
+[resource]
+script = ExtResource("2_tyd70")
+name = "Cloaking Script"
+id = "assassin_cloaking_script"
+type = 1
+rarity = 1
+target = 1
+cost = 2
+icon = ExtResource("1_62de4")
+tooltip_text = "[center]Apply 2 [color='ffdf00']Weakened[/color] and gain [color='0044ff']%s[/color] block.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

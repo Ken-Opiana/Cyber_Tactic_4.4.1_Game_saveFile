@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://boid1vfivyue1"]
+
+[ext_resource type="Texture2D" uid="uid://42eemshupn44" path="res://art/fresh_icons/pentester/resource_allocation.png" id="1_5grvg"]
+[ext_resource type="Script" uid="uid://dn6ksyomlq5dv" path="res://characters/assassin/cards/assassin_resource_allocation.gd" id="2_sq7vf"]
+
+[resource]
+script = ExtResource("2_sq7vf")
+name = "Resource Allocation"
+id = "assassin_resource_allocation"
+type = 1
+cost = 1
+icon = ExtResource("1_5grvg")
+tooltip_text = "[center]At the start of your next turn, gain 2 Energy.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

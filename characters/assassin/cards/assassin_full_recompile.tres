@@ -1,0 +1,16 @@
+[gd_resource type="Resource" format=3 uid="uid://dmrf1p1pa5ycl"]
+
+[ext_resource type="Script" uid="uid://bo45wk6t0h4i2" path="res://characters/assassin/cards/assassin_full_recompile.gd" id="1_f6mi7"]
+[ext_resource type="Texture2D" uid="uid://mnyav6dpxdln" path="res://art/fresh_icons/pentester/full_recompile.png" id="1_tx2li"]
+
+[resource]
+script = ExtResource("1_f6mi7")
+name = "Full Recompile"
+id = "assassin_full_recompile"
+type = 1
+rarity = 1
+remove = true
+icon = ExtResource("1_tx2li")
+tooltip_text = "[center]Discard your hand, then draw that many cards. [color=\"ffdf00\"]Remove[/color].[/center]
+[center][color=light_slate_gray]Remove - removed from combat when played. Returns to deck at the end of combat[/color][/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

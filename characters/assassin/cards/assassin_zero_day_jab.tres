@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3 uid="uid://dwd1i7yrplgf3"]
+
+[ext_resource type="Texture2D" uid="uid://b08lmmicct6d5" path="res://art/fresh_icons/pentester/packet_sniffing.png" id="1_aeolq"]
+[ext_resource type="Script" uid="uid://0i7ski1oqbnf" path="res://characters/assassin/cards/assassin_zero_day_jab.gd" id="2_aeolq"]
+
+[resource]
+script = ExtResource("2_aeolq")
+name = "Zero-Day Jab"
+id = "assassin_zero_day_jab"
+target = 1
+icon = ExtResource("1_aeolq")
+tooltip_text = "[center]Deal [color='ff0000']%s[/color] damage.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

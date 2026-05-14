@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="CharacterStats" load_steps=5 format=3 uid="uid://by3jcfnce8afk"]
+[gd_resource type="Resource" script_class="CharacterStats" format=3 uid="uid://by3jcfnce8afk"]
 
-[ext_resource type="Texture2D" uid="uid://dexe65qywimpe" path="res://art/CyberSword_attack.png" id="1_d75va"]
+[ext_resource type="PackedScene" uid="uid://bst1isp184ojb" path="res://art/3d_models/architect.tscn" id="1_g3mc0"]
 [ext_resource type="Texture2D" uid="uid://48dvyc5h4mpb" path="res://art/question_mark.png" id="1_ihxtb"]
 [ext_resource type="Script" uid="uid://dxplxo6x2a02m" path="res://custom_resources/character_stats.gd" id="1_p7pii"]
 [ext_resource type="Resource" uid="uid://cowpt7h8htwl" path="res://characters/warrior/warrior_starting_deck.tres" id="3_r5wrm"]
@@ -14,14 +14,4 @@ starting_deck = ExtResource("3_r5wrm")
 cards_per_turn = 3
 max_mana = 4
 max_health = 27
-enemy_name = ""
-art = ExtResource("1_d75va")
-tooltip_text = ""
-tooltip_text_real = ""
-elemental_multipliers = {
-0: 1.0,
-1: 1.0,
-2: 1.0,
-3: 1.0,
-4: 1.0
-}
+model = ExtResource("1_g3mc0")

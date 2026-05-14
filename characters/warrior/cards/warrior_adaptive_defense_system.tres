@@ -10,6 +10,7 @@ id = "warrior_adaptive_defense_system"
 type = 2
 rarity = 1
 cost = 1
+remove = true
 icon = ExtResource("1_1ltdp")
 tooltip_text = "[center]Whenever you [color=\"ffdf00\"]Remove[/color] a card, gain 3 block.[/center]
 [center][color=light_slate_gray]Remove - removed from combat when played. Returns to deck at the end of combat[/color][/center]"

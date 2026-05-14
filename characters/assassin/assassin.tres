@@ -1,26 +1,25 @@
-[gd_resource type="Resource" script_class="CharacterStats" load_steps=4 format=3 uid="uid://cbhlln0fk7s0w"]
+[gd_resource type="Resource" script_class="CharacterStats" format=3 uid="uid://cbhlln0fk7s0w"]
 
 [ext_resource type="Script" uid="uid://dxplxo6x2a02m" path="res://custom_resources/character_stats.gd" id="1_3t7do"]
 [ext_resource type="Texture2D" uid="uid://48dvyc5h4mpb" path="res://art/question_mark.png" id="1_5ffc8"]
-[ext_resource type="Resource" uid="uid://cowpt7h8htwl" path="res://characters/warrior/warrior_starting_deck.tres" id="3_e40x2"]
+[ext_resource type="PackedScene" uid="uid://d4doneb6sl2js" path="res://art/3d_models/pen_tester.tscn" id="2_7yfov"]
+[ext_resource type="Resource" uid="uid://r5esu3f4q320" path="res://characters/assassin/assassin_draftable_cards.tres" id="2_omvsn"]
+[ext_resource type="Resource" uid="uid://of82anfjrm3n" path="res://characters/pentester_card_library.tres" id="3_q8opx"]
+[ext_resource type="Texture2D" uid="uid://dmhxql8lpn310" path="res://art/pentester_icon.png" id="4_q8opx"]
+[ext_resource type="Resource" uid="uid://nd5q6v3ubre" path="res://characters/assassin/assassin_starting_deck.tres" id="6_3fs5p"]
+[ext_resource type="Resource" uid="uid://wjosuc810jgu" path="res://threads/hacker_toolkit.tres" id="7_wc3m5"]
 
 [resource]
 script = ExtResource("1_3t7do")
-character_name = "Assassin"
-description = "I am snake."
-portrait = ExtResource("1_5ffc8")
-starting_deck = ExtResource("3_e40x2")
+character_name = "Pen Tester"
+description = "A ethical hacker"
+portrait = ExtResource("4_q8opx")
+starting_deck = ExtResource("6_3fs5p")
+draftable_cards = ExtResource("2_omvsn")
+library_cards = ExtResource("3_q8opx")
 cards_per_turn = 5
 max_mana = 3
-max_health = 24
-enemy_name = ""
+starting_thread = ExtResource("7_wc3m5")
+max_health = 30
 art = ExtResource("1_5ffc8")
-tooltip_text = ""
-tooltip_text_real = ""
-elemental_multipliers = {
-0: 1.0,
-1: 1.0,
-2: 1.0,
-3: 1.0,
-4: 1.0
-}
+model = ExtResource("2_7yfov")

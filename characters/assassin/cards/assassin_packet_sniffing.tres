@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3 uid="uid://ch652f3elthbd"]
+
+[ext_resource type="Texture2D" uid="uid://b08lmmicct6d5" path="res://art/fresh_icons/pentester/packet_sniffing.png" id="1_m087j"]
+[ext_resource type="Script" uid="uid://4tg2eb4l7hlr" path="res://characters/assassin/cards/assassin_packet_sniffing.gd" id="2_m087j"]
+
+[resource]
+script = ExtResource("2_m087j")
+name = "Packet Sniffing"
+id = "assassin_packet_sniffing"
+type = 1
+icon = ExtResource("1_m087j")
+tooltip_text = "[center]Draw 1 card. Discard 1 card.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

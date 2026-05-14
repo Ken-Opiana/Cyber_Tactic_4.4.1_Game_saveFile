@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://dglvjb83rs25f"]
+
+[ext_resource type="Texture2D" uid="uid://becocvfif471g" path="res://art/fresh_icons/pentester/proxy_pivot.png" id="1_vbuar"]
+[ext_resource type="Script" uid="uid://bes278wnsddlw" path="res://characters/assassin/cards/assassin_proxy_pivot.gd" id="2_r3hcu"]
+
+[resource]
+script = ExtResource("2_r3hcu")
+name = "Proxy Pivot"
+id = "assassin_proxy_pivot"
+rarity = 1
+target = 1
+cost = 2
+icon = ExtResource("1_vbuar")
+tooltip_text = "[center]Deal [color='ff0000']%s[/color] damage. Gain [color='0044ff']%s[/color] block.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

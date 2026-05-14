@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://dnvge7deqdhw5"]
+
+[ext_resource type="Texture2D" uid="uid://drq3o8hgtjn6r" path="res://art/fresh_icons/pentester/rapid_breach.png" id="1_chdq8"]
+[ext_resource type="Script" uid="uid://bs5dg8nm31rmx" path="res://characters/assassin/cards/assassin_rapid_breach.gd" id="2_g46v3"]
+
+[resource]
+script = ExtResource("2_g46v3")
+name = "Rapid Breach"
+id = "assassin_rapid_breach"
+target = 1
+cost = 1
+icon = ExtResource("1_chdq8")
+tooltip_text = "[center]Deal [color='ff0000']%s[/color] damage. At the start of your next turn, gain 1 Energy.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"
