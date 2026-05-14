@@ -10,5 +10,5 @@ id = "warrior_reinforced_firewall"
 type = 1
 cost = 1
 icon = ExtResource("1_cdhg6")
-tooltip_text = "[center]Gain [color='0044ff']%s[/color] Defense. Draw 1 card.[/center]"
+tooltip_text = "[center]Gain [color='0044ff']%s[/color] block. Draw 1 card.[/center]"
 metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

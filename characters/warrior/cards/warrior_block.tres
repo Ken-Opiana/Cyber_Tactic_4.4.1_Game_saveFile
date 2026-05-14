@@ -1,15 +1,15 @@
 [gd_resource type="Resource" format=3 uid="uid://cusemvfvh0inm"]
 
-[ext_resource type="Texture2D" uid="uid://p0yqsrixsboc" path="res://art/tile_0102.png" id="1_bd3y4"]
+[ext_resource type="Texture2D" uid="uid://bxtc0knq6h62" path="res://art/fresh_icons/defender/firewall.png" id="1_1eir7"]
 [ext_resource type="Script" uid="uid://g3hrqh0bultl" path="res://characters/warrior/cards/warrior_block.gd" id="2_b1a5w"]
 [ext_resource type="AudioStream" uid="uid://cyltxn5tlirtk" path="res://art/sfx/powerUp.wav" id="3_6dpdd"]
 
 [resource]
 script = ExtResource("2_b1a5w")
-name = "Block"
+name = "Firewall"
 id = "warrior_block"
 type = 1
 cost = 1
-icon = ExtResource("1_bd3y4")
+icon = ExtResource("1_1eir7")
 tooltip_text = "[center]Gain [color=\"00FFFF\"]%s[/color] block.[/center]"
 sound = ExtResource("3_6dpdd")

@@ -10,5 +10,6 @@ id = "warrior_signal_disruption"
 target = 1
 cost = 2
 icon = ExtResource("1_akq80")
-tooltip_text = "[center]Deal [color='ff0000']%s[/color] damage and apply 2 [color='ffdf00']Weakened[/color].[/center]"
+tooltip_text = "[center]Deal [color='ff0000']%s[/color] damage and apply 2 [color='ffdf00']Weakened[/color].[/center]
+[center][color=light_slate_gray]Weakened - deals 25%% less damage[/color][/center]"
 metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

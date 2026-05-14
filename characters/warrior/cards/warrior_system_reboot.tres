@@ -11,6 +11,6 @@ type = 1
 rarity = 1
 cost = 1
 icon = ExtResource("1_lxbka")
-tooltip_text = "[center]Remove 1 card. Draw 2 cards.[/center]
+tooltip_text = "[center][color=\"ffdf00\"]Remove[/color] 1 card. Draw 2 cards.[/center]
 [center][color=light_slate_gray]Remove - removed from combat when played. Returns to deck at the end of combat[/color][/center]"
 metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

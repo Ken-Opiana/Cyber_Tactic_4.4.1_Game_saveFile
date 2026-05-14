@@ -11,5 +11,5 @@ type = 2
 rarity = 2
 cost = 2
 icon = ExtResource("1_df3gq")
-tooltip_text = "[center]Whenever you gain Defense, deal 4 damage to a random enemy.[/center]"
+tooltip_text = "[center]Whenever you gain block, deal 4 damage to a random enemy.[/center]"
 metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

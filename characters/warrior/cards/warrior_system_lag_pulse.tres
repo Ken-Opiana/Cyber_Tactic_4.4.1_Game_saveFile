@@ -11,5 +11,5 @@ target = 2
 cost = 1
 icon = ExtResource("1_serpl")
 tooltip_text = "[center]Deal [color='ff0000']%s[/color] damage and apply 1 [color='ffdf00']Vulnerable[/color] to all enemies.[/center]
-[center][color=light_slate_gray]Vulnerable: take 50% more damage from attacks[/color][/center]"
+[center][color=light_slate_gray]Vulnerable: take 50%% more damage from attacks[/color][/center]"
 metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

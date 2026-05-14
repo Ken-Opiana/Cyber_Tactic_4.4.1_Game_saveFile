@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://wjosuc810jgu"]
+
+[ext_resource type="Texture2D" uid="uid://dl8r8j7eivnt6" path="res://art/fresh_icons/relics/hacker_toolkit.png" id="1_dvnnj"]
+[ext_resource type="Script" uid="uid://b64xjvbrxetd3" path="res://threads/hacker_toolkit.gd" id="2_dvnnj"]
+
+[resource]
+script = ExtResource("2_dvnnj")
+thread_name = "Hacker Toolkit"
+id = "hacker_toolkit"
+character_type = 1
+starter_thread = true
+icon = ExtResource("1_dvnnj")
+tooltip = "[color=\"ffdf00\"]Hacker Toolkit[/color]
+At the start of combat, draw 2 cards."
+metadata/_custom_type_script = "uid://jie6cbv6kc3m"

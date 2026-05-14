@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="WeakenedStatus" load_steps=3 format=3 uid="uid://drtm7ydpbaqnb"]
+[gd_resource type="Resource" script_class="WeakenedStatus" format=3 uid="uid://drtm7ydpbaqnb"]
 
 [ext_resource type="Texture2D" uid="uid://p6xhxssy0yfq" path="res://art/weak.png" id="1_i4mdn"]
 [ext_resource type="Script" uid="uid://da300ets8c0st" path="res://statuses/weakened.gd" id="2_i4mdn"]

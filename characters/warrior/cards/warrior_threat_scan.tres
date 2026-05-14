@@ -12,6 +12,7 @@ rarity = 1
 target = 2
 remove = true
 icon = ExtResource("1_sdv5p")
-tooltip_text = "[center]Apply 1 [color='ffdf00']Weakened[/color] to all enemies.[/center]
-[center][color=light_slate_gray]Remove - removed from combat when played. Returns to deck at the end of combat[/color][/center]"
+tooltip_text = "[center]Apply 1 [color='ffdf00']Weakened[/color] to all enemies. [color=\"ffdf00\"]Remove[/color].[/center]
+[center][color=light_slate_gray]Remove - removed from combat when played. Returns to deck at the end of combat[/color][/center]
+[center][color=light_slate_gray]Weakened - attacks deal 25% less damage[/color][/center]"
 metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

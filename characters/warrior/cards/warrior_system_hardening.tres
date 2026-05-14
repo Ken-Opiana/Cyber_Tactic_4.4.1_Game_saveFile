@@ -10,5 +10,5 @@ id = "warrior_system_hardening"
 type = 1
 cost = 1
 icon = ExtResource("1_84eb6")
-tooltip_text = "[center]Gain [color='0044ff']%s[/color] Defense. Exhaust 1 random card from your hand.[/center]"
+tooltip_text = "[center]Gain [color='0044ff']%s[/color] block. [color=\"ffdf00\"]Remove[/color] 1 random card from your hand.[/center]"
 metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

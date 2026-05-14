@@ -12,5 +12,6 @@ rarity = 2
 cost = 3
 remove = true
 icon = ExtResource("1_gx5qb")
-tooltip_text = "[center]At the start of your turn, gain 2 [color=\"ffdf00\"]Power[/color]. Remove[/center]
-[center][color=light_slate_gray]Remove - removed from combat when played. Returns to deck at the end of combat[/color][/center]"
+tooltip_text = "[center]At the start of your turn, gain 2 [color=\"ffdf00\"]Power[/color]. [color=\"ffdf00\"]Remove[/color][/center]
+[center][color=light_slate_gray]Remove - removed from combat when played. Returns to deck at the end of combat[/color][/center]
+[center][color=light_slate_gray]Power - attack cards deal more damage[/color][/center]"

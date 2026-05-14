@@ -10,5 +10,5 @@ id = "warrior_defense_conversion"
 target = 1
 cost = 1
 icon = ExtResource("1_ux1ns")
-tooltip_text = "[center]Deal damage equal to your Defense.[/center]"
+tooltip_text = "[center]Deal damage equal to your block.[/center]"
 metadata/_custom_type_script = "uid://db7gxbb4g4qbl"
