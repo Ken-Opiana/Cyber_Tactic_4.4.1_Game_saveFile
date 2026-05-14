@@ -67,6 +67,9 @@ func _get_targets(targets: Array[Node]) -> Array[Node]:
 func play(targets: Array[Node], char_stats: CharacterStats, modifiers: ModifierHandler) -> void:
 	Events.card_played.emit(self)
 	char_stats.mana -= cost
+	char_stats.spell -= spell_cost
+	if spell_cost > 0:
+		Events.player_spend_spell.emit()
 	
 	if is_single_targeted():
 		apply_effects(targets, modifiers)

@@ -5,6 +5,7 @@ extends Control
 
 @onready var panel: Panel = $Panel
 @onready var cost: Label = $Cost
+@onready var spell_cost: Label = $SpellCost
 @onready var icon: TextureRect = $Icon
 @onready var rarity: TextureRect = $Rarity
 
@@ -15,8 +16,11 @@ func set_card(value: Card) -> void:
 
 	card = value
 	cost.text = str(card.cost)
+	spell_cost.text = str(card.spell_cost)
 	icon.texture = card.icon
 	rarity.modulate = card.RARITY_COLORS[card.rarity]
+	
+	spell_cost.visible = card.spell_cost > 0
 	
 	# — duplicate & tint *once*, right after we get a real Card —
 	var base_sb = panel.get_theme_stylebox("panel") as StyleBoxFlat

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bi4s6cxvknvci"]
+[gd_scene format=3 uid="uid://bi4s6cxvknvci"]
 
 [ext_resource type="Script" uid="uid://0bnp8a4m67wc" path="res://scenes/status_handler/status_ui.gd" id="1_6mlwl"]
 [ext_resource type="Texture2D" uid="uid://ra3deudpmllj" path="res://art/heart.png" id="1_qlpom"]
@@ -14,13 +14,13 @@ font = ExtResource("2_kkobe")
 font_size = 6
 font_color = Color(0.470158, 0.998568, 0.53073, 1)
 
-[node name="StatusUI" type="Control"]
+[node name="StatusUI" type="Control" unique_id=1767198671]
 layout_mode = 3
 anchors_preset = 0
 mouse_filter = 2
 script = ExtResource("1_6mlwl")
 
-[node name="Icon" type="TextureRect" parent="."]
+[node name="Icon" type="TextureRect" parent="." unique_id=1866982867]
 layout_mode = 0
 offset_right = 10.0
 offset_bottom = 10.0
@@ -28,7 +28,7 @@ texture = ExtResource("1_qlpom")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Duration" type="Label" parent="."]
+[node name="Duration" type="Label" parent="." unique_id=1274495467]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 5.0
@@ -39,7 +39,7 @@ label_settings = SubResource("LabelSettings_443hj")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Stacks" type="Label" parent="."]
+[node name="Stacks" type="Label" parent="." unique_id=1755034962]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 5.0
