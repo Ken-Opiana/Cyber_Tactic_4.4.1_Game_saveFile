@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://cg8k3pe247bub"]
+
+[ext_resource type="Texture2D" uid="uid://2hepf48embns" path="res://art/fresh_icons/relics/purge_protocol.png" id="1_kxqxc"]
+[ext_resource type="Script" uid="uid://c8n858vnm1pct" path="res://threads/purge_protocol.gd" id="2_n4cn0"]
+
+[resource]
+script = ExtResource("2_n4cn0")
+thread_name = "Purge Protocol"
+id = "purge_protocol"
+type = 4
+character_type = 2
+icon = ExtResource("1_kxqxc")
+tooltip = "[color=\"ffdf00\"]Purge Protocol[/color]
+Whenever you exhaust a card, deal 3 damage to all enemies."
+metadata/_custom_type_script = "uid://jie6cbv6kc3m"

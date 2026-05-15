@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://x71yp78dqnj1"]
+
+[ext_resource type="Script" uid="uid://cu11yrt81udcc" path="res://event_rooms/chapter_01/the_lure.gd" id="1_lure"]
+[ext_resource type="Texture2D" uid="uid://ddsyqdyd54uo1" path="res://art/the_lure.png" id="2_fcyuq"]
+[ext_resource type="PackedScene" uid="uid://dnn5kg0tp0d22" path="res://scenes/event_rooms/event_room_button.tscn" id="2_lurebtn"]
+
+[node name="TheLure" type="Control" unique_id=45204688]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lure")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1354876512]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1, 0.15, 0.3, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=738695403]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="EventImage" type="TextureRect" parent="HBoxContainer" unique_id=1755307189]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 360)
+layout_mode = 2
+texture = ExtResource("2_fcyuq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" unique_id=577498642]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="IntroScreen" type="VBoxContainer" parent="HBoxContainer/CenterContainer" unique_id=211946982]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="EventTitleLabel" type="Label" parent="HBoxContainer/CenterContainer/IntroScreen" unique_id=1159591160]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "The Lure"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/CenterContainer/IntroScreen" unique_id=730438429]
+layout_mode = 2
+
+[node name="EventDescription" type="RichTextLabel" parent="HBoxContainer/CenterContainer/IntroScreen" unique_id=1477917856]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 220)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]An urgent message just arrived...[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="StartButton" parent="HBoxContainer/CenterContainer/IntroScreen" unique_id=673416925 instance=ExtResource("2_lurebtn")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "Read the message"
+
+[node name="EventMenu" type="VBoxContainer" parent="HBoxContainer/CenterContainer" unique_id=1543190177]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MenuLabel" type="Label" parent="HBoxContainer/CenterContainer/EventMenu" unique_id=745065661]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "How do you handle it?"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/CenterContainer/EventMenu" unique_id=1938177062]
+layout_mode = 2
+
+[node name="ClickButton" parent="HBoxContainer/CenterContainer/EventMenu" unique_id=1194168909 instance=ExtResource("2_lurebtn")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(380, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 16
+text = "Click the Link"
+autowrap_mode = 2
+
+[node name="VerifyButton" parent="HBoxContainer/CenterContainer/EventMenu" unique_id=1991038168 instance=ExtResource("2_lurebtn")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(380, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 16
+text = "Verify the Sender"
+autowrap_mode = 2
+
+[node name="DeleteButton" parent="HBoxContainer/CenterContainer/EventMenu" unique_id=929413392 instance=ExtResource("2_lurebtn")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(380, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 16
+text = "Delete the Message"
+autowrap_mode = 2
+
+[node name="EventAfterMath" type="VBoxContainer" parent="HBoxContainer/CenterContainer" unique_id=1419795282]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="AftermathText" type="RichTextLabel" parent="HBoxContainer/CenterContainer/EventAfterMath" unique_id=259904489]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 280)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Result text goes here.[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="ContinueButton" parent="HBoxContainer/CenterContainer/EventAfterMath" unique_id=1031254327 instance=ExtResource("2_lurebtn")]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Continue"

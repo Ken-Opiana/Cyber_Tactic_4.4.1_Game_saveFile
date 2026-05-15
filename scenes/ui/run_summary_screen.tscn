@@ -21,6 +21,33 @@ font = ExtResource("2_ybfnd")
 [sub_resource type="LabelSettings" id="LabelSettings_qmv43"]
 font = ExtResource("2_ybfnd")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_unlock_dim"]
+bg_color = Color(0, 0, 0, 0.7)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_unlock_panel"]
+bg_color = Color(0.12, 0.14, 0.22, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.85, 0.1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="LabelSettings" id="LabelSettings_unlock_title"]
+font = ExtResource("2_ybfnd")
+font_size = 20
+font_color = Color(1, 0.85, 0.1, 1)
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_unlock_subtitle"]
+font = ExtResource("2_ybfnd")
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
 [node name="RunSummaryScreen" type="Control" unique_id=2126506227]
 process_mode = 3
 layout_mode = 3
@@ -86,6 +113,7 @@ layout_mode = 2
 
 [node name="KPEarnedLabel" type="Label" parent="MainContainer" unique_id=1167723200]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Knowledge Points Earned: 0 KP"
@@ -121,4 +149,87 @@ custom_minimum_size = Vector2(160, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_ybfnd")
-text = "Return to Menu"
+text = "Return to Hub"
+
+[node name="UnlockOverlay" type="Control" parent="." unique_id=1981452969]
+unique_name_in_owner = true
+process_mode = 3
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dimmer" type="Panel" parent="UnlockOverlay" unique_id=1962159533]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_unlock_dim")
+
+[node name="PanelBox" type="Panel" parent="UnlockOverlay" unique_id=1670002299]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -90.0
+offset_right = 150.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_unlock_panel")
+
+[node name="VBox" type="VBoxContainer" parent="UnlockOverlay/PanelBox" unique_id=725209294]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 10.0
+offset_right = -12.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="UnlockTitle" type="Label" parent="UnlockOverlay/PanelBox/VBox" unique_id=76180680]
+unique_name_in_owner = true
+layout_mode = 2
+text = "NEW CHARACTER UNLOCKED!"
+label_settings = SubResource("LabelSettings_unlock_title")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="PortraitCenter" type="CenterContainer" parent="UnlockOverlay/PanelBox/VBox" unique_id=707173768]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="UnlockPortrait" type="TextureRect" parent="UnlockOverlay/PanelBox/VBox/PortraitCenter" unique_id=1019643487]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="UnlockSubtitle" type="Label" parent="UnlockOverlay/PanelBox/VBox" unique_id=1111050170]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Architect"
+label_settings = SubResource("LabelSettings_unlock_subtitle")
+horizontal_alignment = 1
+
+[node name="UnlockContinueButton" type="Button" parent="UnlockOverlay/PanelBox/VBox" unique_id=323865316]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 28)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_ybfnd")
+text = "Continue"

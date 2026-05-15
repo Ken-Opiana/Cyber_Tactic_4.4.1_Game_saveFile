@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://2kmme3te7ctj"]
+
+[ext_resource type="Texture2D" uid="uid://c65hncpljvegm" path="res://art/fresh_icons/relics/auxiliary_battery.png" id="1_62h7y"]
+[ext_resource type="Script" uid="uid://dyfpfu8u3tf4l" path="res://threads/auxiliray_battery.gd" id="2_rb6rd"]
+
+[resource]
+script = ExtResource("2_rb6rd")
+thread_name = "Auxiliray Battery"
+id = "auxiliray_battery"
+type = 1
+icon = ExtResource("1_62h7y")
+tooltip = "[color=\"ffdf00\"]Auxiliray Battery[/color]
+At the start of combat, gain 1 Mana."
+metadata/_custom_type_script = "uid://jie6cbv6kc3m"

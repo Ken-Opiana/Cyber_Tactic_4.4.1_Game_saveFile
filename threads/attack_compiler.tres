@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://b7qgeby5vb37k"]
+
+[ext_resource type="Texture2D" uid="uid://c2vobd8l1au83" path="res://art/fresh_icons/relics/attack_compiler.png" id="1_rhx5q"]
+[ext_resource type="Script" uid="uid://b184is4tgp312" path="res://threads/attack_compiler.gd" id="2_ej460"]
+
+[resource]
+script = ExtResource("2_ej460")
+thread_name = "Attack Compiler"
+id = "attack_compiler"
+type = 4
+icon = ExtResource("1_rhx5q")
+tooltip = "[color=\"ffdf00\"]Attack Compiler[/color]
+Whenever you play 3 attacks during the same turn, gain 1 Power."
+metadata/_custom_type_script = "uid://jie6cbv6kc3m"

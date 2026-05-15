@@ -43,3 +43,6 @@ func can_appear_as_reward(character: CharacterStats) -> bool:
 	var char_name := character.character_name.to_lower()
 	
 	return thread_char_name == char_name
+
+func set_state_value(_name: String, _value: Variant) -> void:
+	pass

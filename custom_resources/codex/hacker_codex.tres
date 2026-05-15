@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CodexEntry" format=3 uid="uid://iw67tjscrrai"]
+
+[ext_resource type="Texture2D" uid="uid://8mfqegi0730d" path="res://art/hacker_icon.png" id="1_fctpj"]
+[ext_resource type="Script" uid="uid://8upc5fsyrvob" path="res://custom_resources/codex_entry.gd" id="1_w1ojl"]
+
+[resource]
+script = ExtResource("1_w1ojl")
+id = "ransomware"
+name = "Hacker"
+art = ExtResource("1_fctpj")
+tooltip_text = "Has a whole utility of tools and knowledge"
+tooltip_text_real = "He is gone... for now..."
+metadata/_custom_type_script = "uid://8upc5fsyrvob"

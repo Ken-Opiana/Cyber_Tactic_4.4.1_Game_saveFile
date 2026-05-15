@@ -1,0 +1,16 @@
+[gd_resource type="Resource" format=3 uid="uid://coax2uo1mvlk4"]
+
+[ext_resource type="Texture2D" uid="uid://d0jonqjkqbf4d" path="res://art/fresh_icons/ai_architect/quantum_shielding.png" id="1_i0ngy"]
+[ext_resource type="Script" uid="uid://bahwtsrsvtr4k" path="res://characters/wizard/cards/wizard_quantum_shielding.gd" id="1_ub123"]
+[ext_resource type="AudioStream" uid="uid://cyltxn5tlirtk" path="res://art/sfx/powerUp.wav" id="3_ggkx1"]
+
+[resource]
+script = ExtResource("1_ub123")
+name = "Quantum Shielding"
+id = "wizard_quantum_shielding"
+type = 1
+cost = 1
+icon = ExtResource("1_i0ngy")
+tooltip_text = "[center]Gain [color='0044ff']%s[/color] block. At the start of your next turn, gain 1 Energy.[/center]"
+sound = ExtResource("3_ggkx1")
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3 uid="uid://b652cdpsq4xbn"]
+
+[ext_resource type="Texture2D" uid="uid://cn7oklleoo8wg" path="res://art/fresh_icons/relics/emergency_shielding.png" id="1_5vhsx"]
+[ext_resource type="Script" uid="uid://cg4ypm7shsy66" path="res://threads/emergency_shielding.gd" id="2_5vhsx"]
+
+[resource]
+script = ExtResource("2_5vhsx")
+thread_name = "Emergency Shielding"
+id = "emergency_shielding"
+icon = ExtResource("1_5vhsx")
+tooltip = "[color=\"ffdf00\"]Emergency Shielding[/color]
+At the start of your second turn, gain 12 Defense."
+metadata/_custom_type_script = "uid://jie6cbv6kc3m"

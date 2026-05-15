@@ -1,0 +1,16 @@
+[gd_resource type="Resource" format=3 uid="uid://dhxr82ao7ox1r"]
+
+[ext_resource type="Script" uid="uid://dmomhe84rlxa3" path="res://characters/wizard/cards/wizard_bootstrap.gd" id="1_cxmyx"]
+[ext_resource type="Texture2D" uid="uid://5s5ski3aoafj" path="res://art/fresh_icons/ai_architect/bootstrap.png" id="1_woe2m"]
+
+[resource]
+script = ExtResource("1_cxmyx")
+name = "Bootstrap"
+id = "bootstrap"
+type = 1
+spell_cost = 1
+remove = true
+icon = ExtResource("1_woe2m")
+tooltip_text = "[center]Spend 1 [color='4c82ff']Cycle[/color]. Gain 1 Energy and draw 1 card. [color=\"ffdf00\"]Remove[/color].[/center]
+[center][color=light_slate_gray]Remove - removed from combat when played. Returns to deck at the end of combat[/color][/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

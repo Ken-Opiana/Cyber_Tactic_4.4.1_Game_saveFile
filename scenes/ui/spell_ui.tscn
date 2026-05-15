@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b73bgdmuah55d"]
 
 [ext_resource type="Script" uid="uid://c2qi40uyfhogm" path="res://scenes/ui/spell_ui.gd" id="1_3bhm4"]
-[ext_resource type="Texture2D" uid="uid://p0yqsrixsboc" path="res://art/tile_0102.png" id="1_l502c"]
+[ext_resource type="Texture2D" uid="uid://xinmrvxlawnw" path="res://art/cycle_icon.png" id="2_3bhm4"]
 
 [node name="SpellUI" type="HBoxContainer" unique_id=1614265760]
 offset_right = 37.0
@@ -12,7 +12,7 @@ script = ExtResource("1_3bhm4")
 [node name="SpellImage" type="TextureRect" parent="." unique_id=903858713]
 custom_minimum_size = Vector2(8, 8)
 layout_mode = 2
-texture = ExtResource("1_l502c")
+texture = ExtResource("2_3bhm4")
 expand_mode = 3
 stretch_mode = 5
 

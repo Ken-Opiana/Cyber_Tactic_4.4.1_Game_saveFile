@@ -1,13 +1,6 @@
 [gd_scene format=3 uid="uid://c8006h0o0nmgw"]
 
 [ext_resource type="Script" uid="uid://2ju4bjvgrm1i" path="res://scenes/shop/shop.gd" id="1_qxddl"]
-[ext_resource type="Script" uid="uid://jie6cbv6kc3m" path="res://custom_resources/thread_passive.gd" id="2_k4e0x"]
-[ext_resource type="Resource" uid="uid://44a423e8clh1" path="res://threads/extra_energy.tres" id="3_1p8uf"]
-[ext_resource type="Resource" uid="uid://cwxlm3oyg546w" path="res://threads/shockwave.tres" id="4_7rtu0"]
-[ext_resource type="Resource" uid="uid://hmap8l86svk1" path="res://threads/coupons.tres" id="5_72muf"]
-[ext_resource type="Resource" uid="uid://c014g8rpo2k1t" path="res://threads/reinforced_block.tres" id="6_kcjqd"]
-[ext_resource type="Resource" uid="uid://c71lq6c273fb8" path="res://threads/health_module.tres" id="8_6kbe7"]
-[ext_resource type="Resource" uid="uid://bgonfdnsivdou" path="res://threads/recycle_bin.tres" id="9_hbyua"]
 [ext_resource type="PackedScene" uid="uid://bb71f8mjtb5fh" path="res://scenes/modifier_handler/modifier_handler.tscn" id="13_dqlyb"]
 [ext_resource type="PackedScene" uid="uid://0nnepaeuhgih" path="res://scenes/modifier_handler/modifier.tscn" id="14_w60y6"]
 
@@ -20,7 +13,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_qxddl")
-shop_threads = Array[ExtResource("2_k4e0x")]([ExtResource("3_1p8uf"), ExtResource("4_7rtu0"), ExtResource("5_72muf"), ExtResource("6_kcjqd"), ExtResource("8_6kbe7"), ExtResource("9_hbyua")])
 
 [node name="UIContainer" type="Control" parent="." unique_id=1145141072]
 unique_name_in_owner = true

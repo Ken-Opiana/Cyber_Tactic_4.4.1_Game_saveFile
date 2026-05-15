@@ -2,6 +2,53 @@
 
 [ext_resource type="PackedScene" uid="uid://towi1d1vntok" path="res://scenes/pause_screen/pause_menu.tscn" id="1_bocl7"]
 [ext_resource type="Script" uid="uid://cxlfvkiv6s3o4" path="res://scenes/hub/hub.gd" id="1_koree"]
+[ext_resource type="Resource" uid="uid://cj8wg6pkgahdr" path="res://scenes/run/run_startup.tres" id="2_osesr"]
+[ext_resource type="FontFile" uid="uid://c1mfnubgq43co" path="res://art/Font Styles/Monocraft.ttc" id="3_dw1ou"]
+
+[sub_resource type="Gradient" id="Gradient_hub_bg"]
+colors = PackedColorArray(0.0925943, 0.108696, 0.555451, 1, 0.225601, 0.34753, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hub_bg"]
+gradient = SubResource("Gradient_hub_bg")
+width = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_hub_title"]
+font = ExtResource("3_dw1ou")
+font_size = 24
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.341176)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hub_subtitle"]
+font = ExtResource("3_dw1ou")
+font_size = 10
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.341176)
+
+[sub_resource type="LabelSettings" id="LabelSettings_char_name"]
+font = ExtResource("3_dw1ou")
+font_size = 20
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.341176)
+
+[sub_resource type="LabelSettings" id="LabelSettings_char_desc"]
+font = ExtResource("3_dw1ou")
+font_size = 10
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.341176)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lock"]
+font = ExtResource("3_dw1ou")
+font_size = 10
+font_color = Color(0.9, 0.6, 0.2, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_new_badge"]
+font = ExtResource("3_dw1ou")
+font_size = 12
+font_color = Color(1, 0.85, 0.1, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Hub" type="Control" unique_id=889615737]
 layout_mode = 3
@@ -11,55 +58,184 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_koree")
+run_startup = ExtResource("2_osesr")
 
-[node name="Background" type="ColorRect" parent="." unique_id=1192506279]
+[node name="Background" type="TextureRect" parent="." unique_id=1192506279]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+texture = SubResource("GradientTexture1D_hub_bg")
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2118035922]
+[node name="TitleBar" type="VBoxContainer" parent="." unique_id=2118035922]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
+offset_top = 6.0
+offset_bottom = 40.0
 grow_horizontal = 2
-grow_vertical = 2
+theme_override_constants/separation = 2
+alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1110742470]
-layout_mode = 2
-theme_override_constants/separation = 24
-
-[node name="TitleLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1839480212]
+[node name="TitleLabel" type="Label" parent="TitleBar" unique_id=1839480212]
 layout_mode = 2
 text = "HUB"
+label_settings = SubResource("LabelSettings_hub_title")
 horizontal_alignment = 1
 
-[node name="SubtitleLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1555509814]
+[node name="SubtitleLabel" type="Label" parent="TitleBar" unique_id=1555509814]
 layout_mode = 2
-text = "Plan your next infiltration"
+text = "Choose your operative"
+label_settings = SubResource("LabelSettings_hub_subtitle")
+horizontal_alignment = 1
 
-[node name="Spacer" type="Control" parent="CenterContainer/VBoxContainer" unique_id=1424550471]
-layout_mode = 2
-
-[node name="NewRunButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=920267133]
-layout_mode = 2
-text = "Start New Run
-"
-
-[node name="MainMenuButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1162600632]
-layout_mode = 2
+[node name="MainMenuButton" type="Button" parent="." unique_id=1162600632]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -94.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 34.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("3_dw1ou")
 text = "Main Menu"
 
-[node name="PlaceholderLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=126834420]
-modulate = Color(0.6, 0.6, 0.6, 1)
+[node name="SelectorRow" type="HBoxContainer" parent="." unique_id=1186898111]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -75.0
+offset_right = 200.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="PrevButton" type="Button" parent="SelectorRow" unique_id=920267133]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 60)
 layout_mode = 2
-text = "Deck Customization coming soon"
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_dw1ou")
+theme_override_font_sizes/font_size = 24
+text = "<"
+
+[node name="CenterColumn" type="VBoxContainer" parent="SelectorRow" unique_id=2146393944]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="PortraitContainer" type="CenterContainer" parent="SelectorRow/CenterColumn" unique_id=259032]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+
+[node name="CharacterPortrait" type="TextureRect" parent="SelectorRow/CenterColumn/PortraitContainer" unique_id=655741005]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(72, 90)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NewBadge" type="Label" parent="SelectorRow/CenterColumn/PortraitContainer" unique_id=126834420]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_top = 4.0
+offset_right = -2.0
+offset_bottom = 18.0
+grow_horizontal = 0
+text = "NEW!"
+label_settings = SubResource("LabelSettings_new_badge")
+horizontal_alignment = 1
+
+[node name="CharacterName" type="Label" parent="SelectorRow/CenterColumn" unique_id=340470108]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Student"
+label_settings = SubResource("LabelSettings_char_name")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LockLabel" type="Label" parent="SelectorRow/CenterColumn" unique_id=1424550471]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "[ LOCKED ]"
+label_settings = SubResource("LabelSettings_lock")
+horizontal_alignment = 1
+
+[node name="CharacterDescription" type="Label" parent="SelectorRow/CenterColumn" unique_id=962334354]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "A normie student"
+label_settings = SubResource("LabelSettings_char_desc")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="NextButton" type="Button" parent="SelectorRow" unique_id=2058634641]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 60)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_dw1ou")
+theme_override_font_sizes/font_size = 24
+text = ">"
+
+[node name="IconStrip" type="HBoxContainer" parent="." unique_id=12902452]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -70.0
+offset_right = 60.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="StartRunButton" type="Button" parent="." unique_id=1501436672]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 28)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -32.0
+offset_right = 80.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_dw1ou")
+text = "Start Run"
 
 [node name="PauseMenu" parent="." unique_id=540622390 instance=ExtResource("1_bocl7")]
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/NewRunButton" to="." method="_on_new_run_button_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="SelectorRow/PrevButton" to="." method="_on_prev_button_pressed"]
+[connection signal="pressed" from="SelectorRow/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="StartRunButton" to="." method="_on_start_run_button_pressed"]

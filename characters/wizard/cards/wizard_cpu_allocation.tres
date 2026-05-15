@@ -1,0 +1,16 @@
+[gd_resource type="Resource" format=3 uid="uid://bik2lm7atbkww"]
+
+[ext_resource type="Script" uid="uid://cuk5bnsefx4wo" path="res://characters/wizard/cards/wizard_cpu_allocation.gd" id="1_dq6id"]
+[ext_resource type="Texture2D" uid="uid://stibs61mohvi" path="res://art/fresh_icons/ai_architect/cpu_allocation.png" id="1_jdx6i"]
+
+[resource]
+script = ExtResource("1_dq6id")
+name = "CPU Allocation"
+id = "wizard_cpu_allocation"
+type = 1
+rarity = 1
+cost = 1
+spell_cost = 1
+icon = ExtResource("1_jdx6i")
+tooltip_text = "[center]Spend 1 [color='4c82ff']Cycle[/color]. Gain 1 [color='ffdf00']Power[/color] and 1 [color='ffdf00']Refine[/color].[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

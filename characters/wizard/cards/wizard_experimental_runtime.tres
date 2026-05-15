@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://ch2hlihltoehy"]
+
+[ext_resource type="Texture2D" uid="uid://b1yc4jgyr8ovc" path="res://art/fresh_icons/ai_architect/experimental_runtime.png" id="1_bh3ak"]
+[ext_resource type="Script" uid="uid://d17xlxyrrq5yt" path="res://characters/wizard/cards/wizard_experimental_runtime.gd" id="1_q084t"]
+
+[resource]
+script = ExtResource("1_q084t")
+name = "Experimental Runtime"
+id = "wizard_experimental_runtime"
+type = 1
+rarity = 1
+icon = ExtResource("1_bh3ak")
+tooltip_text = "[center]Draw 2 cards. Add a Corrupted File to your draw pile.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

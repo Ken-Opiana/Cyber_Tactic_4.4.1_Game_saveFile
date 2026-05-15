@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://bpen2icn5smh8"]
+
+[ext_resource type="Script" uid="uid://bsbsc5u6q71gr" path="res://characters/wizard/cards/wizard_resource_scaling.gd" id="1_7l82s"]
+[ext_resource type="Texture2D" uid="uid://3m78aig1o410" path="res://art/fresh_icons/ai_architect/resource_scaling.png" id="1_cv2hr"]
+
+[resource]
+script = ExtResource("1_7l82s")
+name = "Resource Scaling"
+id = "wizard_resource_scaling"
+type = 2
+cost = 1
+icon = ExtResource("1_cv2hr")
+tooltip_text = "[center]Gain 2 max Cycle.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

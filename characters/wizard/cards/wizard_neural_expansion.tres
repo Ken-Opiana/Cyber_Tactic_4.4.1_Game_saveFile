@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://btyfk6dl5pu76"]
+
+[ext_resource type="Texture2D" uid="uid://c1p2wesl37eix" path="res://art/fresh_icons/ai_architect/neural_expansion.png" id="1_ab7mx"]
+[ext_resource type="Script" uid="uid://brnoxxsgk8n5q" path="res://characters/wizard/cards/wizard_neural_expansion.gd" id="1_ld53s"]
+
+[resource]
+script = ExtResource("1_ld53s")
+name = "Neural Expansion"
+id = "wizard_neural_expansion"
+type = 2
+rarity = 2
+cost = 1
+icon = ExtResource("1_ab7mx")
+tooltip_text = "[center]At the start of your turn, draw 1 card.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

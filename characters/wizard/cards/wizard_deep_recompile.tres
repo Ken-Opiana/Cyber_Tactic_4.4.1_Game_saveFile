@@ -1,0 +1,16 @@
+[gd_resource type="Resource" format=3 uid="uid://cs440jwa0707b"]
+
+[ext_resource type="Script" uid="uid://bwsychkvp6r4s" path="res://characters/wizard/cards/wizard_deep_recompile.gd" id="1_56qfj"]
+[ext_resource type="Texture2D" uid="uid://jff6vc4kx1v3" path="res://art/fresh_icons/ai_architect/deep_recompile.png" id="1_ue5ip"]
+
+[resource]
+script = ExtResource("1_56qfj")
+name = "Deep Recompile"
+id = "wizard_deep_recompile"
+type = 1
+rarity = 2
+remove = true
+icon = ExtResource("1_ue5ip")
+tooltip_text = "[center]Shuffle all your cards into your draw pile, then draw 4 cards. [color=\"ffdf00\"]Remove[/color].[/center]
+[color=light_slate_gray]Remove - removed from combat when played. Returns to deck at the end of combat[/color][/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

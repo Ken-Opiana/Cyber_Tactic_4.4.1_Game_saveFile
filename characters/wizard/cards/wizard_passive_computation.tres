@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://sjn3o0u8q4a2"]
+
+[ext_resource type="Texture2D" uid="uid://d3laawikc7udn" path="res://art/fresh_icons/ai_architect/passive_computation.png" id="1_v4yfe"]
+[ext_resource type="Script" uid="uid://6janxj8sywvu" path="res://characters/wizard/cards/wizard_passive_computation.gd" id="2_qk7db"]
+
+[resource]
+script = ExtResource("2_qk7db")
+name = "Passive Computation"
+id = "wizard_passive_computation"
+type = 2
+rarity = 1
+cost = 1
+icon = ExtResource("1_v4yfe")
+tooltip_text = "[center]At the start of your turn, gain 1 [color='4c82ff']Cycle[/color].[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

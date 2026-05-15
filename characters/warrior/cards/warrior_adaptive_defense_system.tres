@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bl5u6hub3ihx1" path="res://art/fresh_icons/defender/adaptive_defense_system.png" id="1_1ltdp"]
 [ext_resource type="Script" uid="uid://0ejx508250om" path="res://characters/warrior/cards/warrior_adaptive_defense_system.gd" id="1_l6lh7"]
+[ext_resource type="AudioStream" uid="uid://bu6xe2s3uelks" path="res://art/sfx/sfx_4.wav" id="3_x01a6"]
 
 [resource]
 script = ExtResource("1_l6lh7")
@@ -14,4 +15,7 @@ remove = true
 icon = ExtResource("1_1ltdp")
 tooltip_text = "[center]Whenever you [color=\"ffdf00\"]Remove[/color] a card, gain 3 block.[/center]
 [center][color=light_slate_gray]Remove - removed from combat when played. Returns to deck at the end of combat[/color][/center]"
+real_world_text = "[center][color=\"gray\"]-Flavor Text-[/color][/center]
+A security system that adjusts to threats automatically."
+sound = ExtResource("3_x01a6")
 metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

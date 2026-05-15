@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://byrdat3sj5k4w"]
+
+[ext_resource type="Texture2D" uid="uid://q3xfpjtr6dii" path="res://art/fresh_icons/relics/neural_relay.png" id="1_ixhr5"]
+[ext_resource type="Script" uid="uid://bkct386l31sly" path="res://threads/neural_relay.gd" id="2_oy0pv"]
+
+[resource]
+script = ExtResource("2_oy0pv")
+thread_name = "Neural Relay"
+id = "neural_relay"
+type = 4
+character_type = 3
+icon = ExtResource("1_ixhr5")
+tooltip = "[color=\"ffdf00\"]Neural Relay[/color]
+Whenever you spend one or more Cycle, deal 3 damage to all enemies."
+metadata/_custom_type_script = "uid://jie6cbv6kc3m"

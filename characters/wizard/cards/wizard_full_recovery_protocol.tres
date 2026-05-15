@@ -1,0 +1,16 @@
+[gd_resource type="Resource" format=3 uid="uid://kjwdy35gl4fn"]
+
+[ext_resource type="Texture2D" uid="uid://l1noqv6d16i8" path="res://art/fresh_icons/ai_architect/full_recovery_protocol.png" id="1_jsvtt"]
+[ext_resource type="Script" uid="uid://bcud5hyx3xc4i" path="res://characters/wizard/cards/wizard_full_recovery_protocol.gd" id="1_m2jue"]
+
+[resource]
+script = ExtResource("1_m2jue")
+name = "Full Recovery Protocol"
+id = "wizard_full_recovery_protocol"
+type = 1
+rarity = 2
+remove = true
+icon = ExtResource("1_jsvtt")
+tooltip_text = "[center]Spend all your [color='4c82ff']Cycle[/color]. Draw as many cards and heal as many HP. [color=\"ffdf00\"]Remove[/color].[/center]
+[color=light_slate_gray]Remove - removed from combat when played. Returns to deck at the end of combat[/color][/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

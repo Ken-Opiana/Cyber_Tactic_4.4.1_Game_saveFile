@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dr1e7qxvb81no" path="res://art/fresh_icons/defender/reinforced_firewall.png" id="1_cdhg6"]
 [ext_resource type="Script" uid="uid://wa44d877we4t" path="res://characters/warrior/cards/warrior_reinforced_firewall.gd" id="1_e1yib"]
+[ext_resource type="AudioStream" uid="uid://cyltxn5tlirtk" path="res://art/sfx/powerUp.wav" id="3_kbwii"]
 
 [resource]
 script = ExtResource("1_e1yib")
@@ -11,4 +12,7 @@ type = 1
 cost = 1
 icon = ExtResource("1_cdhg6")
 tooltip_text = "[center]Gain [color='0044ff']%s[/color] block. Draw 1 card.[/center]"
+real_world_text = "[center][color=\"gray\"]-Flavor Text-[/color][/center]
+Strengthening system protection against cyber threats."
+sound = ExtResource("3_kbwii")
 metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

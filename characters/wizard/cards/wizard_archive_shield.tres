@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://cc4fgpfve0adj"]
+
+[ext_resource type="Script" uid="uid://cqnb1qs7s5brk" path="res://characters/wizard/cards/wizard_archive_shield.gd" id="1_fc4dp"]
+[ext_resource type="Texture2D" uid="uid://5jht1ybdebte" path="res://art/fresh_icons/ai_architect/archive_shield.png" id="1_objsb"]
+
+[resource]
+script = ExtResource("1_fc4dp")
+name = "Archive Shield"
+id = "wizard_archive_shield"
+type = 1
+cost = 1
+icon = ExtResource("1_objsb")
+tooltip_text = "[center]Gain block equal to 1 + the number of cards in your discard.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

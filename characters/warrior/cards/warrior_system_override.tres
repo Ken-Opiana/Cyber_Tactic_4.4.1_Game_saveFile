@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bo4y37r0182j1" path="res://art/fresh_icons/defender/system_override.png" id="1_h176f"]
 [ext_resource type="Script" uid="uid://du1nqutcacuq0" path="res://characters/warrior/cards/warrior_system_override.gd" id="2_ky4c4"]
+[ext_resource type="AudioStream" uid="uid://cyltxn5tlirtk" path="res://art/sfx/powerUp.wav" id="3_ky4c4"]
 
 [resource]
 script = ExtResource("2_ky4c4")
@@ -12,4 +13,7 @@ rarity = 2
 cost = 1
 icon = ExtResource("1_h176f")
 tooltip_text = "[center]At the start of your turn, draw 1 card and lose 1 HP.[/center]"
+real_world_text = "[center][color=\"gray\"]-Flavor Text-[/color][/center]
+Gaining unauthorized control over a system or process."
+sound = ExtResource("3_ky4c4")
 metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

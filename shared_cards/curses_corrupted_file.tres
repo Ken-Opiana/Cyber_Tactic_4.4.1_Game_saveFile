@@ -1,0 +1,16 @@
+[gd_resource type="Resource" format=3 uid="uid://ds0e4n55irogm"]
+
+[ext_resource type="Texture2D" uid="uid://bm4m2j7wwrdbd" path="res://art/fresh_icons/curses/corrupted_file.png" id="1_4lsch"]
+[ext_resource type="Script" uid="uid://bkdtslc5cwbha" path="res://shared_cards/curses_corrupted_file.gd" id="1_jm73v"]
+
+[resource]
+script = ExtResource("1_jm73v")
+name = "Corrupted File"
+id = "curses_corrupted_file"
+type = 3
+unplayable = true
+icon = ExtResource("1_4lsch")
+tooltip_text = "[center][color=\"ffdf00\"]Unplayable[/color]. At the end of your turn, take 2 damage.[/center]
+[color=light_slate_gray]Unplayable - you can't play this card.[/color][/center]
+"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

@@ -1,7 +1,6 @@
 [gd_resource type="Resource" script_class="CardPile" format=3 uid="uid://ch4gjbmnndb6c"]
 
 [ext_resource type="Script" uid="uid://db7gxbb4g4qbl" path="res://custom_resources/card.gd" id="1_wcluk"]
-[ext_resource type="Resource" uid="uid://djdrm0hdg5b23" path="res://shared_cards/infection/junk.tres" id="2_mxn01"]
 [ext_resource type="Script" uid="uid://do5h7q7uufehy" path="res://custom_resources/card_pile.gd" id="2_yp6aw"]
 [ext_resource type="Resource" uid="uid://b171ekorhtri5" path="res://characters/warrior/cards/warrior_adaptive_defense_system.tres" id="3_4psic"]
 [ext_resource type="Resource" uid="uid://daiht3oljvjoj" path="res://characters/warrior/cards/warrior_packet_strike.tres" id="4_jsvv0"]
@@ -31,5 +30,5 @@
 
 [resource]
 script = ExtResource("2_yp6aw")
-cards = Array[ExtResource("1_wcluk")]([ExtResource("2_mxn01"), ExtResource("3_4psic"), ExtResource("6_8mulo"), ExtResource("5_ck2rw"), ExtResource("6_lfp81"), ExtResource("8_rnimo"), ExtResource("8_7dnfn"), ExtResource("9_s3u5c"), ExtResource("10_4cli6"), ExtResource("11_7bbu7"), ExtResource("12_ufih0"), ExtResource("13_yoocg"), ExtResource("14_uya37"), ExtResource("4_jsvv0"), ExtResource("16_1u2qk"), ExtResource("17_5k25h"), ExtResource("6_0rq4v"), ExtResource("19_kgwp6"), ExtResource("20_q0oeo"), ExtResource("21_m4jyd"), ExtResource("23_8a1ie"), ExtResource("24_3odoa"), ExtResource("25_067yt"), ExtResource("26_tqboo"), ExtResource("27_lpfxe"), ExtResource("27_4psic")])
+cards = Array[ExtResource("1_wcluk")]([ExtResource("3_4psic"), ExtResource("6_8mulo"), ExtResource("5_ck2rw"), ExtResource("6_lfp81"), ExtResource("8_rnimo"), ExtResource("8_7dnfn"), ExtResource("9_s3u5c"), ExtResource("10_4cli6"), ExtResource("11_7bbu7"), ExtResource("12_ufih0"), ExtResource("13_yoocg"), ExtResource("14_uya37"), ExtResource("4_jsvv0"), ExtResource("16_1u2qk"), ExtResource("17_5k25h"), ExtResource("6_0rq4v"), ExtResource("19_kgwp6"), ExtResource("20_q0oeo"), ExtResource("21_m4jyd"), ExtResource("23_8a1ie"), ExtResource("24_3odoa"), ExtResource("25_067yt"), ExtResource("26_tqboo"), ExtResource("27_lpfxe"), ExtResource("27_4psic")])
 metadata/_custom_type_script = "uid://do5h7q7uufehy"

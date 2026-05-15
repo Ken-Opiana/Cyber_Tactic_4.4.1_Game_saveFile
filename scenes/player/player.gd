@@ -14,9 +14,10 @@ const WHITE_SPRITE_MATERIAL := preload("res://art/white_sprite_material.tres")
 
 
 func _replace_editor_placeholder_with_model() -> void:
-	if model_3d.has_node("StudentMExp"):
-		model_3d.get_node("StudentMExp").queue_free()
-	
+	# Clear any existing 3D model (placeholder or previously swapped-in)
+	for child in model_3d.get_children():
+		child.queue_free()
+	  
 	if stats and stats.model:
 		var real_model_3d = stats.model.instantiate()
 		model_3d.add_child(real_model_3d)
@@ -40,6 +41,7 @@ func update_player() -> void:
 		await ready
 	
 	sprite_2d.texture = stats.art
+	_replace_editor_placeholder_with_model() 
 	update_stats()
 
 func update_stats() -> void:

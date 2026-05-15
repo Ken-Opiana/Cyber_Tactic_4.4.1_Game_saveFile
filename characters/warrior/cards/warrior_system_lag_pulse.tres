@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b6yx2uto58s8h" path="res://art/fresh_icons/defender/system_lag_pulse.png" id="1_serpl"]
 [ext_resource type="Script" uid="uid://dm7hfnoddnkv" path="res://characters/warrior/cards/warrior_system_lag_pulse.gd" id="2_mnah6"]
+[ext_resource type="AudioStream" uid="uid://d23dh2wsb7n87" path="res://art/sfx/sfx_3.wav" id="3_mnah6"]
 
 [resource]
 script = ExtResource("2_mnah6")
@@ -12,4 +13,7 @@ cost = 1
 icon = ExtResource("1_serpl")
 tooltip_text = "[center]Deal [color='ff0000']%s[/color] damage and apply 1 [color='ffdf00']Vulnerable[/color] to all enemies.[/center]
 [center][color=light_slate_gray]Vulnerable: take 50%% more damage from attacks[/color][/center]"
+real_world_text = "[center][color=\"gray\"]-Flavor Text-[/color][/center]
+Slowing down systems or networks through heavy traffic or interference."
+sound = ExtResource("3_mnah6")
 metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

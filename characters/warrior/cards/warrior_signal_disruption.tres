@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dicupl87ik4re" path="res://art/fresh_icons/defender/signal_disruption.png" id="1_akq80"]
 [ext_resource type="Script" uid="uid://bwmxijw23q8u2" path="res://characters/warrior/cards/warrior_signal_disruption.gd" id="2_fmfvi"]
+[ext_resource type="AudioStream" uid="uid://d23dh2wsb7n87" path="res://art/sfx/sfx_3.wav" id="3_fmfvi"]
 
 [resource]
 script = ExtResource("2_fmfvi")
@@ -12,4 +13,7 @@ cost = 2
 icon = ExtResource("1_akq80")
 tooltip_text = "[center]Deal [color='ff0000']%s[/color] damage and apply 2 [color='ffdf00']Weakened[/color].[/center]
 [center][color=light_slate_gray]Weakened - deals 25%% less damage[/color][/center]"
+real_world_text = "[center][color=\"gray\"]-Flavor Text-[/color][/center]
+Interrupting communication to weaken attacks or connections."
+sound = ExtResource("3_fmfvi")
 metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

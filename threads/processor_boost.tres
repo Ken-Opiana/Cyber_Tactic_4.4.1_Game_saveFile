@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://f1d8pvynqcmq"]
+
+[ext_resource type="Texture2D" uid="uid://bh1gllmg8vixt" path="res://art/fresh_icons/relics/processor_boost.png" id="1_stlwe"]
+[ext_resource type="Script" uid="uid://b3vfmrn74vg4s" path="res://threads/processor_boost.gd" id="2_83j7t"]
+
+[resource]
+script = ExtResource("2_83j7t")
+thread_name = "Processor Boost"
+id = "processor_boost"
+type = 1
+icon = ExtResource("1_stlwe")
+tooltip = "[color=\"ffdf00\"]Processor Boost[/color]
+At the start of combat, gain 1 Power."
+metadata/_custom_type_script = "uid://jie6cbv6kc3m"

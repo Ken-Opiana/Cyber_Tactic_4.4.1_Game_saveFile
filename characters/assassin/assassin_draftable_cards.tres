@@ -7,7 +7,6 @@
 [ext_resource type="Resource" uid="uid://covv23ioewnyr" path="res://characters/assassin/cards/assassin_botnet_barrage.tres" id="4_dq828"]
 [ext_resource type="Resource" uid="uid://wpjs7s8w5vw6" path="res://characters/assassin/cards/assassin_cache_reload.tres" id="5_eh5wq"]
 [ext_resource type="Resource" uid="uid://bqcek60gk3g7x" path="res://characters/assassin/cards/assassin_cloaking_script.tres" id="6_es0cp"]
-[ext_resource type="Resource" uid="uid://d01k38p3a4i5k" path="res://characters/assassin/cards/assassin_critical_exploit.tres" id="7_l62ua"]
 [ext_resource type="Resource" uid="uid://byypx5wpbhq0l" path="res://characters/assassin/cards/assassin_distributed_denial.tres" id="8_qqnsy"]
 [ext_resource type="Resource" uid="uid://c8mk61qigpdjg" path="res://characters/assassin/cards/assassin_exploit_probe.tres" id="9_1fbvw"]
 [ext_resource type="Resource" uid="uid://dmrf1p1pa5ycl" path="res://characters/assassin/cards/assassin_full_recompile.tres" id="10_jedck"]
@@ -17,7 +16,6 @@
 [ext_resource type="Resource" uid="uid://nsgcggocww5k" path="res://characters/assassin/cards/assassin_phishing_attack.tres" id="14_5svpf"]
 [ext_resource type="Resource" uid="uid://dmbfkx2vi4e8d" path="res://characters/assassin/cards/assassin_precision_exploit.tres" id="15_fe1gf"]
 [ext_resource type="Resource" uid="uid://dglvjb83rs25f" path="res://characters/assassin/cards/assassin_proxy_pivot.tres" id="16_x8q0e"]
-[ext_resource type="Resource" uid="uid://ulrkvjo3noe7" path="res://characters/assassin/cards/assassin_proxy_shield.tres" id="17_tcjj0"]
 [ext_resource type="Resource" uid="uid://dnvge7deqdhw5" path="res://characters/assassin/cards/assassin_rapid_breach.tres" id="18_f4fx5"]
 [ext_resource type="Resource" uid="uid://boid1vfivyue1" path="res://characters/assassin/cards/assassin_resource_allocation.tres" id="19_acths"]
 [ext_resource type="Resource" uid="uid://4f6ui0h5wf87" path="res://characters/assassin/cards/assassin_secure_routing.tres" id="20_6o46c"]
@@ -25,5 +23,5 @@
 
 [resource]
 script = ExtResource("2_uvfdm")
-cards = Array[ExtResource("1_w5gqk")]([ExtResource("2_m3q4f"), ExtResource("3_xfrt5"), ExtResource("4_dq828"), ExtResource("5_eh5wq"), ExtResource("6_es0cp"), ExtResource("7_l62ua"), ExtResource("8_qqnsy"), ExtResource("9_1fbvw"), ExtResource("10_jedck"), ExtResource("11_bx6je"), ExtResource("12_hmtcs"), ExtResource("13_c0c3g"), ExtResource("14_5svpf"), ExtResource("15_fe1gf"), ExtResource("16_x8q0e"), ExtResource("17_tcjj0"), ExtResource("18_f4fx5"), ExtResource("19_acths"), ExtResource("20_6o46c"), ExtResource("21_fiodx")])
+cards = Array[ExtResource("1_w5gqk")]([ExtResource("2_m3q4f"), ExtResource("3_xfrt5"), ExtResource("4_dq828"), ExtResource("5_eh5wq"), ExtResource("6_es0cp"), ExtResource("8_qqnsy"), ExtResource("9_1fbvw"), ExtResource("10_jedck"), ExtResource("11_bx6je"), ExtResource("12_hmtcs"), ExtResource("13_c0c3g"), ExtResource("14_5svpf"), ExtResource("15_fe1gf"), ExtResource("16_x8q0e"), ExtResource("18_f4fx5"), ExtResource("19_acths"), ExtResource("20_6o46c"), ExtResource("21_fiodx")])
 metadata/_custom_type_script = "uid://do5h7q7uufehy"

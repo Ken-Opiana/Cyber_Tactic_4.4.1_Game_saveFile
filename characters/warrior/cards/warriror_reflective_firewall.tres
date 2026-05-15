@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c6bwrydixd35f" path="res://art/fresh_icons/defender/reflective_firewall.png" id="1_rmov6"]
 [ext_resource type="Script" uid="uid://cavad3kkdafrt" path="res://characters/warrior/cards/warriror_reflective_firewall.gd" id="1_sxybp"]
+[ext_resource type="AudioStream" uid="uid://wjv1qtui7xcq" path="res://art/sfx/sfx_1.wav" id="3_nyw7w"]
 
 [resource]
 script = ExtResource("1_sxybp")
@@ -11,4 +12,7 @@ target = 1
 cost = 1
 icon = ExtResource("1_rmov6")
 tooltip_text = "[center]Deal [color='ff0000']%s[/color] damage. Gain [color='0044ff']%s[/color] Defense.[/center]"
+real_world_text = "[center][color=\"gray\"]-Flavor Text-[/color][/center]
+A defense system that blocks and redirects suspicious activity."
+sound = ExtResource("3_nyw7w")
 metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

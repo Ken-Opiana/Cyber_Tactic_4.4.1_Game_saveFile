@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://d21lxtscxds0x"]
+
+[ext_resource type="Texture2D" uid="uid://b6jxths23wxon" path="res://art/fresh_icons/ai_architect/encryption_shield.png" id="1_7i1vr"]
+[ext_resource type="Script" uid="uid://ct0f7cnlvcmm6" path="res://characters/wizard/cards/wizard_encryption_shield.gd" id="2_wtry0"]
+
+[resource]
+script = ExtResource("2_wtry0")
+name = "Encryption Shield"
+id = "wizard_encryption_shield"
+type = 1
+cost = 1
+icon = ExtResource("1_7i1vr")
+tooltip_text = "[center]Gain [color='0044ff']%s[/color] block.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

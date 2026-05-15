@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://crdt6ag6cp4uj"]
+
+[ext_resource type="Texture2D" uid="uid://56fiqcetytmd" path="res://art/fresh_icons/relics/stealth_suite.png" id="1_uom7k"]
+[ext_resource type="Script" uid="uid://cdp2qmqh85yxi" path="res://threads/stealth_suite.gd" id="2_4pr54"]
+
+[resource]
+script = ExtResource("2_4pr54")
+thread_name = "Stealth Suite"
+id = "stealth_suite"
+type = 4
+character_type = 1
+icon = ExtResource("1_uom7k")
+tooltip = "[color=\"ffdf00\"]Stealth Suite[/color]
+Whenever you discard a card, gain 3 block."
+metadata/_custom_type_script = "uid://jie6cbv6kc3m"

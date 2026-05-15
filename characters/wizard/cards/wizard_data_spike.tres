@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://d2pshogrossce"]
+
+[ext_resource type="Texture2D" uid="uid://cme41b7pnd565" path="res://art/fresh_icons/ai_architect/data_spike.png" id="1_7bmwm"]
+[ext_resource type="Script" uid="uid://bi1cxk40edjxd" path="res://characters/wizard/cards/wizard_data_spike.gd" id="2_0hku8"]
+
+[resource]
+script = ExtResource("2_0hku8")
+name = "Data Spike"
+id = "wizard_data_spike"
+target = 1
+cost = 1
+icon = ExtResource("1_7bmwm")
+tooltip_text = "[center]Deal [color='ff0000']%s[/color] damage.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

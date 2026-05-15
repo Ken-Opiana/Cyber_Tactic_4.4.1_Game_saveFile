@@ -6,7 +6,6 @@ const SHOP_UI1_SCENE := preload("res://scenes/shop/shop_ui1.tscn")
 const SHOP_UI2_SCENE := preload("res://scenes/shop/shop_ui2.tscn")
 
 # ── Exports (assigned in shop.tscn, same as before) ───────────────────────────
-@export var shop_threads: Array[ThreadPassive]
 @export var char_stats: CharacterStats
 @export var run_stats: RunStats
 @export var thread_handler: ThreadHandler
@@ -36,6 +35,8 @@ var _coupon_applied: bool = false
 # ── Transition state ───────────────────────────────────────────────────────────
 var _transitioning: bool = false
 
+# Shop thread pool — loaded from .tres instead of an export.
+var shop_threads: ThreadPool = load("res://threads/thread_pools/shop_thread_pool.tres")
 
 func _ready() -> void:
 	Events.shop_thread_bought.connect(_on_shop_thread_bought_modifier_check)
@@ -147,7 +148,7 @@ func _show_ui2() -> void:
 	_ui2.run_stats        = run_stats
 	_ui2.thread_handler   = thread_handler
 	_ui2.modifier_handler = modifier_handler
-	_ui2.set_available_threads(shop_threads)
+	_ui2.set_available_threads(shop_threads.pool)
 
 	_ui2.back_pressed.connect(_on_ui2_back_pressed)
 	_ui2.tray_collected.connect(_on_tray_collected)
@@ -292,10 +293,8 @@ func _generate_shop_threads() -> void:
 	_thread_ids.clear()
 	_thread_prices.clear()
 
-	var available_threads := shop_threads.filter(
-		func(thread: ThreadPassive):
-			return thread.can_appear_as_reward(char_stats) and not thread_handler.has_thread(thread.id)
-	)
+	# Uses ThreadPool's built-in filter helper.
+	var available_threads := shop_threads.get_available_threads(char_stats, thread_handler)
 	RNG.array_shuffle(available_threads)
 	var shop_threads_array: Array[ThreadPassive] = available_threads.slice(0, 4)
 
@@ -366,7 +365,7 @@ func _find_card(id: String) -> Card:
 
 
 func _find_thread(id: String) -> ThreadPassive:
-	for t: ThreadPassive in shop_threads:
+	for t: ThreadPassive in shop_threads.pool:
 		if t.id == id:
 			return t
 	return null

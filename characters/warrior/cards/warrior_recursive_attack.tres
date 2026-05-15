@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dmugwlij4xa1c" path="res://art/fresh_icons/defender/recursive_attack.png" id="1_62t7q"]
 [ext_resource type="Script" uid="uid://qraib38s2eh2" path="res://characters/warrior/cards/warrior_recursive_attack.gd" id="1_bow1y"]
+[ext_resource type="AudioStream" uid="uid://d23dh2wsb7n87" path="res://art/sfx/sfx_3.wav" id="3_mau2n"]
 
 [resource]
 script = ExtResource("1_bow1y")
@@ -12,4 +13,7 @@ target = 1
 cost = 1
 icon = ExtResource("1_62t7q")
 tooltip_text = "[center]Deal [color='ff0000']%s[/color] damage. +%s damage this combat.[/center]"
+real_world_text = "[center][color=\"gray\"]-Flavor Text-[/color][/center]
+A repeated attack that becomes stronger over time."
+sound = ExtResource("3_mau2n")
 metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

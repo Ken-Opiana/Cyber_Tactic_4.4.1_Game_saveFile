@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://bhrslpw51ayu5"]
+
+[ext_resource type="Texture2D" uid="uid://cl523xcey1oic" path="res://art/fresh_icons/relics/reinforced_chassis.png" id="1_arral"]
+[ext_resource type="Script" uid="uid://cil35lnf7s22c" path="res://threads/reinforced_chassis.gd" id="2_oim28"]
+
+[resource]
+script = ExtResource("2_oim28")
+thread_name = "Reinforced Chassis"
+id = "reinforced_chassis"
+type = 4
+icon = ExtResource("1_arral")
+tooltip = "[color=\"ffdf00\"]Reinforced Chassis[/color]
+Gain 7 max HP."
+metadata/_custom_type_script = "uid://jie6cbv6kc3m"

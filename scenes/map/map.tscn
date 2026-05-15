@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://y5cqwnshg50s"]
+[gd_scene format=3 uid="uid://y5cqwnshg50s"]
 
 [ext_resource type="Script" uid="uid://n6221co7xgoo" path="res://scenes/map/map.gd" id="1_bd6jt"]
 [ext_resource type="Script" uid="uid://3rrc105e18wf" path="res://scenes/map/map_generator.gd" id="2_ewjbt"]
-[ext_resource type="AudioStream" uid="uid://bfoo1bs3kkc51" path="res://art/music/Updating.mp3" id="2_fcby6"]
 [ext_resource type="Resource" uid="uid://5vocm1gyjpxs" path="res://battles/chapter1/battle_stats_pool1.tres" id="3_a7bss"]
 [ext_resource type="Resource" uid="uid://cjhpms5hechb6" path="res://scenes/event_rooms/event_room_pool_01.tres" id="4_ph54e"]
 
@@ -13,32 +12,31 @@ colors = PackedColorArray(0.0430392, 0.0430392, 0.0430392, 1, 0.0328372, 0.05372
 gradient = SubResource("Gradient_ph54e")
 width = 50
 
-[node name="Map" type="Node2D"]
+[node name="Map" type="Node2D" unique_id=1422310816]
 script = ExtResource("1_bd6jt")
-music = ExtResource("2_fcby6")
 
-[node name="Visuals" type="Node2D" parent="."]
+[node name="Visuals" type="Node2D" parent="." unique_id=784168824]
 
-[node name="Lines" type="Node2D" parent="Visuals"]
+[node name="Lines" type="Node2D" parent="Visuals" unique_id=27065306]
 unique_name_in_owner = true
 
-[node name="Rooms" type="Node2D" parent="Visuals"]
+[node name="Rooms" type="Node2D" parent="Visuals" unique_id=763687209]
 unique_name_in_owner = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1786264470]
 position = Vector2(184, 0)
 offset = Vector2(128, 72)
 zoom = Vector2(1.4, 1.4)
 
-[node name="MapGenerator" type="Node" parent="."]
+[node name="MapGenerator" type="Node" parent="." unique_id=577526823]
 script = ExtResource("2_ewjbt")
 battle_stats_pool = ExtResource("3_a7bss")
 event_room_pool = ExtResource("4_ph54e")
 
-[node name="MapBackground" type="CanvasLayer" parent="."]
+[node name="MapBackground" type="CanvasLayer" parent="." unique_id=318401759]
 layer = -1
 
-[node name="Background" type="TextureRect" parent="MapBackground"]
+[node name="Background" type="TextureRect" parent="MapBackground" unique_id=618657308]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://cxyq4i8fodpq1"]
+
+[ext_resource type="Texture2D" uid="uid://bo8n4b1er262e" path="res://art/fresh_icons/relics/adaptive_firewall_chip.png" id="1_nugto"]
+[ext_resource type="Script" uid="uid://d4dt4bbgretj1" path="res://threads/adaptive_firewall_chip.gd" id="1_w11ir"]
+
+[resource]
+script = ExtResource("1_w11ir")
+thread_name = "Adaptive Firewall Chip"
+id = "adaptive_firewall_chip"
+type = 2
+character_type = 2
+icon = ExtResource("1_nugto")
+tooltip = "[color=\"ffdf00\"]Adaptive Firewall Chip[/color]
+At the end of your turn, gain 3 Defense."
+metadata/_custom_type_script = "uid://jie6cbv6kc3m"

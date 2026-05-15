@@ -1,0 +1,17 @@
+[gd_resource type="Resource" format=3 uid="uid://c3415dkgo0a7"]
+
+[ext_resource type="Script" uid="uid://bfl8wsxs356w5" path="res://characters/wizard/cards/wizard_adaptive_algorithm.gd" id="1_s7bmk"]
+[ext_resource type="Texture2D" uid="uid://cw7458re80avn" path="res://art/fresh_icons/ai_architect/adaptive_algorithm.png" id="1_u7e4v"]
+
+[resource]
+script = ExtResource("1_s7bmk")
+name = "Adaptive Algorithm"
+id = "wizard_adaptive_algorithm"
+type = 1
+rarity = 2
+remove = true
+icon = ExtResource("1_u7e4v")
+tooltip_text = "[center]Add a random Power to your hand. It costs 0. [color=\"ffdf00\"]Remove[/color].[/center]
+[color=light_slate_gray]Remove - removed from combat when played. Returns to deck at the end of combat[/color][/center]
+"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://q2mj0kh6e7m5"]
+
+[ext_resource type="Texture2D" uid="uid://rrgfucru5m03" path="res://art/fresh_icons/relics/backup_drive.png" id="1_poasi"]
+[ext_resource type="Script" uid="uid://be2n5muu0jo8h" path="res://threads/backup_drive.gd" id="2_4vif0"]
+
+[resource]
+script = ExtResource("2_4vif0")
+thread_name = "Backup Drive"
+id = "backup_drive"
+type = 4
+icon = ExtResource("1_poasi")
+tooltip = "[color=\"ffdf00\"]Backup Drive[/color]
+Whenever you shuffle your Draw Pile, gain 6 Defense."
+metadata/_custom_type_script = "uid://jie6cbv6kc3m"

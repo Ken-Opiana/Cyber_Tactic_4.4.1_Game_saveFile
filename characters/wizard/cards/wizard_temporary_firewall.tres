@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3 uid="uid://rg1gevv3blps"]
+
+[ext_resource type="Texture2D" uid="uid://d4nj88pkhtqxa" path="res://art/fresh_icons/ai_architect/temporary_firewall.png" id="1_6efu5"]
+[ext_resource type="Script" uid="uid://crv2m515pa5xh" path="res://characters/wizard/cards/wizard_temporary_firewall.gd" id="1_myq36"]
+
+[resource]
+script = ExtResource("1_myq36")
+name = "Temporary Firewall"
+id = "wizard_temporary_firewall"
+type = 1
+icon = ExtResource("1_6efu5")
+tooltip_text = "[center]Gain [color='0044ff']%s[/color] block. -1 block this combat.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

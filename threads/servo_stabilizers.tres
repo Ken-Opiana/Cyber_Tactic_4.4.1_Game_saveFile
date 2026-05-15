@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://ch7sn6j55mvj0"]
+
+[ext_resource type="Texture2D" uid="uid://qt4y21ispvm" path="res://art/fresh_icons/relics/servo_stabilizers.png" id="1_eeoox"]
+[ext_resource type="Script" uid="uid://g0fmulfnijaw" path="res://threads/servo_stabilizers.gd" id="2_ppo1s"]
+
+[resource]
+script = ExtResource("2_ppo1s")
+thread_name = "Servo Stabilizers"
+id = "servo_stabilizers"
+type = 1
+icon = ExtResource("1_eeoox")
+tooltip = "[color=\"ffdf00\"]Servo Stabilizers[/color]
+At the start of combat, gain 1 Refine."
+metadata/_custom_type_script = "uid://jie6cbv6kc3m"

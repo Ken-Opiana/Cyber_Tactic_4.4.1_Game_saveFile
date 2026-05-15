@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://dn0x88hwtvyl4"]
+
+[ext_resource type="Texture2D" uid="uid://dv8425lvq2rux" path="res://art/fresh_icons/relics/auto_barrier.png" id="1_f3351"]
+[ext_resource type="Script" uid="uid://lqui5k2da5ws" path="res://threads/auto_barrier.gd" id="2_7ril0"]
+
+[resource]
+script = ExtResource("2_7ril0")
+thread_name = "Auto Barrier"
+id = "auto_barrier"
+type = 4
+icon = ExtResource("1_f3351")
+tooltip = "[color=\"ffdf00\"]Auto Barrier[/color]
+At the end of your turn, if you have no block, gain 5 block."
+metadata/_custom_type_script = "uid://jie6cbv6kc3m"

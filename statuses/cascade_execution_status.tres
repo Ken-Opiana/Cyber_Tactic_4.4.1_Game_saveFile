@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CascadeExecution" format=3 uid="uid://bcfskot6m0hiw"]
+
+[ext_resource type="Texture2D" uid="uid://ultpywpma2xm" path="res://art/fresh_icons/ai_architect/cascade_execution.png" id="1_tc5yb"]
+[ext_resource type="Script" uid="uid://cu12k2hpk0p2i" path="res://statuses/cascade_execution_status.gd" id="1_ys5xi"]
+
+[resource]
+script = ExtResource("1_ys5xi")
+id = "cascade_execution_status"
+type = 2
+effect_type = 1
+stack_type = 1
+stacks = 1
+icon = ExtResource("1_tc5yb")
+tooltip = "Cascade Execution: whenever you gain a Cycle, deal %s damage to a random enemy."
+metadata/_custom_type_script = "uid://v7sfotas0ox0"

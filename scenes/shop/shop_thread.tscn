@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://try4g5bpiloc" path="res://scenes/shop/shop_thread.gd" id="1_1inwf"]
 [ext_resource type="PackedScene" uid="uid://dy03obqy51h0k" path="res://scenes/thread_handler/thread_ui.tscn" id="1_ndjpn"]
-[ext_resource type="Resource" uid="uid://44a423e8clh1" path="res://threads/extra_energy.tres" id="2_vu2cy"]
 [ext_resource type="FontFile" uid="uid://c1mfnubgq43co" path="res://art/Font Styles/Monocraft.ttc" id="4_er4wc"]
 [ext_resource type="Texture2D" uid="uid://c4hcddu2md8wb" path="res://art/Cache10.png" id="5_2eusy"]
 
@@ -12,7 +11,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/separation = 2
 script = ExtResource("1_1inwf")
-thread = ExtResource("2_vu2cy")
 
 [node name="ThreadContainer" type="CenterContainer" parent="." unique_id=1919406654]
 unique_name_in_owner = true
@@ -46,6 +44,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 13)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.94, 0.564, 0, 1)
 theme_override_fonts/font = ExtResource("4_er4wc")
 theme_override_font_sizes/font_size = 9
 text = "999"

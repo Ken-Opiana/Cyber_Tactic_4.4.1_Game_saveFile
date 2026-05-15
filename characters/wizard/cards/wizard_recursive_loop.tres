@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://blrdbxshlixi7"]
+
+[ext_resource type="Script" uid="uid://hmnx87lb5q7y" path="res://characters/wizard/cards/wizard_recursive_loop.gd" id="1_7q5jm"]
+[ext_resource type="Texture2D" uid="uid://be5k0ie1htvut" path="res://art/fresh_icons/ai_architect/recursive_loop.png" id="1_cuxel"]
+
+[resource]
+script = ExtResource("1_7q5jm")
+name = "Recursive Loop"
+id = "wizard_recursive_loop"
+target = 1
+cost = 1
+spell_cost = 1
+icon = ExtResource("1_cuxel")
+tooltip_text = "[center]Spend 1 [color='4c82ff']Cycle[/color]. Deal [color='ff0000']%s[/color] damage two times.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

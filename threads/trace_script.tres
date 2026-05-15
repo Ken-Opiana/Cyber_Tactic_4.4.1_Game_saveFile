@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://boqwctp28c4ew"]
+
+[ext_resource type="Script" uid="uid://dc8ckahgk1ab8" path="res://threads/trace_script.gd" id="1_gpx24"]
+[ext_resource type="Texture2D" uid="uid://i6gkin87u3a4" path="res://art/fresh_icons/relics/trace_script.png" id="1_jhak7"]
+
+[resource]
+script = ExtResource("1_gpx24")
+thread_name = "Trace Script"
+id = "trace_script"
+type = 4
+character_type = 1
+icon = ExtResource("1_jhak7")
+tooltip = "[color=\"ffdf00\"]Trace Script[/color]
+Whenever you play a card with a cost of 0, deal 1 damage to all enemies."
+metadata/_custom_type_script = "uid://jie6cbv6kc3m"

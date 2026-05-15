@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="CardPile" format=3 uid="uid://bhqhbf3rnltpt"]
+
+[ext_resource type="Script" uid="uid://db7gxbb4g4qbl" path="res://custom_resources/card.gd" id="1_mipos"]
+[ext_resource type="Resource" uid="uid://c3415dkgo0a7" path="res://characters/wizard/cards/wizard_adaptive_algorithm.tres" id="2_07npt"]
+[ext_resource type="Script" uid="uid://do5h7q7uufehy" path="res://custom_resources/card_pile.gd" id="2_kj4m2"]
+[ext_resource type="Resource" uid="uid://cc4fgpfve0adj" path="res://characters/wizard/cards/wizard_archive_shield.tres" id="3_rktw4"]
+[ext_resource type="Resource" uid="uid://dhxr82ao7ox1r" path="res://characters/wizard/cards/wizard_bootstrap.tres" id="4_hd76j"]
+[ext_resource type="Resource" uid="uid://52w20dv5b11w" path="res://characters/wizard/cards/wizard_cascade_execution.tres" id="5_6kqyj"]
+[ext_resource type="Resource" uid="uid://bik2lm7atbkww" path="res://characters/wizard/cards/wizard_cpu_allocation.tres" id="6_foedj"]
+[ext_resource type="Resource" uid="uid://cxqqxwwcw3wm5" path="res://characters/wizard/cards/wizard_data_analysis.tres" id="7_jggjc"]
+[ext_resource type="Resource" uid="uid://d2pshogrossce" path="res://characters/wizard/cards/wizard_data_spike.tres" id="8_steqo"]
+[ext_resource type="Resource" uid="uid://cs440jwa0707b" path="res://characters/wizard/cards/wizard_deep_recompile.tres" id="9_mbbew"]
+[ext_resource type="Resource" uid="uid://d21lxtscxds0x" path="res://characters/wizard/cards/wizard_encryption_shield.tres" id="10_lmotn"]
+[ext_resource type="Resource" uid="uid://ch2hlihltoehy" path="res://characters/wizard/cards/wizard_experimental_runtime.tres" id="11_biwd7"]
+[ext_resource type="Resource" uid="uid://jqkey7ylv2nj" path="res://characters/wizard/cards/wizard_failsafe_protocol.tres" id="12_s6dlt"]
+[ext_resource type="Resource" uid="uid://kjwdy35gl4fn" path="res://characters/wizard/cards/wizard_full_recovery_protocol.tres" id="13_qbiib"]
+[ext_resource type="Resource" uid="uid://btyfk6dl5pu76" path="res://characters/wizard/cards/wizard_neural_expansion.tres" id="14_gwagb"]
+[ext_resource type="Resource" uid="uid://dq4fm0qya0k87" path="res://characters/wizard/cards/wizard_packet_barrage.tres" id="15_duran"]
+[ext_resource type="Resource" uid="uid://sjn3o0u8q4a2" path="res://characters/wizard/cards/wizard_passive_computation.tres" id="16_y3frm"]
+[ext_resource type="Resource" uid="uid://31e1m8ifut7b" path="res://characters/wizard/cards/wizard_power_surge.tres" id="17_aulde"]
+[ext_resource type="Resource" uid="uid://g1p86cwn86tm" path="res://characters/wizard/cards/wizard_quantum_barrier.tres" id="18_5swpd"]
+[ext_resource type="Resource" uid="uid://coax2uo1mvlk4" path="res://characters/wizard/cards/wizard_quantum_shielding.tres" id="19_ww2g1"]
+[ext_resource type="Resource" uid="uid://b7sre0t3k2fga" path="res://characters/wizard/cards/wizard_reactive_kernel.tres" id="20_1jw2n"]
+[ext_resource type="Resource" uid="uid://blrdbxshlixi7" path="res://characters/wizard/cards/wizard_recursive_loop.tres" id="21_jyjjh"]
+[ext_resource type="Resource" uid="uid://bpen2icn5smh8" path="res://characters/wizard/cards/wizard_resource_scaling.tres" id="22_c3pt0"]
+[ext_resource type="Resource" uid="uid://cg0dierqq1doy" path="res://characters/wizard/cards/wizard_system_purge.tres" id="23_i27al"]
+[ext_resource type="Resource" uid="uid://rg1gevv3blps" path="res://characters/wizard/cards/wizard_temporary_firewall.tres" id="24_w8bwb"]
+[ext_resource type="Resource" uid="uid://d4gndpkamv1jk" path="res://characters/wizard/cards/wizard_vulnerability_injection.tres" id="25_0yyfn"]
+
+[resource]
+script = ExtResource("2_kj4m2")
+cards = Array[ExtResource("1_mipos")]([ExtResource("2_07npt"), ExtResource("3_rktw4"), ExtResource("4_hd76j"), ExtResource("5_6kqyj"), ExtResource("6_foedj"), ExtResource("7_jggjc"), ExtResource("8_steqo"), ExtResource("9_mbbew"), ExtResource("10_lmotn"), ExtResource("11_biwd7"), ExtResource("12_s6dlt"), ExtResource("13_qbiib"), ExtResource("14_gwagb"), ExtResource("15_duran"), ExtResource("16_y3frm"), ExtResource("17_aulde"), ExtResource("18_5swpd"), ExtResource("19_ww2g1"), ExtResource("20_1jw2n"), ExtResource("21_jyjjh"), ExtResource("22_c3pt0"), ExtResource("23_i27al"), ExtResource("24_w8bwb"), ExtResource("25_0yyfn")])
+metadata/_custom_type_script = "uid://do5h7q7uufehy"

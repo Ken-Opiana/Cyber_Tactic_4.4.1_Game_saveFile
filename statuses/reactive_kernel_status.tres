@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://bb46g4wm787in"]
+
+[ext_resource type="Texture2D" uid="uid://d4ipo1gxsboik" path="res://art/fresh_icons/ai_architect/reactive_kernel.png" id="1_rh58r"]
+[ext_resource type="Script" uid="uid://bj8177n8bxxhb" path="res://statuses/reactive_kernel_status.gd" id="1_wet1x"]
+
+[resource]
+script = ExtResource("1_wet1x")
+id = "reactive_kernel_status"
+type = 2
+effect_type = 1
+stack_type = 1
+stacks = 1
+icon = ExtResource("1_rh58r")
+tooltip = "Reactive Kernel: whenever you take damage, gain %s Cycle(s)."
+metadata/_custom_type_script = "uid://v7sfotas0ox0"

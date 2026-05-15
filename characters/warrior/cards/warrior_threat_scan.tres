@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bk3s4hej3vilb" path="res://characters/warrior/cards/warrior_threat_scan.gd" id="1_r0jjl"]
 [ext_resource type="Texture2D" uid="uid://dbqywgw7meq2x" path="res://art/fresh_icons/defender/threat_scan.png" id="1_sdv5p"]
+[ext_resource type="AudioStream" uid="uid://bty1q3l7ltsla" path="res://art/sfx/hitHurt.wav" id="3_l8o4t"]
 
 [resource]
 script = ExtResource("1_r0jjl")
@@ -15,4 +16,7 @@ icon = ExtResource("1_sdv5p")
 tooltip_text = "[center]Apply 1 [color='ffdf00']Weakened[/color] to all enemies. [color=\"ffdf00\"]Remove[/color].[/center]
 [center][color=light_slate_gray]Remove - removed from combat when played. Returns to deck at the end of combat[/color][/center]
 [center][color=light_slate_gray]Weakened - attacks deal 25% less damage[/color][/center]"
+real_world_text = "[center][color=\"gray\"]-Flavor Text-[/color][/center]
+Scanning systems to detect possible vulnerabilities or threats."
+sound = ExtResource("3_l8o4t")
 metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://lyk62n7whs8c"]
+
+[ext_resource type="Script" uid="uid://cr5ftqxubjt0p" path="res://statuses/passive_computation_status.gd" id="1_dydjb"]
+[ext_resource type="Texture2D" uid="uid://d3laawikc7udn" path="res://art/fresh_icons/ai_architect/passive_computation.png" id="1_xnlut"]
+
+[resource]
+script = ExtResource("1_dydjb")
+id = "passive_computation_status"
+effect_type = 1
+stack_type = 1
+stacks = 1
+icon = ExtResource("1_xnlut")
+tooltip = "Passive Computation: at the start of your turn, gain %s Cycle(s)."
+metadata/_custom_type_script = "uid://v7sfotas0ox0"

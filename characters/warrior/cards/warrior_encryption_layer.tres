@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b1n4cgh8btlg4" path="res://art/fresh_icons/defender/encryption_layer.png" id="1_0j5af"]
 [ext_resource type="Script" uid="uid://b81268asv3nhk" path="res://characters/warrior/cards/warrior_encryption_layer.gd" id="1_4ifbe"]
+[ext_resource type="AudioStream" uid="uid://cwxi3qclk5ys5" path="res://art/sfx/sfx_2.wav" id="3_y5prc"]
 
 [resource]
 script = ExtResource("1_4ifbe")
@@ -12,4 +13,7 @@ rarity = 1
 cost = 1
 icon = ExtResource("1_0j5af")
 tooltip_text = "[center]Double your block.[/center]"
+real_world_text = "[center][color=\"gray\"]-Flavor Text-[/color][/center]
+Adding extra protection to secure information and data."
+sound = ExtResource("3_y5prc")
 metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

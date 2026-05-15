@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://c077twntl2n1v"]
+
+[ext_resource type="Texture2D" uid="uid://cxedotssf8nk1" path="res://art/fresh_icons/relics/threat_broadcast.png" id="1_ccxu7"]
+[ext_resource type="Script" uid="uid://chqvskvd1wabv" path="res://threads/threat_broadcast.gd" id="2_fwaa8"]
+
+[resource]
+script = ExtResource("2_fwaa8")
+thread_name = "Threat Broadcast"
+id = "threat_broadcast"
+type = 1
+icon = ExtResource("1_ccxu7")
+tooltip = "[color=\"ffdf00\"]Threat Broadcast[/color]
+At the start of combat, apply 1 Weakened to all enemies."
+metadata/_custom_type_script = "uid://jie6cbv6kc3m"

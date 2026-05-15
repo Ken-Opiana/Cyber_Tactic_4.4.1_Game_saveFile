@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://31e1m8ifut7b"]
+
+[ext_resource type="Texture2D" uid="uid://cwmjciou8g5jr" path="res://art/fresh_icons/ai_architect/power_surge.png" id="1_2pspd"]
+[ext_resource type="Script" uid="uid://jn27xw8ykbsg" path="res://characters/wizard/cards/wizard_power_surge.gd" id="1_8dkm2"]
+
+[resource]
+script = ExtResource("1_8dkm2")
+name = "Power Surge"
+id = "wizard_power_surge"
+target = 1
+cost = 1
+icon = ExtResource("1_2pspd")
+tooltip_text = "[center]Deal [color='ff0000']%s[/color] damage. Gain 1 [color='4c82ff']Cycle[/color].[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

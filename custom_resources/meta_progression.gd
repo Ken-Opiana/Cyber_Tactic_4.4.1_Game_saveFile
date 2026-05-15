@@ -3,6 +3,17 @@ extends Resource
 
 const META_SAVE_PATH := "user://meta_progression.tres"
 
+# ===== CHARACTER UNLOCK ORDER (Slay-the-Spire style) =====
+# Order in which characters become available.
+# Index 0 is unlocked from the start.
+# Beating a run with character at index N unlocks character at index N + 1.
+# Use the character_name field of each CharacterStats .tres as the key.
+const CHARACTER_UNLOCK_ORDER: Array[String] = [
+	"Student",      # warrior.tres  - unlocked by default
+	"Architect",    # wizard.tres   - unlocked after beating a run as Student
+	"Pen Tester",   # assassin.tres - unlocked after beating a run as Architect
+]
+
 # Persistent data that carries over between runs
 @export var persistent_gold: int = 0
 @export var knowledge_points: int = 0  # Currency for meta upgrades
@@ -22,14 +33,23 @@ const META_SAVE_PATH := "user://meta_progression.tres"
 @export var total_runs_won: int = 0
 @export var total_runs_lost: int = 0
 @export var total_knowledge_points_earned: int = 0  # Lifetime KP
-@export var total_perfect_battles: int = 0  # NEW
-@export var total_trivia_correct: int = 0  # NEW
-@export var total_trivia_attempted: int = 0  # NEW
-@export var best_rank_tier: String = "Bronze"  # NEW: Best rank achieved
-@export var highest_kp_single_run: int = 0  # NEW: Highest KP in a single run
+@export var total_perfect_battles: int = 0
+@export var total_trivia_correct: int = 0
+@export var total_trivia_attempted: int = 0
+@export var best_rank_tier: String = "Bronze"
+@export var highest_kp_single_run: int = 0
 
 # Codex/Bestiary unlocks (persistent across runs)
 @export var codex_discovered: Array[String] = []
+
+# ===== CHARACTER UNLOCK STATE =====
+# Names of characters the player has unlocked.
+# Always contains at least the first character in CHARACTER_UNLOCK_ORDER.
+@export var unlocked_characters: Array[String] = ["Student"]
+
+# Names of characters whose unlock notification has not yet been seen
+# (used by the hub / play selector to show a "NEW!" badge once).
+@export var newly_unlocked_characters: Array[String] = []
 
 
 func save_meta() -> void:
@@ -39,7 +59,12 @@ func save_meta() -> void:
 
 static func load_meta() -> MetaProgression:
 	if FileAccess.file_exists(META_SAVE_PATH):
-		return ResourceLoader.load(META_SAVE_PATH) as MetaProgression
+		var loaded := ResourceLoader.load(META_SAVE_PATH) as MetaProgression
+		# Defensive: older saves may not have unlocked_characters populated.
+		if loaded.unlocked_characters.is_empty():
+			loaded.unlocked_characters = ["Student"]
+			loaded.save_meta()
+		return loaded
 	
 	# Return new meta progression with default values
 	return MetaProgression.new()
@@ -197,7 +222,7 @@ func increment_runs_lost() -> void:
 	save_meta()
 
 
-# NEW: Track run completion stats from RunStatsTracker
+# Track run completion stats from RunStatsTracker
 func record_run_completion(stats_tracker: RunStatsTracker, rank_data: Dictionary) -> void:
 	# Add perfect battles to lifetime total
 	total_perfect_battles += stats_tracker.perfect_battles
@@ -257,3 +282,54 @@ func is_codex_entry_unlocked(id: String) -> bool:
 
 func get_all_unlocked_codex_entries() -> Array[String]:
 	return codex_discovered.duplicate()
+
+
+# ===== CHARACTER UNLOCKS (Slay-the-Spire style) =====
+
+# True if the given character is unlocked and selectable.
+func is_character_unlocked(character_name: String) -> bool:
+	# First character is always unlocked, even on a brand new save.
+	if CHARACTER_UNLOCK_ORDER.size() > 0 and character_name == CHARACTER_UNLOCK_ORDER[0]:
+		return true
+	return character_name in unlocked_characters
+
+
+# Unlock a specific character by name. Returns true if this was a new unlock.
+func unlock_character(character_name: String) -> bool:
+	if character_name in unlocked_characters:
+		return false
+	unlocked_characters.append(character_name)
+	if character_name not in newly_unlocked_characters:
+		newly_unlocked_characters.append(character_name)
+	save_meta()
+	return true
+
+
+# Called when the player BEATS a run with the given character.
+# Unlocks the next character in CHARACTER_UNLOCK_ORDER (if any).
+# Returns the name of the newly unlocked character, or "" if nothing new was unlocked.
+func unlock_next_after_win(character_name: String) -> String:
+	var idx := CHARACTER_UNLOCK_ORDER.find(character_name)
+	if idx == -1:
+		# Character not in the progression list — nothing to unlock.
+		return ""
+	var next_idx := idx + 1
+	if next_idx >= CHARACTER_UNLOCK_ORDER.size():
+		# Already at the last character in the chain.
+		return ""
+	var next_name: String = CHARACTER_UNLOCK_ORDER[next_idx]
+	if unlock_character(next_name):
+		return next_name
+	return ""
+
+
+# Mark a "newly unlocked" notification as seen so the badge can be cleared.
+func acknowledge_new_unlock(character_name: String) -> void:
+	if character_name in newly_unlocked_characters:
+		newly_unlocked_characters.erase(character_name)
+		save_meta()
+
+
+# True if this character's unlock notification has not been shown yet.
+func is_character_newly_unlocked(character_name: String) -> bool:
+	return character_name in newly_unlocked_characters

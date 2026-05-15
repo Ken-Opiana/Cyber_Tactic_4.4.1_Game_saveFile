@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://d4hs5bhclnjjf"]
+
+[ext_resource type="Texture2D" uid="uid://p4hj5vavs8cr" path="res://art/fresh_icons/relics/nano_repair_kit.png" id="1_bi14d"]
+[ext_resource type="Script" uid="uid://d1c5hl6ov4r82" path="res://threads/nano_repair_kit.gd" id="2_1oylu"]
+
+[resource]
+script = ExtResource("2_1oylu")
+thread_name = "Nano Repair Kit"
+id = "nano_repair_kit"
+type = 1
+icon = ExtResource("1_bi14d")
+tooltip = "[color=\"ffdf00\"]Nano Repair Kit[/color]
+At the start of combat, heal 2 HP."
+metadata/_custom_type_script = "uid://jie6cbv6kc3m"

@@ -12,4 +12,6 @@ target = 2
 cost = 1
 icon = ExtResource("1_xddpm")
 tooltip_text = "[center]Targets [color=\"#FFFF00\"]all enemies[/color] enemy to deal [color=\"ff0000\"]%s[/color] damage.[/center]"
+real_world_text = "[center][color=\"gray\"]-Flavor Text-[/color][/center]
+Scanning multiple areas of a network for threats or activity."
 sound = ExtResource("3_7urdb")

@@ -1,9 +1,11 @@
 class_name Map
 extends Node2D
 
-const SCROLL_SPEED := 15
 const MAP_ROOM = preload("res://scenes/map/map_room.tscn")
 const MAP_LINE = preload("res://scenes/map/map_line.tscn")
+
+# How many floors are shown per page.
+const FLOORS_PER_PAGE := 6
 
 @onready var map_generator: MapGenerator = $MapGenerator
 @onready var lines: Node2D = %Lines
@@ -14,29 +16,13 @@ const MAP_LINE = preload("res://scenes/map/map_line.tscn")
 var map_data: Array[Array]
 var floors_climbed: int
 var last_room: Room
-var camera_edge_y: float
-
-
-func _ready() -> void:
-	camera_edge_y = MapGenerator.Y_DIST * (MapGenerator.FLOORS - 4)
-
-
-func _unhandled_input(event: InputEvent) -> void:
-	if not visible:
-		return
-	
-	if event.is_action_pressed("scroll_up") or event.is_action_pressed("up_arrow"):
-		camera_2d.position.y -= SCROLL_SPEED
-	elif event.is_action_pressed("scroll_down") or event.is_action_pressed("down_arrow"):
-		camera_2d.position.y += SCROLL_SPEED
-	
-	camera_2d.position.y = clamp(camera_2d.position.y, -camera_edge_y, 0)
 
 
 func generate_new_map() -> void:
 	floors_climbed = 0
 	map_data = map_generator.generate_map()
 	create_map()
+	_snap_camera_to_current_page()
 
 
 func load_map(map: Array[Array], floors_completed: int, last_room_climbed: Room) -> void:
@@ -49,6 +35,8 @@ func load_map(map: Array[Array], floors_completed: int, last_room_climbed: Room)
 		unlock_next_rooms()
 	else:
 		unlock_floor()
+	
+	_snap_camera_to_current_page()
 
 
 func create_map() -> void:
@@ -121,4 +109,30 @@ func _on_map_room_clicked(room: Room) -> void:
 func _on_map_room_selected(room: Room) -> void:
 	last_room = room
 	floors_climbed += 1
+	_snap_camera_to_current_page()
 	Events.map_exited.emit(room)
+
+
+# ---------------------------------------------------------------------------
+# Paged camera logic
+# ---------------------------------------------------------------------------
+# Page 0: floors 1-6   (rows 0-5)   -> camera y =   0
+# Page 1: floors 7-12  (rows 6-11)  -> camera y = -240  (6 * Y_DIST)
+# Page 2: floors 13-15 (rows 12-14) -> camera y = -480  (12 * Y_DIST)
+#
+# The page is derived from floors_climbed so loading a save mid-run lands the
+# camera on the correct page automatically.
+
+func _get_current_page() -> int:
+	var max_page := _get_max_page()
+	return clampi(floors_climbed / FLOORS_PER_PAGE, 0, max_page)
+
+
+func _get_max_page() -> int:
+	# ceil(FLOORS / FLOORS_PER_PAGE) - 1
+	return ceili(float(MapGenerator.FLOORS) / float(FLOORS_PER_PAGE)) - 1
+
+
+func _snap_camera_to_current_page() -> void:
+	var page := _get_current_page()
+	camera_2d.position.y = -page * FLOORS_PER_PAGE * MapGenerator.Y_DIST

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://brta2pipoj2uu"]
+
+[ext_resource type="Texture2D" uid="uid://djcod43n7lo6f" path="res://art/fresh_icons/relics/script_injector.png" id="1_8au8n"]
+[ext_resource type="Script" uid="uid://b03oils176hw4" path="res://threads/script_injector.gd" id="1_x0dvj"]
+
+[resource]
+script = ExtResource("1_x0dvj")
+thread_name = "Script Injector"
+id = "script_injector"
+type = 4
+icon = ExtResource("1_8au8n")
+tooltip = "[color=\"ffdf00\"]Script Injector[/color]
+Whenever you play 3 skills during your turn, deal 5 damage to all enemies."
+metadata/_custom_type_script = "uid://jie6cbv6kc3m"

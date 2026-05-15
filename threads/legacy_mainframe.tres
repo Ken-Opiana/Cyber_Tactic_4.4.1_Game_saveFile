@@ -1,0 +1,16 @@
+[gd_resource type="Resource" format=3 uid="uid://sqfr0hwoom3h"]
+
+[ext_resource type="Texture2D" uid="uid://ntx45ntxcgv3" path="res://art/fresh_icons/relics/legacy_mainframe.png" id="1_w2gik"]
+[ext_resource type="Script" uid="uid://byep7fhmpn6s3" path="res://threads/legacy_mainframe.gd" id="2_q4nbm"]
+
+[resource]
+script = ExtResource("2_q4nbm")
+thread_name = "Legacy Mainframe"
+id = "legacy_mainframe"
+type = 1
+character_type = 3
+starter_thread = true
+icon = ExtResource("1_w2gik")
+tooltip = "[color=\"ffdf00\"]Legacy Mainframe[/color]
+At the start of combat, gain 1 [color=\"cyan\"]Cycle[/color] and add 1 \"Bootstrap\" to your hand."
+metadata/_custom_type_script = "uid://jie6cbv6kc3m"

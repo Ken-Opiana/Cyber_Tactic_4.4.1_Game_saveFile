@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cnqthygdb2tib" path="res://art/fresh_icons/defender/machine_learning_core.png" id="1_np055"]
 [ext_resource type="Script" uid="uid://bkrccfou0v6sn" path="res://characters/warrior/cards/warrior_machine_learning_core.gd" id="2_gr18k"]
+[ext_resource type="AudioStream" uid="uid://d23dh2wsb7n87" path="res://art/sfx/sfx_3.wav" id="3_gr18k"]
 
 [resource]
 script = ExtResource("2_gr18k")
@@ -14,4 +15,7 @@ icon = ExtResource("1_np055")
 tooltip_text = "[center]Whenever you [color=\"ffdf00\"]Remove[/color] a card, draw 1 card.[/center]
 [center][color=light_slate_gray]Remove - removed from combat when played. Returns to deck at the end of combat[/color][/center]
 "
+real_world_text = "[center][color=\"gray\"]-Flavor Text-[/color][/center]
+Artificial intelligence that improves through gathered data."
+sound = ExtResource("3_gr18k")
 metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

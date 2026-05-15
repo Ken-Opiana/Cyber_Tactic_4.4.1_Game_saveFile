@@ -4,6 +4,8 @@
 ## 2. _save_run() captures get_slot_codes(), get_tray_card_ids(),
 ##    get_tray_thread_ids() from the shop node.
 ## 3. Clear new fields in the else branch of _save_run() so stale data is wiped.
+## 4. NEW: _on_battle_won() calls meta.unlock_next_after_win(...) on victory,
+##    triggering Slay-the-Spire style character progression.
 ##
 ## All other logic is UNCHANGED from your original run.gd.
 ## Replace your existing run.gd with this file.
@@ -359,6 +361,13 @@ func _on_battle_won() -> void:
 	if map.floors_climbed == MapGenerator.FLOORS:
 		var meta = MetaProgression.load_meta()
 		meta.increment_runs_won()
+		
+		# Slay-the-Spire style progression: beating a run with this
+		# character unlocks the next character in the unlock chain.
+		var newly_unlocked := meta.unlock_next_after_win(character.character_name)
+		if newly_unlocked != "":
+			print("Unlocked new character: %s" % newly_unlocked)
+		
 		SaveGame.delete_data()
 		_show_run_summary(true)
 	else:

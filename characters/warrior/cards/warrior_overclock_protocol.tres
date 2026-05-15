@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://o80ms40mv0hb" path="res://art/fresh_icons/defender/overclock_protocol.png" id="1_3ygyb"]
 [ext_resource type="Script" uid="uid://dbsjcg3f0o0x0" path="res://characters/warrior/cards/warrior_overclock_protocol.gd" id="1_ao6o2"]
+[ext_resource type="AudioStream" uid="uid://wjv1qtui7xcq" path="res://art/sfx/sfx_1.wav" id="3_8ouif"]
 
 [resource]
 script = ExtResource("1_ao6o2")
@@ -12,4 +13,7 @@ rarity = 1
 cost = 1
 icon = ExtResource("1_3ygyb")
 tooltip_text = "[center]Whenever a card makes you lose HP, gain 1 [color='ffdf00']Power[/color].[/center]"
+real_world_text = "[center][color=\"gray\"]-Flavor Text-[/color][/center]
+Pushing a system beyond normal performance limits."
+sound = ExtResource("3_8ouif")
 metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

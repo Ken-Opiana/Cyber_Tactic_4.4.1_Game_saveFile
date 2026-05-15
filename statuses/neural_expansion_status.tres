@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://cn688pq8h82t2"]
+
+[ext_resource type="Script" uid="uid://bllt688gpiamx" path="res://statuses/neural_expansion_status.gd" id="1_j6wl3"]
+[ext_resource type="Texture2D" uid="uid://c1p2wesl37eix" path="res://art/fresh_icons/ai_architect/neural_expansion.png" id="1_xim3l"]
+
+[resource]
+script = ExtResource("1_j6wl3")
+id = "neural_expansion_status"
+type = 2
+effect_type = 1
+stack_type = 1
+stacks = 1
+icon = ExtResource("1_xim3l")
+tooltip = "Neural Expansion: at the start of your turn, draw %s card(s)."
+metadata/_custom_type_script = "uid://v7sfotas0ox0"

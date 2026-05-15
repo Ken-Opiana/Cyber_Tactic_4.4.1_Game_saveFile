@@ -88,7 +88,7 @@ func show_block_immediately() -> void:
 	if next_button:
 		next_button.visible = false
 	if skip_button:
-		skip_button.visible = false
+		skip_button.visible = true
 
 func show_dialogue(dialogue_data: Dictionary) -> void:
 	_lines = dialogue_data.get("lines", [])

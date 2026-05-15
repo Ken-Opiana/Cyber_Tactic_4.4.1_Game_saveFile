@@ -1,0 +1,16 @@
+[gd_resource type="Resource" format=3 uid="uid://cg0dierqq1doy"]
+
+[ext_resource type="Texture2D" uid="uid://cbil3f3luq5r4" path="res://art/fresh_icons/ai_architect/system_purge.png" id="1_ofjpl"]
+[ext_resource type="Script" uid="uid://6jd6fu0blya4" path="res://characters/wizard/cards/wizard_system_purge.gd" id="1_s51fg"]
+
+[resource]
+script = ExtResource("1_s51fg")
+name = "System Purge"
+id = "wizard_system_purge"
+rarity = 2
+target = 2
+cost = 2
+spell_cost = 3
+icon = ExtResource("1_ofjpl")
+tooltip_text = "[center]Spend 3 [color='4c82ff']Cycle[/color]. Deal [color='ff0000']%s[/color] damage to all enemies.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

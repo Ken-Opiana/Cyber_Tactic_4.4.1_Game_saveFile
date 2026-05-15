@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://52w20dv5b11w"]
+
+[ext_resource type="Script" uid="uid://bwow8j4t6pxhn" path="res://characters/wizard/cards/wizard_cascade_execution.gd" id="1_3uddh"]
+[ext_resource type="Texture2D" uid="uid://ultpywpma2xm" path="res://art/fresh_icons/ai_architect/cascade_execution.png" id="1_pdbdw"]
+
+[resource]
+script = ExtResource("1_3uddh")
+name = "Cascade Execution"
+id = "wizard_cascade_execution"
+type = 2
+rarity = 1
+cost = 1
+icon = ExtResource("1_pdbdw")
+tooltip_text = "[center]Whenever you gain a Cycle, deal 3 damage to a random enemy.[/center]"
+metadata/_custom_type_script = "uid://db7gxbb4g4qbl"

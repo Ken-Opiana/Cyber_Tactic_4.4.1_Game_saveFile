@@ -24,13 +24,21 @@ func discard_card(card: CardUI) -> void:
 func enable_hand() -> void:
 	for card: CardUI in get_children():
 		card.disabled = false
-		if card.is_hovered():
+		# Re-fire hover visuals if the mouse is currently over this card.
+		# `Control.is_hovered()` does not exist in Godot 4 — use the rect check.
+		if _is_mouse_over(card):
 			card.card_state_machine.on_mouse_entered()
 
 
 func disable_hand() -> void:
 	for card: CardUI in get_children():
 		card.disabled = true
+
+
+func _is_mouse_over(ctrl: Control) -> bool:
+	if not is_instance_valid(ctrl) or not ctrl.is_visible_in_tree():
+		return false
+	return ctrl.get_global_rect().has_point(ctrl.get_global_mouse_position())
 
 
 func _on_card_ui_reparent_requested(child: CardUI) -> void:

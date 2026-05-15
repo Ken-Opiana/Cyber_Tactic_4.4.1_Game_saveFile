@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3 uid="uid://b0rqc5aq3eti0"]
+
+[ext_resource type="Script" uid="uid://bw5vgbx0vy408" path="res://threads/pulse_emitter.gd" id="1_n27yc"]
+[ext_resource type="Texture2D" uid="uid://cgavygs6n0q8v" path="res://art/fresh_icons/relics/pulse_emitter.png" id="1_sfrfp"]
+
+[resource]
+script = ExtResource("1_n27yc")
+thread_name = "Pulse Emitter"
+id = "pulse_emitter"
+icon = ExtResource("1_sfrfp")
+tooltip = "[color=\"ffdf00\"]Pulse Emitter[/color]
+At the start of your turn, deal 2 damage to all enemies."
+metadata/_custom_type_script = "uid://jie6cbv6kc3m"

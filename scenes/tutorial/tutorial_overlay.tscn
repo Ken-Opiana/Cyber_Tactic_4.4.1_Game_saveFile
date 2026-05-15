@@ -1,12 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://b64l6yr4kj78t"]
+[gd_scene format=3 uid="uid://b64l6yr4kj78t"]
 
 [ext_resource type="Script" uid="uid://c3b4vuv63s1hp" path="res://scenes/tutorial/tutorial_overlay.gd" id="1"]
 
-[node name="TutorialOverlay" type="CanvasLayer"]
-layer = 3
+[node name="TutorialOverlay" type="CanvasLayer" unique_id=1211448989]
+layer = 100
 script = ExtResource("1")
 
-[node name="HighlightBorder" type="ReferenceRect" parent="."]
+[node name="InputBlocker" type="Control" parent="." unique_id=805872353]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DimRect" type="ColorRect" parent="InputBlocker" unique_id=2012832413]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="HighlightBorder" type="ReferenceRect" parent="." unique_id=45152903]
 visible = false
 offset_right = 100.0
 offset_bottom = 50.0

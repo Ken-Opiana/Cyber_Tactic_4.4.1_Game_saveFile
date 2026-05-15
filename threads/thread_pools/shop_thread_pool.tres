@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="ThreadPool" format=3 uid="uid://cw10tbfvm353l"]
+
+[ext_resource type="Script" uid="uid://jie6cbv6kc3m" path="res://custom_resources/thread_passive.gd" id="1_spmkl"]
+[ext_resource type="Script" uid="uid://c5q8n2idqs00y" path="res://custom_resources/thread_pool.gd" id="2_5wgdf"]
+[ext_resource type="Resource" uid="uid://b0rqc5aq3eti0" path="res://threads/pulse_emitter.tres" id="2_xi5fr"]
+[ext_resource type="Resource" uid="uid://2kmme3te7ctj" path="res://threads/auxiliray_battery.tres" id="3_bva0h"]
+[ext_resource type="Resource" uid="uid://cxyq4i8fodpq1" path="res://threads/adaptive_firewall_chip.tres" id="4_mbkth"]
+[ext_resource type="Resource" uid="uid://brta2pipoj2uu" path="res://threads/script_injector.tres" id="5_0mbhf"]
+[ext_resource type="Resource" uid="uid://q2mj0kh6e7m5" path="res://threads/backup_drive.tres" id="6_ywxqx"]
+[ext_resource type="Resource" uid="uid://f1d8pvynqcmq" path="res://threads/processor_boost.tres" id="7_7go6h"]
+[ext_resource type="Resource" uid="uid://c077twntl2n1v" path="res://threads/threat_broadcast.tres" id="8_x3u7v"]
+[ext_resource type="Resource" uid="uid://p1ojeg6deli6" path="res://threads/vulnerability_scanner.tres" id="9_inaoj"]
+[ext_resource type="Resource" uid="uid://ch7sn6j55mvj0" path="res://threads/servo_stabilizers.tres" id="10_1tljt"]
+[ext_resource type="Resource" uid="uid://crdt6ag6cp4uj" path="res://threads/stealth_suite.tres" id="11_a60e3"]
+[ext_resource type="Resource" uid="uid://byrdat3sj5k4w" path="res://threads/neural_relay.tres" id="12_f40lq"]
+[ext_resource type="Resource" uid="uid://b652cdpsq4xbn" path="res://threads/emergency_shielding.tres" id="13_cnob6"]
+[ext_resource type="Resource" uid="uid://chkdop5nqk7o8" path="res://threads/support_drone.tres" id="14_am2vd"]
+[ext_resource type="Resource" uid="uid://dn0x88hwtvyl4" path="res://threads/auto_barrier.tres" id="15_f4j65"]
+[ext_resource type="Resource" uid="uid://d4hs5bhclnjjf" path="res://threads/nano_repair_kit.tres" id="16_7oalj"]
+[ext_resource type="Resource" uid="uid://bhrslpw51ayu5" path="res://threads/reinforced_chassis.tres" id="17_0wjs0"]
+[ext_resource type="Resource" uid="uid://dgylxu61s1xlm" path="res://threads/energy_capacitor.tres" id="18_fsomp"]
+[ext_resource type="Resource" uid="uid://cg8k3pe247bub" path="res://threads/purge_protocol.tres" id="19_2ua8i"]
+[ext_resource type="Resource" uid="uid://b7qgeby5vb37k" path="res://threads/attack_compiler.tres" id="20_k6dbg"]
+[ext_resource type="Resource" uid="uid://boqwctp28c4ew" path="res://threads/trace_script.tres" id="21_cokki"]
+[ext_resource type="Resource" uid="uid://hmap8l86svk1" path="res://threads/coupons.tres" id="22_jx4to"]
+[ext_resource type="Resource" uid="uid://b8i7wg2qgf6oe" path="res://threads/crypto_miner.tres" id="23_hmqnv"]
+
+[resource]
+script = ExtResource("2_5wgdf")
+pool = Array[ExtResource("1_spmkl")]([ExtResource("2_xi5fr"), ExtResource("3_bva0h"), ExtResource("4_mbkth"), ExtResource("5_0mbhf"), ExtResource("6_ywxqx"), ExtResource("7_7go6h"), ExtResource("8_x3u7v"), ExtResource("9_inaoj"), ExtResource("10_1tljt"), ExtResource("11_a60e3"), ExtResource("12_f40lq"), ExtResource("13_cnob6"), ExtResource("14_am2vd"), ExtResource("15_f4j65"), ExtResource("16_7oalj"), ExtResource("17_0wjs0"), ExtResource("18_fsomp"), ExtResource("19_2ua8i"), ExtResource("20_k6dbg"), ExtResource("21_cokki"), ExtResource("22_jx4to"), ExtResource("23_hmqnv")])
+metadata/_custom_type_script = "uid://c5q8n2idqs00y"

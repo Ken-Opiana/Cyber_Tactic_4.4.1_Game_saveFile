@@ -1,7 +1,7 @@
 extends ThreadPassive
 
 
-func activate_relic(owner: ThreadUI):
+func activate_thread(owner: ThreadUI):
 	await Events.player_hand_drawn
 	var player := owner.get_tree().get_first_node_in_group("player") as Player
 	if player:

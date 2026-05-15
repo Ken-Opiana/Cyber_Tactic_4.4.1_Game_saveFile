@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://chkdop5nqk7o8"]
+
+[ext_resource type="Texture2D" uid="uid://cd2sfimsgty3t" path="res://art/fresh_icons/relics/support_drone.png" id="1_smisq"]
+[ext_resource type="Script" uid="uid://ceuvjkn35l1wk" path="res://threads/support_drone.gd" id="2_72fdn"]
+
+[resource]
+script = ExtResource("2_72fdn")
+thread_name = "Support Drone"
+id = "support_drone"
+type = 2
+character_type = 3
+icon = ExtResource("1_smisq")
+tooltip = "[color=\"ffdf00\"]Support Drone[/color]
+At the end of your turn, gain 2 Defense for every Cycle you have."
+metadata/_custom_type_script = "uid://jie6cbv6kc3m"

@@ -1,11 +1,6 @@
 [gd_scene format=3 uid="uid://da6ocx485g0c7"]
 
 [ext_resource type="Script" uid="uid://ddky077xerok0" path="res://scenes/treasure/treasure.gd" id="1_xmwdt"]
-[ext_resource type="Script" uid="uid://jie6cbv6kc3m" path="res://custom_resources/thread_passive.gd" id="2_3ynfn"]
-[ext_resource type="Resource" uid="uid://cwxlm3oyg546w" path="res://threads/shockwave.tres" id="3_72l3w"]
-[ext_resource type="Resource" uid="uid://44a423e8clh1" path="res://threads/extra_energy.tres" id="4_knoyn"]
-[ext_resource type="Resource" uid="uid://c014g8rpo2k1t" path="res://threads/reinforced_block.tres" id="5_ypb2i"]
-[ext_resource type="Resource" uid="uid://chqxc7ly6cg54" path="res://threads/confusing_staff.tres" id="6_8auyv"]
 [ext_resource type="Texture2D" uid="uid://lugennxj0o6x" path="res://art/battle_background1.png" id="7_8auyv"]
 [ext_resource type="PackedScene" uid="uid://1sj0jhjm8jcs" path="res://art/3d_models/LootCrate.glb" id="8_lootcrate"]
 
@@ -21,7 +16,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_xmwdt")
-treasure_thread_pool = Array[ExtResource("2_3ynfn")]([ExtResource("3_72l3w"), ExtResource("4_knoyn"), ExtResource("5_ypb2i"), ExtResource("6_8auyv")])
 
 [node name="Background" type="TextureRect" parent="." unique_id=400050013]
 layout_mode = 1
@@ -69,10 +63,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -100.0
-offset_right = 100.0
-offset_bottom = 100.0
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 0
@@ -81,13 +75,13 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="LootCrateViewport" unique_id=85868549]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(200, 200)
+size = Vector2i(640, 360)
 render_target_update_mode = 4
 
 [node name="World3D" type="Node3D" parent="LootCrateViewport/SubViewport" unique_id=1542112834]
 
 [node name="Camera3D" type="Camera3D" parent="LootCrateViewport/SubViewport/World3D" unique_id=1181844415]
-transform = Transform3D(1, 0, 0, 0, 0.956497, 0.29243046, 0, -0.29243046, 0.956497, 0, 1.2, 3.5)
+transform = Transform3D(1, 0, 0, 0, 0.9563048, 0.2923717, 0, -0.2923717, 0.9563048, 0, 1.9185643, 6.580859)
 fov = 40.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="LootCrateViewport/SubViewport/World3D" unique_id=1740422060]

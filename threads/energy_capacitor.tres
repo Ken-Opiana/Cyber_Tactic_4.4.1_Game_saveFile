@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://dgylxu61s1xlm"]
+
+[ext_resource type="Texture2D" uid="uid://ccg06jgv1h3kc" path="res://art/fresh_icons/relics/energy_capacitor.png" id="1_8qgho"]
+[ext_resource type="Script" uid="uid://c32u2ek7whmj0" path="res://threads/energy_capacitor.gd" id="2_1sjpx"]
+
+[resource]
+script = ExtResource("2_1sjpx")
+thread_name = "Energy Capacitor"
+id = "energy_capacitor"
+type = 1
+icon = ExtResource("1_8qgho")
+tooltip = "[color=\"ffdf00\"]Energy Capacitor[/color]
+Every 3 turns, gain 1 Energy."
+metadata/_custom_type_script = "uid://jie6cbv6kc3m"

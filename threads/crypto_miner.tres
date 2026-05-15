@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://b8i7wg2qgf6oe"]
+
+[ext_resource type="Texture2D" uid="uid://cfdugqovwote6" path="res://art/fresh_icons/relics/crypto_miner.png" id="1_8jjnk"]
+[ext_resource type="Script" uid="uid://t8wdokdhgg4v" path="res://threads/crypto_miner.gd" id="2_ra43h"]
+
+[resource]
+script = ExtResource("2_ra43h")
+thread_name = "Crypto Miner"
+id = "crypto_miner"
+type = 4
+icon = ExtResource("1_8jjnk")
+tooltip = "[color=\"ffdf00\"]Crypto Miner[/color]
+Defeated enemies give you 7 more gold."
+metadata/_custom_type_script = "uid://jie6cbv6kc3m"
