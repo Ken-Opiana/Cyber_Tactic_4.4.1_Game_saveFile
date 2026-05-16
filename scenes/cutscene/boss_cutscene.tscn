@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cejlqyn2xqcg2"]
+
+[ext_resource type="Script" uid="uid://8mx6otyu6qc6" path="res://scenes/cutscene/boss_cutscene.gd" id="1_bcs01"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg01"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="BossCutscene" type="Control" unique_id=39284189]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bcs01")
+
+[node name="Background" type="Panel" parent="." unique_id=1806445962]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bg01")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=896043251]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 1.77778
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AspectRatioContainer" unique_id=41440931]
+unique_name_in_owner = true
+layout_mode = 2
+expand = true

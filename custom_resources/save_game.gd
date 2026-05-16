@@ -41,6 +41,12 @@ const SAVE_PATH := "user://savegame.tres"
 # shop visit's prices. Prevents re-applying the discount on every save/load.
 @export var shop_coupon_applied: bool = false
 
+# ── Boss cutscene one-shot flags ──────────────────────────────────────────────
+# Once true, the corresponding cutscene will not play again, even after
+# save/quit/reload within the same run.
+@export var boss_intro_cutscene_played: bool = false
+@export var boss_ending_cutscene_played: bool = false
+
 
 func save_data() -> void:
 	var err := ResourceSaver.save(self, SAVE_PATH)

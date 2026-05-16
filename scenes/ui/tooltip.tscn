@@ -1,11 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://ookdkrpepxa2"]
+[gd_scene format=3 uid="uid://ookdkrpepxa2"]
 
 [ext_resource type="Theme" uid="uid://cao7y1u2su7i5" path="res://main_theme.tres" id="1_o8a0y"]
 [ext_resource type="Texture2D" uid="uid://wy0km0q1cnv8" path="res://art/tile_0119.png" id="2_k4j5b"]
 [ext_resource type="Script" uid="uid://58t0uw2ipi3j" path="res://scenes/ui/tooltip.gd" id="2_o3wlr"]
 [ext_resource type="FontFile" uid="uid://dkc0wbxtwj6ao" path="res://art/Font Styles/MedodicaRegular.otf" id="4_o3msy"]
 
-[node name="Tooltip" type="PanelContainer"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o3msy"]
+bg_color = Color(0, 0.16799994, 0.21, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[node name="Tooltip" type="PanelContainer" unique_id=953629944]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -14,19 +22,20 @@ offset_right = 55.0
 offset_bottom = 36.0
 grow_horizontal = 2
 theme = ExtResource("1_o8a0y")
+theme_override_styles/panel = SubResource("StyleBoxFlat_o3msy")
 script = ExtResource("2_o3wlr")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1389418251]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=114105844]
 layout_mode = 2
 
-[node name="TooltipIcon" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+[node name="TooltipIcon" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=1566574373]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
@@ -34,7 +43,7 @@ texture = ExtResource("2_k4j5b")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="TooltipText" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+[node name="TooltipText" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=1272393379]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3

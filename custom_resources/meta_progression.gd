@@ -10,8 +10,8 @@ const META_SAVE_PATH := "user://meta_progression.tres"
 # Use the character_name field of each CharacterStats .tres as the key.
 const CHARACTER_UNLOCK_ORDER: Array[String] = [
 	"Student",      # warrior.tres  - unlocked by default
-	"Architect",    # wizard.tres   - unlocked after beating a run as Student
-	"Pen Tester",   # assassin.tres - unlocked after beating a run as Architect
+	"Pen Tester",    # wizard.tres   - unlocked after beating a run as Student
+	"Architect",   # assassin.tres - unlocked after beating a run as Architect
 ]
 
 # Persistent data that carries over between runs

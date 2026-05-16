@@ -10,5 +10,5 @@ id = "crypto_miner"
 type = 4
 icon = ExtResource("1_8jjnk")
 tooltip = "[color=\"ffdf00\"]Crypto Miner[/color]
-Defeated enemies give you 7 more gold."
+Defeated enemies give you 7 more cache."
 metadata/_custom_type_script = "uid://jie6cbv6kc3m"

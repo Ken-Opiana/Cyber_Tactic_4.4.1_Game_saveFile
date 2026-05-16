@@ -1,13 +1,15 @@
-## run.gd — CHANGES FROM ORIGINAL:
-## 1. _on_shop_entered() passes new slot_codes, tray_card_ids, tray_thread_ids
-##    to restore_from_save().
-## 2. _save_run() captures get_slot_codes(), get_tray_card_ids(),
-##    get_tray_thread_ids() from the shop node.
-## 3. Clear new fields in the else branch of _save_run() so stale data is wiped.
-## 4. NEW: _on_battle_won() calls meta.unlock_next_after_win(...) on victory,
-##    triggering Slay-the-Spire style character progression.
+## run.gd — CHANGES FROM PREVIOUS VERSION:
+## 1. Added BOSS_CUTSCENE_SCENE preload.
+## 2. _on_map_exited() Room.Type.BOSS now plays the boss intro cutscene
+##    once (gated by save_data.boss_intro_cutscene_played), then proceeds
+##    to _on_battle_room_entered(room). On subsequent reloads or non-boss
+##    rooms, behavior is unchanged.
+## 3. _on_battle_won() final-boss branch now plays the boss ending cutscene
+##    once (gated by save_data.boss_ending_cutscene_played) BEFORE showing
+##    the run summary. Other branches unchanged.
+## 4. NEW helper: _play_boss_cutscene(video_path, on_finished).
 ##
-## All other logic is UNCHANGED from your original run.gd.
+## All other logic is UNCHANGED from the previous run.gd.
 ## Replace your existing run.gd with this file.
 
 class_name Run
@@ -21,7 +23,11 @@ const TREASURE_SCENE := preload("res://scenes/treasure/treasure.tscn")
 const BESTIARY_SCENE := preload("res://scenes/bestiary/bestiary.tscn")
 const WIN_SCREEN_SCENE := preload("res://scenes/win_screen/win_screen.tscn")
 const SUMMARY_SCENE := preload("res://scenes/ui/run_summary_screen.tscn")
+const BOSS_CUTSCENE_SCENE := preload("res://scenes/cutscene/boss_cutscene.tscn")
 const MAIN_MENU_PATH := "res://scenes/ui/main_menu.tscn"
+
+const BOSS_INTRO_VIDEO  := "res://art/video/Cutscenes/Boss-Encounter-Scene.ogv"
+const BOSS_ENDING_VIDEO := "res://art/video/Cutscenes/Ending-Scene.ogv"
 
 @export var run_startup: RunStartup
 
@@ -368,8 +374,20 @@ func _on_battle_won() -> void:
 		if newly_unlocked != "":
 			print("Unlocked new character: %s" % newly_unlocked)
 		
-		SaveGame.delete_data()
-		_show_run_summary(true)
+		# ── Boss ending cutscene (one-shot, final boss only) ───────────
+		# Gated by save_data flag so it can never replay even if the
+		# player somehow re-enters this branch. We play the cutscene
+		# BEFORE deleting the save so the flag write is meaningful.
+		if save_data and not save_data.boss_ending_cutscene_played:
+			save_data.boss_ending_cutscene_played = true
+			save_data.save_data()
+			_play_boss_cutscene(BOSS_ENDING_VIDEO, func():
+				SaveGame.delete_data()
+				_show_run_summary(true)
+			)
+		else:
+			SaveGame.delete_data()
+			_show_run_summary(true)
 	else:
 		_show_regular_battle_rewards()
 
@@ -397,7 +415,18 @@ func _on_map_exited(room: Room) -> void:
 		Room.Type.EVENT:
 			_on_event_room_entered(room)
 		Room.Type.BOSS:
-			_on_battle_room_entered(room)
+			# ── Boss intro cutscene (one-shot) ────────────────────────
+			# Plays before the battle starts. Flag persists across
+			# save/quit/reload, so if the player quits during the
+			# cutscene and continues, they'll go straight to battle.
+			if save_data and not save_data.boss_intro_cutscene_played:
+				save_data.boss_intro_cutscene_played = true
+				save_data.save_data()
+				_play_boss_cutscene(BOSS_INTRO_VIDEO, func():
+					_on_battle_room_entered(room)
+				)
+			else:
+				_on_battle_room_entered(room)
 
 
 func _on_battle_reward_exited_wrapper() -> void:
@@ -434,3 +463,38 @@ func _show_run_summary(victory: bool) -> void:
 	var summary := _change_view(SUMMARY_SCENE) as RunSummaryScreen
 	summary.show_summary(stats_tracker, victory)
 	get_tree().paused = true
+
+
+# ── Boss cutscene helper ──────────────────────────────────────────────
+# Instantiates the BossCutscene scene as a child of current_view (so it
+# overlays correctly above the map/battle area) and invokes the given
+# callable when the video finishes. Music is intentionally NOT touched —
+# the existing MusicPlayer track continues under the video's own audio.
+func _play_boss_cutscene(video_path: String, on_finished: Callable) -> void:
+	# CRITICAL: The battle-over panel pauses the tree when the Continue
+	# button is clicked. If we don't unpause here, VideoStreamPlayer will
+	# never tick and the cutscene stays on a black frame forever. This
+	# matches the pattern in _change_view().
+	get_tree().paused = false
+	
+	# Clear whatever is currently in CurrentView (the map is hidden, but
+	# leftover scenes from a battle would block our cutscene).
+	if current_view.get_child_count() > 0:
+		current_view.get_child(0).queue_free()
+	
+	_is_on_map = false
+	map.hide_map()
+	map_labels.hide()
+	message_label.hide()
+	
+	var cs := BOSS_CUTSCENE_SCENE.instantiate() as BossCutscene
+	if not cs:
+		push_error("Run: Failed to instantiate BossCutscene; skipping.")
+		on_finished.call()
+		return
+	
+	cs.video_path = video_path
+	cs.finished.connect(func():
+		on_finished.call()
+	)
+	current_view.add_child(cs)

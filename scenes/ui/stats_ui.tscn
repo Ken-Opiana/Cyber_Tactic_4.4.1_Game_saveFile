@@ -59,6 +59,7 @@ offset_right = 45.0
 offset_bottom = 16.0
 grow_horizontal = 2
 theme = ExtResource("1_57rat")
+theme_override_constants/separation = 29
 alignment = 1
 script = ExtResource("2_mm03n")
 
