@@ -32,6 +32,13 @@ var current_video_index: int = 0
 var is_dialogue_active: bool = false
 var checked_triggers: Array = []  # Track which triggers we've already fired
 
+# ── Hard skip state ──────────────────────────────────────────────────────
+# Set to true the moment ESC is pressed so _process() stops firing dialogue
+# triggers and _on_video_finished() stops queuing the next video while
+# we're tearing things down.
+var _is_skipping: bool = false
+
+
 func _ready() -> void:
 	DialogueState.reset_all()
 	# Hide dialogue UI initially
@@ -49,12 +56,54 @@ func _ready() -> void:
 	# Start first video
 	_load_and_play_video(0)
 
+
+# ── ESC hard-skip ────────────────────────────────────────────────────────
+# Single press of ESC (ui_cancel) skips the entire cutscene — bypasses any
+# remaining videos AND any active or pending dialogue — and goes straight
+# to the scene defined in _transition_to_run().
+func _unhandled_input(event: InputEvent) -> void:
+	if _is_skipping:
+		return
+	if event.is_action_pressed("ui_cancel"):
+		get_viewport().set_input_as_handled()
+		_skip_cutscene()
+
+
+func _skip_cutscene() -> void:
+	if _is_skipping:
+		return
+	_is_skipping = true
+	
+	# Stop the video so it doesn't keep ticking / firing finished mid-skip.
+	if video_stream_player and video_stream_player.is_playing():
+		video_stream_player.stop()
+	
+	# If a dialogue is currently up, tear it down without letting it run
+	# its normal "finished -> maybe change scene" cascade. DialogueManager
+	# is connected to dialogue_ui.dialogue_finished as CONNECT_ONE_SHOT, so
+	# we disconnect it before we ourselves hide the UI to avoid firing the
+	# manager's post-scene logic.
+	if dialogue_ui:
+		if DialogueManager and dialogue_ui.is_connected("dialogue_finished", Callable(DialogueManager, "_on_ui_finished")):
+			dialogue_ui.disconnect("dialogue_finished", Callable(DialogueManager, "_on_ui_finished"))
+		dialogue_ui.force_hide_block()
+		dialogue_ui.visible = false
+	
+	is_dialogue_active = false
+	
+	# Instant cut to the next scene.
+	_transition_to_run(true)
+
+
 func _process(_delta: float) -> void:
+	if _is_skipping:
+		return
 	if is_dialogue_active or not video_stream_player or not video_stream_player.is_playing():
 		return
 	
 	# Check for dialogue triggers at current playback position
 	_check_dialogue_triggers()
+
 
 func _check_dialogue_triggers() -> void:
 	var current_time: float = video_stream_player.stream_position
@@ -76,6 +125,7 @@ func _check_dialogue_triggers() -> void:
 			_pause_and_show_dialogue(trigger.get("dialogue", ""))
 			break  # Only trigger one dialogue at a time
 
+
 func _pause_and_show_dialogue(dialogue_path: String) -> void:
 	if dialogue_path == "" or not FileAccess.file_exists(dialogue_path):
 		push_error("Cutscene: Dialogue file not found: %s" % dialogue_path)
@@ -92,15 +142,23 @@ func _pause_and_show_dialogue(dialogue_path: String) -> void:
 		push_error("Cutscene: DialogueManager not found!")
 		_resume_video()
 
+
 func _on_dialogue_finished() -> void:
+	if _is_skipping:
+		return
 	is_dialogue_active = false
 	_resume_video()
+
 
 func _resume_video() -> void:
 	if video_stream_player:
 		video_stream_player.paused = false
 
+
 func _on_video_finished() -> void:
+	if _is_skipping:
+		return
+	
 	# Move to next video
 	current_video_index += 1
 	
@@ -110,6 +168,7 @@ func _on_video_finished() -> void:
 	else:
 		# All videos finished, transition to run scene
 		_transition_to_run()
+
 
 func _load_and_play_video(index: int) -> void:
 	if index < 0 or index >= videos.size():
@@ -133,9 +192,13 @@ func _load_and_play_video(index: int) -> void:
 		push_error("Cutscene: Failed to load video: %s" % video_path)
 		_transition_to_run()
 
-func _transition_to_run() -> void:
+
+# `instant` skips the normal 0.5s pause before the scene change.
+# Used by the ESC hard skip so the transition feels like a hard cut.
+func _transition_to_run(instant: bool = false) -> void:
 	print("Cutscene: Transitioning to run scene")
-	await get_tree().create_timer(0.5).timeout
+	if not instant:
+		await get_tree().create_timer(0.5).timeout
 	
 	# Change scene first
 	var result = get_tree().change_scene_to_file("res://scenes/battle/battleSim.tscn")
